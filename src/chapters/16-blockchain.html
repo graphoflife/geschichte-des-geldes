@@ -1,0 +1,54 @@
+<section class="chapter" id="blockchain" data-num="16" data-part="III" data-title="Die Blockchain und die längste Kette" data-desc="Warum sich die Vergangenheit nicht umschreiben lässt">
+  <header class="ch-head">
+    <div class="ch-num">16</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Die Blockchain und die längste Kette</h1>
+    <p class="ch-lede">Blöcke, die über Hashes aneinandergekettet sind, machen die Vergangenheit unveränderlich – solange die ehrlichen Miner die Mehrheit der Rechenleistung haben.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Eine Kette aus Fingerabdrücken</h2>
+    <p>Ein Bitcoin-Block enthält eine Liste von Transaktionen, eine Nonce – und den <strong>Hash des vorherigen Blocks</strong>. Dieser letzte Punkt ist entscheidend. Jeder Block trägt den Fingerabdruck seines Vorgängers in sich, und weil der Hash des Vorgängers wiederum vom Vor-Vorgänger abhängt, ist jeder Block mit der gesamten Geschichte bis zum Genesis-Block verbunden. Die Idee, Dokumente so zu verketten, um ihre Reihenfolge fälschungssicher zu machen, stammt von Stuart Haber und Scott Stornetta aus dem Jahr 1991 – Satoshi zitierte sie im Whitepaper.</p>
+    <p>Was passiert, wenn jemand eine alte Transaktion ändern will? Probiere es aus:</p>
+
+    <figure class="scene" data-scene="chain">
+      <figcaption>Ändere die Daten in Block 2 – zum Beispiel die Anzahl Bitcoin für die Pizza. Sein Hash ändert sich, und alle Blöcke danach werden ungültig. Mit «Minen» kannst du sie reparieren, einen nach dem anderen. (Nach der Blockchain-Demo von Anders Brownworth.)</figcaption>
+    </figure>
+
+    <p>Hast du bemerkt, wie viel Arbeit es kostet, die Geschichte umzuschreiben? Wer einen alten Block ändert, muss nicht nur diesen einen neu minen, sondern <strong>jeden einzelnen Block danach</strong>. Und während er das tut, hängt das ehrliche Netzwerk alle zehn Minuten einen neuen Block an. Er muss also nicht nur aufholen, sondern überholen.</p>
+
+    <h2>Die Regel der längsten Kette</h2>
+    <p>Bitcoin hat eine einfache Regel: <strong>Jeder Knoten folgt der gültigen Kette mit der meisten akkumulierten Rechenarbeit</strong>, vereinfacht gesagt der «längsten Kette». Manchmal finden zwei Miner fast gleichzeitig einen Block. Dann gibt es kurz zwei konkurrierende Versionen, und das Netzwerk ist für einen Moment geteilt. Sobald der nächste Block gefunden wird, ist eine der beiden Ketten länger, und alle wechseln zu ihr. Die Transaktionen aus dem verwaisten Block wandern zurück in den Wartebereich und kommen in einen späteren Block.</p>
+    <p>Deshalb spricht man von <strong>Bestätigungen</strong>. Eine Transaktion im neusten Block hat eine Bestätigung, mit jedem weiteren Block kommt eine dazu. Für kleine Beträge reicht oft eine Bestätigung, für grosse Beträge wartet man üblicherweise sechs Blöcke, also rund eine Stunde.</p>
+
+    <h2>Das Wettrennen des Angreifers</h2>
+    <p>Wie sicher ist das? Satoshi hat es im elften Abschnitt des Whitepapers ausgerechnet. Angenommen, ein Angreifer kontrolliert den Anteil \(q\) der gesamten Rechenleistung, die ehrlichen Miner den Rest \(p = 1-q\). Der Angreifer bezahlt einen Händler, wartet, bis dieser nach \(z\) Bestätigungen die Ware liefert, und versucht dann, heimlich eine längere Kette ohne die Zahlung zu bauen. Die Wahrscheinlichkeit, dass ihm das gelingt, ist</p>
+    $$P = 1 - \sum_{k=0}^{z} \frac{\lambda^k e^{-\lambda}}{k!}\left(1 - \left(\frac{q}{p}\right)^{z-k}\right), \qquad \lambda = z\,\frac{q}{p}.$$
+    <p>Hinter der Formel steckt ein Zufallslauf, wie ihn schon Glücksspieler kennen («Gambler’s Ruin»): Der Angreifer ist im Rückstand und muss in einem Rennen aufholen, in dem er jede Runde mit Wahrscheinlichkeit \(q\) gewinnt. Solange \(q &lt; p\) ist, sinkt seine Chance mit jeder Bestätigung <strong>exponentiell</strong>.</p>
+
+    <figure class="scene" data-scene="race">
+      <figcaption>Stelle die Rechenleistung des Angreifers und die Anzahl Bestätigungen ein. Unten läuft eine Simulation des Rennens – sie bestätigt Satoshis Formel.</figcaption>
+    </figure>
+
+    <p>Mit 10 Prozent der Rechenleistung und sechs Bestätigungen liegt die Erfolgschance bei etwa 0.02 Prozent. Selbst mit 30 Prozent der Rechenleistung braucht ein Händler nur gut zwanzig Bestätigungen, um auf ein Risiko von 0.1 Prozent zu kommen.</p>
+
+    <aside class="note think">
+      <span class="note-label">Und der 51-%-Angriff?</span>
+      <p>Hätte ein Angreifer mehr als die Hälfte der Rechenleistung, würde er das Rennen auf Dauer gewinnen. Er könnte dann eigene Zahlungen rückgängig machen und Transaktionen anderer blockieren. Was er aber nicht kann: fremde Bitcoin stehlen (dafür bräuchte er die privaten Schlüssel, siehe nächstes Kapitel), Bitcoin aus dem Nichts erzeugen oder die Regeln ändern – jeder Knoten würde ungültige Blöcke ablehnen. Zudem müsste er Hardware und Energie im Wert von vielen Milliarden einsetzen, um ein System anzugreifen, dessen Wert er damit zerstört.</p>
+    </aside>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Die Vergangenheit von Bitcoin ist nicht durch Vertrauen geschützt, sondern durch Physik: Wer sie ändern will, muss mehr Energie aufwenden als alle ehrlichen Miner zusammen – und zwar ab dem Block, den er ändern will, bis heute.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Satoshi Nakamoto: Whitepaper, Abschnitte 3–5 und 11 «Calculations».</li>
+        <li>Stuart Haber, W. Scott Stornetta: <em>How to Time-Stamp a Digital Document</em>, 1991.</li>
+        <li>Anders Brownworth: <em>Blockchain Demo</em>, 2016 – <a href="https://andersbrownworth.com/blockchain/" rel="noopener">andersbrownworth.com</a>.</li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+<section class="chapter" id="cypherpunks" data-num="12" data-part="III" data-title="Die Suche nach digitalem Bargeld" data-desc="Cypherpunks, gescheiterte Vorgänger und Satoshi Nakamoto">
+  <header class="ch-head">
+    <div class="ch-num">12</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Die Suche nach digitalem Bargeld</h1>
+    <p class="ch-lede">Bevor Satoshi Nakamoto auftauchte, versuchten Kryptografen zwanzig Jahre lang, digitales Geld zu bauen. Jeder Versuch scheiterte – und hinterliess ein Puzzlestück.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Die Cypherpunks</h2>
+    <p>1992 gründeten Eric Hughes, Timothy May und John Gilmore in der Bucht von San Francisco eine Mailingliste, deren Mitglieder sich bald <strong>Cypherpunks</strong> nannten. Ihre Überzeugung: Im digitalen Zeitalter lässt sich Privatsphäre nicht durch Gesetze schützen, sondern nur durch Mathematik – durch Kryptografie, die jeder benutzen kann. Eric Hughes fasste das 1993 in seinem <em>Cypherpunk’s Manifesto</em> in drei Worte: «Cypherpunks write code.» Nicht reden, bauen.</p>
+    <p>Ein Traum zog sich durch die Diskussionen wie ein roter Faden: <strong>digitales Bargeld</strong>. Geld, das man so privat und direkt weitergeben kann wie eine Banknote, aber über das Internet. Die Geschichte dieses Traums ist eine Geschichte des Scheiterns – und des Lernens.</p>
+
+    <ol class="tl">
+      <li><span class="yr">1982</span><span class="ev"><b>David Chaum: blinde Signaturen</b><span>Der Kryptograf zeigt, wie eine Bank digitale Münzen signieren kann, ohne zu sehen, wer sie später ausgibt. Anonymes digitales Geld wird denkbar.</span></span></li>
+      <li class="fail"><span class="yr">1990</span><span class="ev"><b>DigiCash und eCash</b><span>Chaums Firma in Amsterdam bringt eCash auf den Markt. Technisch brillant, aber auf eine zentrale Firma angewiesen. 1998 geht DigiCash in Konkurs – und mit ihr das Geld.</span></span></li>
+      <li><span class="yr">1992</span><span class="ev"><b>Die Cypherpunk-Mailingliste</b><span>Hunderte Kryptografen, Programmierer und Libertäre diskutieren über Privatsphäre, Verschlüsselung und digitales Geld.</span></span></li>
+      <li class="fail"><span class="yr">1996</span><span class="ev"><b>e-gold</b><span>Digitales, mit echtem Gold gedecktes Geld. Zeitweise mit Millionen Konten. Doch die Firma und ihre Server lassen sich angreifen: Ab 2007 verfolgen die US-Behörden e-gold, 2008 bekennen sich die Gründer schuldig. Lektion: Was einen Kopf hat, kann man abschlagen.</span></span></li>
+      <li><span class="yr">1997</span><span class="ev"><b>Adam Back: Hashcash</b><span>Ein Mittel gegen Spam: Wer eine E-Mail sendet, muss eine kleine Rechenaufgabe lösen. Für einzelne Mails kaum spürbar, für Millionen Spam-Mails teuer. Die Idee des <em>Proof of Work</em> ist geboren.</span></span></li>
+      <li><span class="yr">1998</span><span class="ev"><b>Wei Dai: b-money</b><span>Ein Entwurf für dezentrales Geld: Geld entsteht durch Rechenarbeit, alle Teilnehmer führen ein gemeinsames Hauptbuch. Nie umgesetzt, aber später von Satoshi zitiert.</span></span></li>
+      <li><span class="yr">1998</span><span class="ev"><b>Nick Szabo: Bit Gold</b><span>«Digitales Gold»: eine Kette aus Proof-of-Work-Lösungen, jede mit der vorherigen verknüpft. Szabo veröffentlicht den Entwurf 2005 in seinem Blog. Es fehlt ein Weg, wie sich alle ohne Zentrale über die Reihenfolge einigen.</span></span></li>
+      <li><span class="yr">2004</span><span class="ev"><b>Hal Finney: RPOW</b><span>Wiederverwendbare Proof-of-Work-Token. Finney wird fünf Jahre später der erste Mensch sein, der Bitcoin erhält.</span></span></li>
+      <li class="btc"><span class="yr">31.10.2008</span><span class="ev"><b>Das Whitepaper</b><span>Auf der Cryptography-Mailingliste veröffentlicht jemand unter dem Namen Satoshi Nakamoto ein neunseitiges Papier: <em>Bitcoin: A Peer-to-Peer Electronic Cash System</em>.</span></span></li>
+      <li class="btc"><span class="yr">03.01.2009</span><span class="ev"><b>Der Genesis-Block</b><span>Satoshi startet das Netzwerk. Im allerersten Block ist eine Schlagzeile der Londoner <em>Times</em> verewigt.</span></span></li>
+      <li class="btc"><span class="yr">12.01.2009</span><span class="ev"><b>Die erste Transaktion</b><span>Satoshi sendet Hal Finney 10 Bitcoin (Block 170). Finney hatte zwei Tage zuvor getwittert: «Running bitcoin».</span></span></li>
+      <li class="btc"><span class="yr">22.05.2010</span><span class="ev"><b>Pizza für 10’000 Bitcoin</b><span>Laszlo Hanyecz bezahlt 10’000 BTC für zwei Pizzen – der erste bekannte Kauf eines realen Guts mit Bitcoin. Damals rund 41 Dollar wert.</span></span></li>
+      <li class="btc"><span class="yr">2010/11</span><span class="ev"><b>Satoshi verschwindet</b><span>Im Dezember 2010 der letzte Forumsbeitrag, im April 2011 die letzten E-Mails. Seither: Schweigen.</span></span></li>
+    </ol>
+
+    <h2>Was alle Vorgänger scheitern liess</h2>
+    <p>DigiCash, e-gold und ihre Nachfolger hatten alle dasselbe Problem: einen <strong>zentralen Punkt</strong>. Eine Firma, die pleitegehen kann. Einen Server, den man abschalten kann. Einen Gründer, den man verhaften kann. Satoshi kannte diese Geschichte genau. Er verwies auf Tauschbörsen wie Napster, die mit ihrem zentralen Server leicht zu schliessen waren, während reine Peer-to-Peer-Netze wie Gnutella oder Tor sich hielten.</p>
+    <p>Die geniale Leistung von Bitcoin war nicht eine einzelne Erfindung. Fast alle Bausteine existierten schon: Public-Key-Kryptografie, digitale Signaturen, Hash-Ketten für Zeitstempel (Haber und Stornetta, 1991), Proof of Work (Back), die Idee eines gemeinsamen Hauptbuchs (Dai, Szabo) und Peer-to-Peer-Netzwerke. Satoshi fügte sie so zusammen, dass ein Problem gelöst wurde, das als unlösbar galt: <strong>Wie einigt sich ein offenes Netzwerk von Fremden auf ein einziges Hauptbuch, ohne dass jemand die Kontrolle hat?</strong></p>
+
+    <aside class="note story">
+      <span class="note-label">Die Botschaft im Genesis-Block</span>
+      <p>In den allerersten Block der Bitcoin-Blockchain schrieb Satoshi diesen Text:</p>
+      <p style="font-family:var(--mono);font-size:16px;color:var(--btc)">The Times 03/Jan/2009 Chancellor on brink of second bailout for banks</p>
+      <p>Es ist die Schlagzeile der Titelseite der <em>Times</em> vom selben Tag: Der britische Schatzkanzler steht kurz vor einer zweiten Rettung der Banken. Die Zeile beweist einerseits, dass der Block nicht vor diesem Datum erstellt wurde – ein Zeitstempel. Andererseits ist sie ein Kommentar: Bitcoin entstand mitten in der Finanzkrise, als Staaten mit neu geschaffenem Geld Banken retteten, deren Risiken die Allgemeinheit tragen musste.</p>
+    </aside>
+
+    <h2>Ein Geschenk ohne Absender</h2>
+    <p>Wer Satoshi Nakamoto war, ist bis heute unbekannt. Ein Mensch oder eine Gruppe? Die Spekulationen füllen Bücher. Schätzungen zufolge hat Satoshi in der Anfangszeit rund eine Million Bitcoin geschürft und nie bewegt.</p>
+    <p>Viele Bitcoiner sehen in Satoshis Verschwinden eines der wichtigsten Geschenke an das Projekt. Bitcoin hat keinen Gründer, den man verhaften, bestechen oder erpressen könnte, keinen CEO, der die Regeln ändern könnte, und keine Firma, die man verklagen kann. Es ist das, was e-gold und DigiCash nie waren: <strong>kopflos</strong>.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Bitcoin ist keine Erfindung aus dem Nichts, sondern die geniale Kombination von Bausteinen, an denen Kryptografen zwei Jahrzehnte gearbeitet hatten. Der entscheidende Schritt: ein Geld ohne Zentrale.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Satoshi Nakamoto: <em>Bitcoin: A Peer-to-Peer Electronic Cash System</em>, 2008 – <a href="https://bitcoin.org/bitcoin.pdf" rel="noopener">bitcoin.org/bitcoin.pdf</a>.</li>
+        <li>Eric Hughes: <em>A Cypherpunk’s Manifesto</em>, 1993.</li>
+        <li>Adam Back: <em>Hashcash – A Denial of Service Counter-Measure</em>, 2002 (Idee 1997).</li>
+        <li>Wei Dai: <em>b-money</em>, 1998; Nick Szabo: <em>Bit Gold</em>, 2005; Hal Finney: <em>RPOW</em>, 2004.</li>
+        <li>Stuart Haber, W. Scott Stornetta: <em>How to Time-Stamp a Digital Document</em>, Journal of Cryptology, 1991.</li>
+        <li>Nathaniel Popper: <em>Digital Gold</em>, 2015.</li>
+      </ul>
+    </div>
+  </div>
+</section>

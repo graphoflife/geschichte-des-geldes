@@ -1,0 +1,61 @@
+<section class="chapter" id="schluessel" data-num="17" data-part="III" data-title="Schlüssel, Signaturen und Eigentum" data-desc="Elliptische Kurven, digitale Signaturen und 24 Wörter">
+  <header class="ch-head">
+    <div class="ch-num">17</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Schlüssel, Signaturen und Eigentum</h1>
+    <p class="ch-lede">Wem gehört ein Bitcoin? Demjenigen, der eine bestimmte Zahl kennt. Über elliptische Kurven und Eigentum ohne Grundbuchamt.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Eigentum ist Wissen</h2>
+    <p>Auf Yap gehörte ein Stein dem, von dem das Dorf wusste, dass er ihm gehört. Bei Bitcoin gehört eine Münze dem, der eine ganz bestimmte geheime Zahl kennt: den <strong>privaten Schlüssel</strong>. Das ist einfach eine riesige Zufallszahl zwischen 1 und etwa 2<sup>256</sup> – so, als würdest du 256 Mal eine Münze werfen und Kopf und Zahl als Einsen und Nullen aufschreiben. Wie wir im Kapitel über Hashfunktionen gesehen haben, ist dieser Zahlenraum so gross, dass niemand jemals zufällig deine Zahl erraten wird.</p>
+    <p>Aus dem privaten Schlüssel wird ein <strong>öffentlicher Schlüssel</strong> berechnet, und daraus wiederum eine <strong>Adresse</strong>, an die dir andere Bitcoin senden können. Der Trick: Diese Berechnungen laufen nur in eine Richtung. Vom privaten zum öffentlichen Schlüssel geht es in Millisekunden. Zurück geht es nicht.</p>
+
+    <h2>Addition auf einer Kurve</h2>
+    <p>Wie baut man eine solche Einbahnstrasse? Bitcoin verwendet eine <strong>elliptische Kurve</strong> namens <em>secp256k1</em>, beschrieben durch die erstaunlich einfache Gleichung</p>
+    $$y^2 = x^3 + 7.$$
+    <p>Auf dieser Kurve kann man Punkte auf eine besondere Art «addieren». Das klingt abstrakt, ist aber eine schöne geometrische Konstruktion:</p>
+
+    <figure class="scene" data-scene="ecc">
+      <figcaption>Punktaddition auf der Kurve y² = x³ + 7 – zuerst über den reellen Zahlen, dann so, wie Bitcoin wirklich rechnet: über einem endlichen Feld.</figcaption>
+    </figure>
+
+    <p>Addiert man einen festen Startpunkt \(G\) immer wieder zu sich selbst, erhält man \(2G, 3G, 4G, \ldots\). Mit einem cleveren Verfahren (wiederholtes Verdoppeln) kann man \(k \cdot G\) auch für eine 77-stellige Zahl \(k\) blitzschnell berechnen. Dein privater Schlüssel ist \(k\), dein öffentlicher Schlüssel ist der Punkt \(K = k \cdot G\).</p>
+    <p>Bei Bitcoin wird nicht mit gewöhnlichen Zahlen gerechnet, sondern mit Resten bei der Division durch eine riesige Primzahl. Dadurch springen die Punkte \(G, 2G, 3G, \ldots\) scheinbar zufällig durch den Raum. Wer nur \(K\) kennt, hat keinen Anhaltspunkt, wie oft man \(G\) addieren musste, um dort anzukommen. Dieses <strong>Problem des diskreten Logarithmus</strong> gilt mit heutiger Technik als praktisch unlösbar.</p>
+
+    <h2>Digitale Signaturen</h2>
+    <p>Mit dem privaten Schlüssel kann man eine Nachricht <strong>signieren</strong>, etwa: «Ich sende 0.1 BTC an Adresse X.» Jeder kann mit dem öffentlichen Schlüssel prüfen, dass die Signatur echt ist – ohne den privaten Schlüssel je zu sehen. Und die Signatur passt nur zu genau dieser Nachricht. Ändert jemand auch nur ein Bit, etwa den Betrag oder den Empfänger, ist sie ungültig.</p>
+    <p>Man kann sich das vorstellen wie ein Siegel, das nur du herstellen kannst, das jeder auf Echtheit prüfen kann und das nur auf ein einziges Dokument passt. Deshalb kann niemand – auch kein Miner und kein 51-Prozent-Angreifer – deine Bitcoin ausgeben, solange er deinen privaten Schlüssel nicht kennt.</p>
+
+    <h2>Münzen, die sich nie bewegen</h2>
+    <p>Bitcoin kennt keine Konten mit Kontoständen. Das Hauptbuch besteht aus <strong>unverbrauchten Transaktionsausgängen</strong> (englisch <em>unspent transaction outputs</em>, kurz UTXO) – man kann sie sich vorstellen wie Banknoten mit beliebigem Nennwert, auf denen steht, welcher Schlüssel sie ausgeben darf. Eine Transaktion verbraucht einige dieser «Noten» und erzeugt neue: eine für den Empfänger, eine als Wechselgeld zurück an dich. Wie auf Yap bewegt sich dabei nichts. Es ändert sich nur, wer worüber verfügen darf.</p>
+
+    <h2>Ein Vermögen in 24 Wörtern</h2>
+    <p>Private Schlüssel sind unhandlich. Deshalb hat sich ein Standard (BIP-39) durchgesetzt, der sie in eine Folge von 12 oder 24 gewöhnlichen Wörtern aus einer Liste von 2’048 Wörtern übersetzt, die sogenannte <strong>Seed-Phrase</strong>. Wer diese Wörter kennt, besitzt die Bitcoin – unabhängig von Gerät, Bank oder Land.</p>
+
+    <aside class="note story">
+      <span class="note-label">Eigentum, das man im Kopf tragen kann</span>
+      <p>Denk an die Amerikaner von 1933, die ihr Gold abliefern mussten, oder an Flüchtlinge, die über Jahrhunderte Schmuck in ihre Kleider einnähten, in der Hoffnung, ihn über eine Grenze zu retten. Eine Seed-Phrase kann man auf ein Stück Metall stanzen, an mehreren Orten verstecken oder sich merken. Menschen, die aus Krisenländern fliehen mussten, haben berichtet, wie sie so ihre Ersparnisse mitnehmen konnten, ohne dass sie an einer Grenze beschlagnahmt wurden.</p>
+    </aside>
+
+    <aside class="note warn">
+      <span class="note-label">Die Kehrseite</span>
+      <p>Diese Freiheit bedeutet volle Verantwortung. Wer seine Seed-Phrase verliert, verliert seine Bitcoin für immer – es gibt keinen Kundendienst, kein «Passwort vergessen». Wer sie jemand anderem zeigt, kann bestohlen werden. Und wer seine Bitcoin bei einer Börse liegen lässt, besitzt in Wahrheit nur ein Versprechen der Börse. Daher der Leitsatz: <strong>«Not your keys, not your coins.»</strong></p>
+    </aside>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Bitcoin trennt Eigentum von physischem Besitz und von Institutionen. Wer die Schlüssel hat, hat das Geld – kein Tresor, keine Bank, kein Grundbuchamt.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Satoshi Nakamoto: Whitepaper, Abschnitt 2 «Transactions».</li>
+        <li>Certicom Research: <em>SEC 2: Recommended Elliptic Curve Domain Parameters</em> (secp256k1), 2000/2010.</li>
+        <li>BIP-39: <em>Mnemonic code for generating deterministic keys</em>, 2013.</li>
+        <li>Andreas M. Antonopoulos, David A. Harding: <em>Mastering Bitcoin</em>, 3. Auflage, O’Reilly 2023.</li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,1442 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Die Geschichte des Geldes – Von Muscheln bis Bitcoin</title>
+<meta name="description" content="Eine animierte Reise durch die Geschichte des Geldes: Kieselsteine, Muscheln, Rai-Steine, Salz, Silber, Gold, Fiat-Geld, 1971, Inflation und Cantillon-Effekt – und wie Bitcoin mit Proof of Work die Probleme von Gold und Fiat löst.">
+<meta name="theme-color" content="#0b0d11">
+<meta property="og:title" content="Die Geschichte des Geldes – Von Muscheln bis Bitcoin">
+<meta property="og:description" content="Kapitel für Kapitel animiert erklärt: warum sich welches Geld durchgesetzt hat, wie Fiat entstand und wie Bitcoin funktioniert.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%230b0d11' stroke='%23f0ac5f' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%2358c4dd' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23f7931a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#/prolog" aria-label="Zur Startseite">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="none" stroke="#f0ac5f" stroke-width="4"/><circle cx="32" cy="32" r="19" fill="none" stroke="#58c4dd" stroke-width="3"/><circle cx="32" cy="32" r="7" fill="#f7931a"/></svg>
+    <span class="brand-text">Die Geschichte des Geldes</span>
+  </a>
+  <div class="where" id="where" aria-live="polite"></div>
+  <div class="top-btns">
+    <button class="icon-btn" id="prevBtn" aria-label="Vorheriges Kapitel" title="Vorheriges Kapitel (←)"><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="icon-btn" id="nextBtn" aria-label="Nächstes Kapitel" title="Nächstes Kapitel (→)"><svg viewBox="0 0 16 16"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="icon-btn" id="tocBtn" aria-expanded="false" aria-controls="toc"><svg viewBox="0 0 16 16"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="btn-label">Kapitel</span></button>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<nav class="toc" id="toc" hidden aria-label="Inhaltsverzeichnis"><div class="toc-inner" id="tocInner"></div></nav>
+
+<main id="main">
+<noscript><p>Diese Seite braucht JavaScript für die Navigation und die Animationen. Ohne JavaScript werden alle Kapitel untereinander angezeigt.</p><style>.chapter{display:block!important}</style></noscript>
+<section class="chapter" id="prolog" data-num="0" data-part="P" data-title="Prolog: Eine Geschichte über Härte" data-desc="Worum es geht und wie diese Seite funktioniert">
+  <header class="ch-head">
+    <p class="ch-kicker">Eine animierte Reise in 20 Kapiteln</p>
+    <h1>Die Geschichte des Geldes</h1>
+    <p class="ch-lede">Von Kieselsteinen, Muscheln und Rai-Steinen über Salz, Silber und Gold bis zum Fiat-Geld – und warum Bitcoin genau die Probleme löst, an denen alle früheren Formen gescheitert sind.</p>
+    <div class="cta-row">
+      <a class="cta" href="#/tauschhandel">Reise beginnen →</a>
+      <a class="cta ghost" href="#/cypherpunks">Direkt zu Bitcoin</a>
+    </div>
+    <p class="resume" id="resume" hidden></p>
+  </header>
+
+  <div class="prose">
+    <figure class="scene" data-scene="title">
+      <figcaption>Neun Formen von Geld – und eine einzige Frage, die über ihr Schicksal entschied.</figcaption>
+    </figure>
+
+    <h2>Worum es geht</h2>
+    <p>Jeden Tag tauschst du deine Zeit gegen Geld – und Geld gegen die Zeit anderer Menschen: das Brot der Bäckerin, den Strom aus dem Kraftwerk, die Arbeit des Arztes. Geld ist die Sprache, in der eine Gesellschaft über Werte spricht. Und doch lernen die wenigsten von uns, woher es kommt, warum es funktioniert – und warum es manchmal plötzlich aufhört zu funktionieren.</p>
+    <p>Diese Seite erzählt die Geschichte des Geldes als eine Reihe von Experimenten. Über Jahrtausende haben Menschen Muscheln, Glasperlen, tonnenschwere Steinscheiben, Salz, Vieh, Silber, Gold und bedrucktes Papier als Geld benutzt. Manche Experimente liefen Jahrhunderte lang gut, andere endeten in Armut, Revolution oder Krieg. Hinter Erfolg und Scheitern steckt ein erstaunlich einfaches Prinzip:</p>
+
+    <aside class="note key">
+      <span class="note-label">Der rote Faden</span>
+      <p>Gutes Geld ist schwer herzustellen. Wer Geld billiger produzieren kann als alle anderen, bekommt deren Arbeit fast umsonst.</p>
+    </aside>
+
+    <p>Am Ende der Reise steht Bitcoin – nicht als Spekulationsobjekt, sondern als Antwort auf eine sehr alte Frage: <em>Wie bauen wir ein Geld, das niemand beliebig vermehren kann, das sich trotzdem in Minuten um die ganze Welt schicken lässt und dem man nicht blind vertrauen muss, weil jeder es selbst überprüfen kann?</em></p>
+
+    <h2>So funktioniert diese Seite</h2>
+    <ul>
+      <li><strong>Kapitel für Kapitel:</strong> Am Ende jedes Kapitels geht es weiter. Du kannst auch die Pfeiltasten <strong>←</strong> und <strong>→</strong> benutzen oder oben rechts das Kapitelverzeichnis öffnen.</li>
+      <li><strong>Animationen</strong> starten, sobald du zu ihnen scrollst. Mit <strong>↺</strong> spielst du sie neu ab, mit dem Regler spulst du vor und zurück. Viele lassen sich mit Knöpfen und Reglern selbst steuern – probier es aus.</li>
+      <li><strong>Kästen:</strong> Gelbe Kästen enthalten das Wichtigste in einem Satz, blaue Kästen Anekdoten, grüne Kästen Gedankenexperimente.</li>
+      <li><strong>Auf dem Handy</strong> lohnt es sich, für die Animationen das Gerät quer zu halten.</li>
+      <li>Dein Fortschritt wird nur lokal in deinem Browser gespeichert. Es gibt kein Tracking.</li>
+    </ul>
+
+    <h2>Die Route</h2>
+    <div class="route">
+      <a href="#/tauschhandel"><span class="part-tag">Teil I · Kapitel 1–6</span><b>Die Suche nach hartem Geld</b><span>Tauschhandel, das Kieselstein-Gedankenexperiment, Muscheln und Glasperlen, die Rai-Steine von Yap, Salz und Vieh, Silber und Gold.</span></a>
+      <a href="#/banken"><span class="part-tag">Teil II · Kapitel 7–11</span><b>Papier, Macht und Fiat</b><span>Banken und Goldstandard, die Geburt des Papiergeldes, der 15. August 1971, Inflation, der Cantillon-Effekt und die Pyramide des Geldes.</span></a>
+      <a href="#/cypherpunks"><span class="part-tag">Teil III · Kapitel 12–20</span><b>Bitcoin</b><span>Cypherpunks, Double Spending, die byzantinischen Generäle, Hashfunktionen, Proof of Work, die Blockchain, Schlüssel, 21 Millionen – und was das philosophisch bedeutet.</span></a>
+    </div>
+
+    <h2>Auf den Schultern von Riesen</h2>
+    <p>Diese Seite erfindet wenig neu. Sie fasst zusammen, was andere klug durchdacht haben: allen voran <strong>Saifedean Ammous</strong> (<em>The Bitcoin Standard</em>), <strong>Lyn Alden</strong> (<em>Broken Money</em>), <strong>Nik Bhatia</strong> (<em>Layered Money</em>), der Autor <strong>Gigi</strong> (<em>21 Lessons</em>, <em>Bitcoin Is Time</em>), <strong>Nick Szabo</strong> (<em>Shelling Out</em>) und natürlich <strong>Satoshi Nakamoto</strong>. Der visuelle Stil verneigt sich vor <strong>Grant Sanderson</strong> und seinem Kanal <strong>3Blue1Brown</strong>, der seit Jahren zeigt, wie schön Erklären sein kann. Alle Quellen findest du in jedem Kapitel und gesammelt im <a href="#/quellen">Anhang</a>.</p>
+
+    <aside class="note warn">
+      <span class="note-label">Hinweis</span>
+      <p>Dies ist ein Bildungsprojekt, geschrieben aus der Perspektive der «Bitcoin-Ökonomie» rund um Ammous, Alden und Co. Es ist keine Finanz- oder Anlageberatung. Wo es ernsthafte Gegenargumente gibt, werden sie genannt – denn wer etwas verstehen will, muss auch die Einwände kennen.</p>
+    </aside>
+  </div>
+</section>
+<section class="chapter" id="tauschhandel" data-num="1" data-part="I" data-title="Die Welt ohne Geld" data-desc="Tauschhandel, doppelte Koinzidenz und Carl Menger">
+  <header class="ch-head">
+    <div class="ch-num">01</div>
+    <p class="ch-kicker">Teil I · Die Suche nach hartem Geld</p>
+    <h1>Die Welt ohne Geld</h1>
+    <p class="ch-lede">Warum Menschen überhaupt Geld brauchen – und warum es niemand erfinden musste.</p>
+  </header>
+
+  <div class="prose">
+    <p>Stell dir ein Dorf vor, vor einigen tausend Jahren. Die Fischerin hat heute mehr Fische gefangen, als ihre Familie essen kann, und sie braucht dringend neue Schuhe. Also geht sie zum Schuster. Doch der Schuster mag keinen Fisch – er hätte gerne Brot.</p>
+
+    <figure class="scene" data-scene="coincidence">
+      <figcaption>Drei Menschen, die alle etwas anbieten und etwas suchen – aber nie zur gleichen Zeit dasselbe.</figcaption>
+    </figure>
+
+    <p>Ökonomen nennen dieses Problem die <strong>doppelte Koinzidenz der Bedürfnisse</strong>: Ein direkter Tausch klappt nur, wenn zwei Menschen <em>gleichzeitig</em> genau das haben, was der andere will – in der richtigen Menge, am richtigen Ort, zur richtigen Zeit. Je spezialisierter eine Gesellschaft wird, desto seltener passiert das. Ein Bauer mit einer Kuh, der nur ein Paar Schuhe braucht, steht vor einem zusätzlichen Problem: Er kann seine Kuh nicht zerteilen, ohne sie zu zerstören.</p>
+
+    <h2>Das Problem wächst quadratisch</h2>
+    <p>Es gibt noch eine zweite Schwierigkeit, und sie ist mathematischer Natur. In einer reinen Tauschwirtschaft braucht jedes Gut einen Preis in jedem anderen Gut: Wie viele Eier ist ein Paar Schuhe wert? Wie viel Holz ein Krug Wein? Wie viel Wolle ein Messer? Bei \(n\) Gütern ergibt das</p>
+    $$\binom{n}{2} = \frac{n\,(n-1)}{2}$$
+    <p>verschiedene Tauschverhältnisse. Bei 10 Gütern sind es 45, bei 100 Gütern 4’950, bei 1’000 Gütern schon fast eine halbe Million. Kein Mensch kann sich das merken – und kein Händler könnte damit kalkulieren.</p>
+
+    <figure class="scene" data-scene="barter">
+      <figcaption>Schiebe den Regler: Jede blaue Linie ist ein Tauschverhältnis, das man kennen müsste. Schalte dann auf «Mit Geld» – plötzlich braucht jedes Gut nur noch einen einzigen Preis.</figcaption>
+    </figure>
+
+    <p>Sobald es ein Gut gibt, das alle als Zwischenstation akzeptieren, schrumpft das Chaos von \(n(n-1)/2\) auf \(n\) Preise. Genau das ist Geld: ein Gut, das man nicht annimmt, um es selbst zu verbrauchen, sondern um es weiterzutauschen. Die Fischerin in der Animation nimmt Brot an, obwohl sie keinen Hunger hat – weil sie weiss, dass der Schuster Brot will. In diesem Moment ist das Brot für sie Geld.</p>
+
+    <h2>Niemand hat Geld erfunden</h2>
+    <p>Der österreichische Ökonom <strong>Carl Menger</strong> beschrieb 1892 in seinem Aufsatz <em>On the Origins of Money</em>, wie Geld spontan entsteht. Niemand muss es beschliessen, kein König muss es verordnen. Kluge Händler merken einfach, dass manche Güter leichter weiterzutauschen sind als andere. Menger nannte diese Eigenschaft <strong>Absatzfähigkeit</strong> – auf Englisch <em>salability</em>.</p>
+    <p>Wer Fisch hat, der morgen verdirbt, tauscht ihn lieber gegen Salz, das sich hält und das jeder braucht. Je mehr Menschen das tun, desto absatzfähiger wird das Salz – und desto mehr Menschen akzeptieren es. Es ist ein sich selbst verstärkender Prozess, an dessen Ende ein einziges Gut als allgemeines Tauschmittel übrig bleibt. Ein bisschen wie bei einer Sprache: Niemand hat beschlossen, dass Englisch die Sprache der Flughäfen wird. Es hat sich durchgesetzt, weil es schon viele sprechen.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Geld ist das absatzfähigste Gut einer Gesellschaft. Es wird nicht von oben verordnet, sondern setzt sich im Wettbewerb durch.</p>
+    </aside>
+
+    <h2>Die drei Aufgaben des Geldes</h2>
+    <p>Lehrbücher zählen drei Funktionen auf:</p>
+    <ol>
+      <li><strong>Tauschmittel</strong> – man kann damit bezahlen.</li>
+      <li><strong>Wertaufbewahrungsmittel</strong> – man kann damit Wert in die Zukunft transportieren.</li>
+      <li><strong>Recheneinheit</strong> – man kann darin Preise ausdrücken, Gewinne berechnen und Pläne machen.</li>
+    </ol>
+    <p>Saifedean Ammous betont in <em>The Bitcoin Standard</em>, dass diese Funktionen aufeinander aufbauen. Ein Gut, das seinen Wert über die Zeit hält, wird gerne als Tauschmittel angenommen. Und erst wenn ein Tauschmittel sehr weit verbreitet ist, beginnen Menschen, darin zu rechnen. Die zweite Funktion ist der Schlüssel zu allem: <strong>Geld ist eine Zeitmaschine.</strong> Es erlaubt dir, heute zu arbeiten und die Früchte dieser Arbeit in zehn oder dreissig Jahren zu ernten.</p>
+
+    <aside class="note think">
+      <span class="note-label">Gedankenexperiment: die ideale Zeitkapsel</span>
+      <p>Stell dir vor, du könntest einen Teil deiner heutigen Arbeit in einen Tresor legen und ihn in dreissig Jahren unverändert wieder herausnehmen. Welche Eigenschaften müsste das Ding im Tresor haben?</p>
+      <ul>
+        <li>Es dürfte nicht verrotten – Fisch fällt weg.</li>
+        <li>Niemand dürfte es in der Zwischenzeit beliebig nachproduzieren können – sonst wird dein Anteil an der Gesamtmenge immer kleiner.</li>
+        <li>Es müsste leicht zu prüfen, zu teilen und zu transportieren sein.</li>
+      </ul>
+      <p>Halte diese Wunschliste im Kopf. Wir werden sie in jedem Kapitel wieder hervorholen.</p>
+    </aside>
+
+    <aside class="note story">
+      <span class="note-label">Eine andere Sicht</span>
+      <p>Nicht alle Historiker teilen Mengers Erzählung. Der Anthropologe David Graeber argumentiert in <em>Schulden: Die ersten 5000 Jahre</em>, dass in vielen frühen Gesellschaften Kredit und Schuldbuchhaltung vor dem Münzgeld kamen – reine Tauschwirtschaften seien kaum belegt. Beide Sichtweisen schliessen sich nicht aus: Schulden müssen in <em>etwas</em> gemessen und am Ende beglichen werden. Welches Etwas dafür taugt und welches nicht, ist die Frage dieser Seite.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Carl Menger: <em>On the Origins of Money</em>, The Economic Journal, 1892.</li>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Wiley 2018, Kapitel 1 «Money» (dt.: <em>Der Bitcoin-Standard</em>, 2019).</li>
+        <li>David Graeber: <em>Debt: The First 5,000 Years</em>, 2011 (dt.: <em>Schulden</em>, Klett-Cotta 2012).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="gutes-geld" data-num="2" data-part="I" data-title="Warum Kieselsteine schlechtes Geld sind" data-desc="Härte, Stock-to-Flow und die Falle des leichten Geldes">
+  <header class="ch-head">
+    <div class="ch-num">02</div>
+    <p class="ch-kicker">Teil I · Die Suche nach hartem Geld</p>
+    <h1>Warum Kieselsteine schlechtes Geld sind</h1>
+    <p class="ch-lede">Ein Gedankenexperiment, eine einfache Kennzahl und die wichtigste Eigenschaft, die Geld haben kann: Härte.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Das Kieselstein-Gedankenexperiment</h2>
+
+    <aside class="note think">
+      <span class="note-label">Gedankenexperiment</span>
+      <p>Ein Dorf beschliesst, glatte Kieselsteine als Geld zu verwenden. Auf den ersten Blick keine schlechte Idee: Kiesel sind haltbar, handlich, man kann sie zählen, und jeder erkennt sie sofort. Was passiert?</p>
+      <p>Am nächsten Morgen steht das ganze Dorf am Flussufer und sammelt. Wer eine Stunde lang bückt, ist «reich». Nach einer Woche liegen so viele Kiesel herum, dass niemand mehr ein Huhn für eine Handvoll davon hergibt. Nach einem Monat bezahlt man mit Säcken voller Steine – und bald überhaupt nicht mehr damit.</p>
+    </aside>
+
+    <p>Der Kiesel scheitert nicht, weil er hässlich oder unpraktisch wäre. Er scheitert, weil ihn <strong>jeder ohne Aufwand herstellen kann</strong>. Sobald etwas als Geld begehrt ist, lohnt es sich, mehr davon zu produzieren. Und wenn das billig ist, wird so lange produziert, bis der Wert auf die Produktionskosten gefallen ist – im Fall des Kiesels auf praktisch null.</p>
+    <p>Der Informatiker und Jurist <strong>Nick Szabo</strong> hat dafür einen schönen Begriff geprägt: <em>unforgeable costliness</em> – «unfälschbare Kostspieligkeit». Gutes Geld zieht seinen Wert daraus, dass es nachweislich teuer war, es herzustellen, und dass sich diese Kosten nicht vortäuschen lassen. Ein Kiesel hat keine Kosten. Ein Goldnugget hat welche: Jemand musste Tonnen von Gestein bewegen, um ihn zu finden.</p>
+
+    <h2>Absatzfähigkeit in drei Dimensionen</h2>
+    <p>Ammous unterscheidet, aufbauend auf Menger, drei Arten von Absatzfähigkeit:</p>
+    <ul>
+      <li><strong>Über Grössenordnungen</strong> – lässt sich das Gut in kleine Einheiten teilen und zu grossen zusammenfassen? Eine Kuh nicht, Silbermünzen schon.</li>
+      <li><strong>Über den Raum</strong> – lässt es sich leicht transportieren? Ein Haus nicht, ein Goldring schon.</li>
+      <li><strong>Über die Zeit</strong> – behält es seinen Wert? Tomaten nicht, Gold schon.</li>
+    </ul>
+    <p>Die dritte Dimension ist die anspruchsvollste. Sie verlangt nicht nur, dass das Gut physisch nicht verrottet, sondern auch, dass seine <strong>Menge nicht schnell wachsen kann</strong>. Denn auch ein perfekt haltbarer Kiesel verliert seinen Wert, wenn täglich Millionen neue dazukommen.</p>
+
+    <h2>Bestand und Zufluss: Stock-to-Flow</h2>
+    <p>Um Härte messbar zu machen, vergleichen wir zwei Zahlen: den <strong>Bestand</strong> (englisch <em>stock</em>) – alle Einheiten, die heute existieren – und den <strong>Zufluss</strong> (<em>flow</em>) – die Menge, die pro Jahr neu produziert wird.</p>
+    $$\text{Stock-to-Flow} = \frac{\text{Bestand}}{\text{jährliche Neuproduktion}}$$
+    <p>Die Zahl sagt dir, wie viele Jahre die gesamte Produktion bräuchte, um den heutigen Bestand noch einmal herzustellen. Bei Gold sind das rund 60 Jahre. Bei Kupfer, Öl oder Weizen ist das Verhältnis kleiner als 1: Diese Rohstoffe werden verbraucht, sodass die Jahresproduktion grösser ist als alle Vorräte zusammen. Ein hohes Verhältnis bedeutet: Selbst wenn alle Produzenten ihre Anstrengung verdoppeln, wächst die Gesamtmenge kaum. Das nennen Ökonomen <strong>hartes Geld</strong>. Ein niedriges Verhältnis heisst <strong>leichtes Geld</strong> (<em>easy money</em>).</p>
+
+    <h2>Die Falle des leichten Geldes</h2>
+    <p>Ammous beschreibt einen Mechanismus, den er die <em>easy money trap</em> nennt – die Falle des leichten Geldes. Sie funktioniert immer gleich:</p>
+    <ol>
+      <li>Ein Gut wird als Wertaufbewahrungsmittel beliebt. Die Nachfrage steigt.</li>
+      <li>Der Preis steigt. Damit lohnt es sich plötzlich, mehr davon zu produzieren.</li>
+      <li>Wenn das leicht geht, strömen neue Einheiten auf den Markt, bis der Preis wieder fällt.</li>
+      <li>Wer in diesem Gut gespart hat, verliert. Gewonnen haben die Produzenten.</li>
+    </ol>
+    <p>Nur wenn die Menge kaum auf den höheren Preis reagiert, behalten die Sparer den Wertzuwachs. Probiere es aus:</p>
+
+    <figure class="scene" data-scene="stockflow">
+      <figcaption>Wähle ein Gut. Nach zwei Jahren verdoppelt sich die Nachfrage. Links siehst du den Bestand und den Zufluss, rechts den Preis. (Vereinfachtes Modell zur Veranschaulichung.)</figcaption>
+    </figure>
+
+    <p>Beim Kiesel ist der Preissprung nach wenigen Wochen verschwunden. Beim Salz nach ein paar Jahren. Beim Gold bleibt er jahrzehntelang bestehen, weil selbst eine fieberhafte Ausweitung des Bergbaus den riesigen Bestand nur um wenige Prozent pro Jahr vergrössert. Und bei Bitcoin – dazu kommen wir in Kapitel 18 – reagiert die Menge überhaupt nicht.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Hartes Geld ist Geld, dessen Menge kaum wächst, auch wenn alle mehr davon wollen. Das ist die wichtigste Eigenschaft überhaupt – und der rote Faden durch die ganze Geschichte.</p>
+    </aside>
+
+    <h2>Die Wunschliste</h2>
+    <p>Fassen wir zusammen, was ein gutes Geld braucht. In den nächsten Kapiteln prüfen wir jede historische Geldform an dieser Liste:</p>
+    <ul>
+      <li><strong>Knappheit (Härte):</strong> Es ist schwer, mehr davon herzustellen.</li>
+      <li><strong>Haltbarkeit:</strong> Es verrottet, rostet und zerbricht nicht.</li>
+      <li><strong>Teilbarkeit:</strong> Man kann damit kleine und grosse Beträge bezahlen.</li>
+      <li><strong>Transportierbarkeit:</strong> Viel Wert passt in wenig Gewicht und Volumen.</li>
+      <li><strong>Prüfbarkeit:</strong> Echtheit und Menge lassen sich leicht feststellen.</li>
+      <li><strong>Einheitlichkeit:</strong> Eine Einheit ist so gut wie jede andere (Fungibilität).</li>
+    </ul>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Nick Szabo: <em>Shelling Out: The Origins of Money</em>, 2002 – <a href="https://nakamotoinstitute.org/library/shelling-out/" rel="noopener">nakamotoinstitute.org</a>.</li>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 1–2 (Absatzfähigkeit, Stock-to-Flow, «easy money trap»).</li>
+        <li>Carl Menger: <em>On the Origins of Money</em>, 1892.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="muscheln" data-num="3" data-part="I" data-title="Muscheln, Glasperlen und Wampum" data-desc="Das erste Geld kam aus dem Meer – und ging unter">
+  <header class="ch-head">
+    <div class="ch-num">03</div>
+    <p class="ch-kicker">Teil I · Die Suche nach hartem Geld</p>
+    <h1>Muscheln, Glasperlen und Wampum</h1>
+    <p class="ch-lede">Das erste weit verbreitete Geld kam aus dem Meer – und ging unter, als Fremde es billiger herstellen konnten.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Kaurischnecken: Geld aus dem Indischen Ozean</h2>
+    <p>Die Kaurischnecke (<em>Monetaria moneta</em> – der Name verrät es schon) ist eine kleine, glänzende Meeresschnecke, die vor allem rund um die Malediven in grosser Zahl vorkommt. Über Jahrtausende war ihr Gehäuse eines der erfolgreichsten Gelder der Menschheit: in China, Indien, Südostasien und weiten Teilen Afrikas.</p>
+    <p>Aus Sicht unserer Wunschliste war die Kauri ziemlich gut: haltbar, leicht, gleichmässig gross, zählbar und praktisch nicht zu fälschen. Und solange man sie nur an wenigen fernen Stränden fand, war sie auch knapp genug.</p>
+
+    <aside class="note story">
+      <span class="note-label">Anekdote: Die Muschel in der Schrift</span>
+      <p>In China waren Kauris so lange Geld, dass sie in die Schrift eingewandert sind. Das Schriftzeichen 貝 (<em>bèi</em>) ist ursprünglich das Bild einer Kaurischnecke. Es steckt bis heute in Zeichen, die mit Geld zu tun haben: 買 (kaufen), 賣 (verkaufen), 貨 (Ware), 財 (Reichtum) und 貴 (teuer).</p>
+    </aside>
+
+    <p>Doch die Kauri hatte eine Schwachstelle, die sie mit fast allen frühen Geldern teilt: Ihre Knappheit hing davon ab, wer Zugang zu den Stränden und zu Schiffen hatte. Im 19. Jahrhundert verschifften europäische Handelshäuser enorme Mengen Kauris – auch eine grössere Art aus Ostafrika – nach Westafrika. Die Geldmenge explodierte, und der Wert der Kauri zerfiel. Wer seine Ersparnisse in Muscheln hielt, verlor sie.</p>
+
+    <h2>Glasperlen in Westafrika</h2>
+    <p>Eine noch bitterere Geschichte erzählt Ammous über die sogenannten Aggrey-Perlen. In Westafrika waren Glasperlen über Jahrhunderte ein geschätztes Geld. Glas herzustellen war dort aufwendig, die Perlen waren also tatsächlich kostspielig – unfälschbar kostspielig im Sinne Szabos.</p>
+    <p>Europäische Seefahrer und Händler bemerkten das. In Venedig und später in Böhmen und anderswo konnte man Glasperlen industriell und spottbillig herstellen. Also luden sie Schiffe voll damit und kauften in Afrika Gold, Elfenbein, Palmöl – und Menschen. Die Perlen wurden später unter einem Namen bekannt, der alles sagt: <strong>Sklavenperlen</strong>.</p>
+
+    <figure class="scene" data-scene="beads">
+      <figcaption>Was für das Dorf Ersparnis ist, ist für den Händler billige Massenware. Das Geld fliesst ins Dorf – die echten Werte fliessen hinaus.</figcaption>
+    </figure>
+
+    <p>Für die Menschen in Westafrika war das ein doppelter Verlust. Erstens bekamen die Händler die Güter fast umsonst. Zweitens verloren alle, die in Perlen gespart hatten, mit jeder Schiffsladung einen Teil ihres Vermögens – ganz ohne Diebstahl im klassischen Sinn, einfach durch Verwässerung.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Wer dein Geld billiger herstellen kann als du, kann deine Arbeit fast umsonst bekommen. Diese Lektion der Glasperlen wiederholt sich in dieser Geschichte noch oft – zuletzt mit der Druckerpresse.</p>
+    </aside>
+
+    <h2>Wampum in Nordamerika</h2>
+    <p>Auf der anderen Seite des Atlantiks spielte sich etwas sehr Ähnliches ab. Die indigenen Völker im Nordosten Nordamerikas fertigten aus den Schalen von Venusmuscheln und Wellhornschnecken weisse und violette Perlen, die zu Schnüren und Gürteln aufgefädelt wurden: <strong>Wampum</strong>. Das Bohren der winzigen Löcher mit Steinwerkzeugen war mühsame Handarbeit – genau das machte Wampum wertvoll.</p>
+    <p>Die niederländischen und englischen Kolonisten übernahmen Wampum als Zahlungsmittel. Die Kolonie Massachusetts erkannte es 1637 sogar als gesetzliches Zahlungsmittel an. Doch die Europäer brachten Stahlbohrer mit. Plötzlich liess sich Wampum in Massen herstellen, und genau das geschah. Der Wert zerfiel, und 1661 hob Massachusetts den Status als Zahlungsmittel wieder auf.</p>
+
+    <h2>Was die Muscheln lehren</h2>
+    <p>Nick Szabo argumentiert in <em>Shelling Out</em>, dass Sammelobjekte wie Muschelketten und Perlen eine der grossen Erfindungen der Menschheit waren, lange vor dem Geld im heutigen Sinn. Sie erlaubten es, Wert über Generationen weiterzugeben – als Mitgift, Erbe oder Wiedergutmachung – und schufen so Vertrauen und Zusammenarbeit zwischen Gruppen, die sich sonst bekämpft hätten.</p>
+    <p>Aber ihre Knappheit war geborgt: Sie hing von der verfügbaren Technologie ab. Sobald jemand mit besseren Werkzeugen, grösseren Schiffen oder Zugang zu anderen Quellen auftauchte, war die Härte dahin. <strong>Technologischer Fortschritt ist der natürliche Feind jedes Warengeldes</strong> – ausser bei einem Gut, dessen Menge sich auch mit besserer Technik nicht nennenswert steigern lässt.</p>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 2 «Primitive Moneys» (Aggrey-Perlen).</li>
+        <li>Nick Szabo: <em>Shelling Out: The Origins of Money</em>, 2002.</li>
+        <li>Jan S. Hogendorn &amp; Marion Johnson: <em>The Shell Money of the Slave Trade</em>, Cambridge University Press 1986.</li>
+        <li>Jack Weatherford: <em>The History of Money</em>, 1997.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="rai" data-num="4" data-part="I" data-title="Die Rai-Steine von Yap" data-desc="Ein Geld, das sich nie bewegte – und ein Hauptbuch im Kopf">
+  <header class="ch-head">
+    <div class="ch-num">04</div>
+    <p class="ch-kicker">Teil I · Die Suche nach hartem Geld</p>
+    <h1>Die Rai-Steine von Yap</h1>
+    <p class="ch-lede">Ein Geld, das man nicht bewegen konnte – und das trotzdem funktionierte. Die verblüffend moderne Geschichte einer kleinen Pazifikinsel.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Eine Insel, ein Steinbruch und 400 Kilometer Meer</h2>
+    <p>Yap ist eine kleine Inselgruppe im westlichen Pazifik, heute Teil der Föderierten Staaten von Mikronesien. Auf Yap selbst gibt es keinen Kalkstein. Den fanden die Yaper erst auf Palau, rund 400 Kilometer entfernt über offenes Meer. Dort brachen sie mit Werkzeugen aus Muscheln und Stein grosse runde Scheiben aus dem Fels, bohrten ein Loch in die Mitte, schoben eine Stange hindurch und brachten die Steine auf Kanus und Flössen nach Hause.</p>
+    <p>Die Steine heissen <strong>Rai</strong> (oder <em>Fei</em>). Manche sind so klein wie ein Teller, die grössten haben einen Durchmesser von über drei Metern und wiegen mehrere Tonnen. Ihr Wert hing von Grösse und Verarbeitung ab, aber auch von ihrer Geschichte: Ein Stein, für dessen Transport Menschen gestorben waren, galt als besonders wertvoll. Das ist unfälschbare Kostspieligkeit in Reinform.</p>
+
+    <figure class="scene" data-scene="rai">
+      <figcaption>Vier Akte einer Geldgeschichte: die gefährliche Herstellung, das Hauptbuch im Kopf, der Stein auf dem Meeresgrund – und die Inflation durch Eisenwerkzeug.</figcaption>
+    </figure>
+
+    <h2>Ein Hauptbuch im Kopf</h2>
+    <p>Die grossen Steine waren viel zu schwer, um sie bei jedem Geschäft hin und her zu rollen. Also blieben sie einfach liegen – vor einem Haus, an einem Weg, auf einem Dorfplatz. Wechselte ein Stein den Besitzer, bewegte sich nichts. Das ganze Dorf wusste einfach, dass er jetzt jemand anderem gehörte. Die Eigentumsverhältnisse waren in der gemeinsamen Erinnerung der Gemeinschaft gespeichert: ein mündlich geführtes, von allen geteiltes <strong>Hauptbuch</strong>.</p>
+
+    <aside class="note story">
+      <span class="note-label">Anekdote: Der Stein auf dem Meeresgrund</span>
+      <p>Der amerikanische Ethnologe William Henry Furness III besuchte Yap um 1903 und erzählt in seinem Buch <em>The Island of Stone Money</em> (1910) eine unglaubliche Geschichte. Eine Familie galt als besonders wohlhabend, obwohl niemand ihren Reichtum je gesehen hatte. Ein Vorfahre hatte einst einen gewaltigen Stein aus Palau holen lassen. Auf der Rückfahrt geriet das Floss in einen Sturm, und die Mannschaft musste die Leine kappen. Der Stein versank im Meer.</p>
+      <p>Zurück auf Yap bezeugten alle, dass es ein prächtiger Stein gewesen war und dass ihn niemand durch eigene Schuld verloren hatte. Also beschloss man: Der Stein behält seinen vollen Wert. Über Generationen besass die Familie einen Stein, der auf dem Meeresgrund lag – und konnte damit bezahlen.</p>
+    </aside>
+
+    <p>Das klingt absurd, ist aber eine tiefe Einsicht in das Wesen des Geldes. <strong>Geld ist nicht das Ding selbst, sondern die von allen anerkannte Information darüber, wer worauf Anspruch hat.</strong> Der Stein muss nicht in deiner Hand liegen. Er muss nur unbestritten dir gehören.</p>
+
+    <aside class="note btc">
+      <span class="note-label">Vorausblick auf Bitcoin</span>
+      <p>Auf Yap bewegt sich das Geld nicht – nur das gemeinsame Wissen darüber, wem es gehört. Genau so funktioniert Bitcoin. Bitcoin «reisen» nie irgendwohin. Es ändert sich nur ein Eintrag in einem Hauptbuch, das alle Teilnehmer gemeinsam führen. Der Unterschied: Das Hauptbuch von Yap funktionierte in einem Dorf, in dem sich alle kannten. Bitcoin muss es für Milliarden Fremde schaffen, die einander nicht vertrauen.</p>
+    </aside>
+
+    <h2>Milton Friedman und die schwarzen Kreuze</h2>
+    <p>1899 kaufte das Deutsche Kaiserreich die Karolinen-Inseln von Spanien, und Yap wurde deutsche Kolonie. Die neue Verwaltung wollte, dass die Häuptlinge die Wege auf der Insel instand setzten. Die Yaper sahen dafür wenig Grund. Was tun? Geldstrafen in Mark hätten niemanden beeindruckt.</p>
+    <p>Also schickten die Beamten Leute los, die auf die wertvollsten Rai-Steine der säumigen Bezirke ein schwarzes Kreuz malten: Diese Steine gehörten jetzt der Regierung. Kein Stein wurde bewegt – und doch fühlten sich die Besitzer schlagartig arm. Die Wege wurden in Rekordzeit repariert. Danach wischten die Beamten die Kreuze wieder ab, und die Yaper waren wieder reich.</p>
+    <p>Der Ökonom und Nobelpreisträger <strong>Milton Friedman</strong> griff diese Geschichte 1991 in einem Aufsatz auf. Er verglich sie mit einer Episode von 1932, als die französische Zentralbank in New York gelagertes Gold für sich «markieren» liess, ohne dass es den Tresor verliess. In den USA galt das als Abfluss von Goldreserven und trug zur Bankenpanik von 1933 bei. Friedmans Pointe: Der Glaube an ein Gold, das in einem fremden Keller liegt und dessen Besitz nur durch einen Eintrag festgehalten ist, unterscheidet sich kaum vom Glauben der Yaper an ihren Stein im Meer.</p>
+
+    <h2>David O’Keefe: Inflation mit Eisenwerkzeug</h2>
+    <p>1871 strandete der irisch-amerikanische Kapitän <strong>David Dean O’Keefe</strong> auf Yap. Er erkannte schnell zwei Dinge: Die Yaper begehrten Rai-Steine über alles, und er besass etwas, was sie nicht hatten – ein Schiff und Werkzeuge aus Eisen. Er begann, Steine auf Palau zu brechen und in grossen Mengen nach Yap zu bringen. Bezahlen liess er sich in Kopra (getrocknetem Kokosfleisch) und Seegurken, die er in Asien mit grossem Gewinn verkaufte. O’Keefe wurde reich und nannte sich gerne «König von Yap». Hollywood verfilmte sein Leben 1954 mit Burt Lancaster.</p>
+    <p>Für das Geld der Yaper war O’Keefe eine Katastrophe in Zeitlupe. Die Yaper reagierten klug und bewerteten die neuen, mit Eisen gebrochenen Steine deutlich tiefer als die alten. Aber die Härte des Rai war gebrochen. Was Generationen von Mut und Mühe gekostet hatte, liess sich nun mit Technik billig nachproduzieren. Ammous sieht in O’Keefe das perfekte Beispiel dafür, wie neue Technologie ein Warengeld entwertet.</p>
+    <p>Heute sind Rai-Steine vor allem Kulturgut. Sie werden bei traditionellen Anlässen wie Hochzeiten oder Versöhnungen noch weitergegeben – und nach wie vor gilt: Wem ein Stein gehört, das weiss das Dorf.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Die Rai-Steine zeigen zwei Dinge auf einmal: Geld kann ein reines Hauptbuch sein, ohne dass sich etwas bewegt. Und ein solches Geld bleibt nur so lange hart, wie niemand einen billigeren Weg findet, neue Einheiten zu erzeugen.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>William Henry Furness III: <em>The Island of Stone Money: Uap of the Carolines</em>, 1910.</li>
+        <li>Milton Friedman: <em>The Island of Stone Money</em>, Hoover Institution Working Paper E-91-3, 1991; auch in <em>Money Mischief</em>, 1992.</li>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 2 (Rai-Steine und O’Keefe).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="salz" data-num="5" data-part="I" data-title="Salz, Vieh und andere Waren" data-desc="Warum der Lohn nach Salz klingt und das Kapital nach Rindern">
+  <header class="ch-head">
+    <div class="ch-num">05</div>
+    <p class="ch-kicker">Teil I · Die Suche nach hartem Geld</p>
+    <h1>Salz, Vieh und andere Waren</h1>
+    <p class="ch-lede">Warum unser Lohn nach Salz klingt, das Kapital nach Rindern – und warum beide als Geld trotzdem scheiterten.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Das weisse Gold</h2>
+    <p>Bevor es Kühlschränke gab, war Salz eine Überlebensfrage. Es konservierte Fleisch und Fisch, man brauchte es für Käse, Leder und Vieh. Wer Salz hatte, konnte über den Winter kommen. Kein Wunder, dass Salz in vielen Kulturen als Zahlungsmittel diente.</p>
+    <p>Die Spuren finden sich bis heute in unserer Sprache. Das Wort <strong>Salär</strong> stammt vom lateinischen <em>salarium</em>, das mit <em>sal</em>, dem Salz, verwandt ist. Ob römische Soldaten tatsächlich in Salz bezahlt wurden oder ob <em>salarium</em> eher eine Zulage war, mit der sie Salz kaufen konnten, ist unter Historikern umstritten. Sicher ist: Salz war wertvoll genug, dass eine der wichtigsten Strassen Roms – die <em>Via Salaria</em> – nach ihm benannt wurde.</p>
+
+    <aside class="note story">
+      <span class="note-label">Anekdoten aus aller Welt</span>
+      <ul>
+        <li><strong>Äthiopien:</strong> Bis ins 20. Jahrhundert zirkulierten dort Salzbarren namens <em>Amolé</em>, gebrochen in der glühend heissen Danakil-Senke. Je weiter man sich von den Salzpfannen entfernte, desto mehr war ein Barren wert.</li>
+        <li><strong>Sahara:</strong> Karawanen brachten Salz aus den Minen von Taghaza und Taoudenni nach Timbuktu, wo es gegen Gold aus dem Süden getauscht wurde. Legenden erzählen, es sei Gewicht gegen Gewicht gegangen.</li>
+        <li><strong>Europa:</strong> Städte wie Salzburg, Hallstatt oder Lüneburg wurden durch Salz reich. Die «Salzstrassen» gehörten zu den wichtigsten Handelswegen des Mittelalters.</li>
+        <li><strong>Schweiz:</strong> Salz war so wichtig, dass die Kantone bis heute das <em>Salzregal</em> besitzen – ein staatliches Monopol auf den Salzhandel. Die Schweizer Salinen gehören den Kantonen.</li>
+      </ul>
+    </aside>
+
+    <p>Warum hat sich Salz trotzdem nicht als Geld gehalten? Gehen wir die Wunschliste durch: Salz ist gut teilbar und überall begehrt. Aber es ist schwer im Verhältnis zu seinem Wert, es zieht Feuchtigkeit an, und vor allem: <strong>Es wird verbraucht.</strong> Der Bestand ist klein im Verhältnis zur jährlichen Produktion – sein Stock-to-Flow-Verhältnis liegt nahe bei 1. Sobald neue Salzbergwerke, bessere Siedepfannen und die Eisenbahn auftauchten, wurde Salz überall billig. Das Schicksal von Kauri und Rai-Stein ereilte auch das weisse Gold.</p>
+
+    <h2>Vieh: das erste Kapital</h2>
+    <p>Eine noch ältere Form von Vermögen läuft auf vier Beinen. Auch hier verrät uns die Sprache viel:</p>
+    <ul>
+      <li>Das lateinische <em>pecunia</em> (Geld) stammt von <em>pecus</em>, dem Vieh. Daher kommt unser Wort <strong>pekuniär</strong>.</li>
+      <li><strong>Kapital</strong> leitet sich von <em>caput</em> ab, dem Kopf – gezählt wurden Rinder nach Köpfen.</li>
+      <li>Das englische <em>fee</em> (Gebühr) geht auf das altenglische <em>feoh</em> zurück, das Vieh und Besitz bedeutete – ein enger Verwandter unseres Wortes <strong>Vieh</strong>.</li>
+    </ul>
+    <p>Vieh hatte echte Vorzüge: Es transportierte sich selbst zum Markt, war überall nützlich und vermehrte sich sogar. Aber es war schlecht teilbar – niemand bezahlt mit einer halben Kuh –, uneinheitlich und sterblich. Vieh ist eher ein produktives Vermögen als ein Geld.</p>
+
+    <h2>Der Wettbewerb der Waren</h2>
+    <p>Legen wir alle bisherigen Kandidaten nebeneinander. Jede Form von Geld war in einigen Dimensionen gut und in anderen schlecht:</p>
+
+    <figure class="scene" data-scene="radar-waren">
+      <figcaption>Klicke dich durch die Kandidaten oder lass die Animation laufen. Achte besonders auf die Achse «Knappheit»: Wer dort schwach ist, verliert langfristig alles.</figcaption>
+    </figure>
+
+    <p>Auffällig ist, dass zwei Metalle in fast allen Dimensionen gut abschneiden: Silber und Gold. Sie sind haltbar, teilbar, einheitlich, relativ leicht zu transportieren – und vor allem schwer zu vermehren. Ihnen gehört das nächste Kapitel.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Jede Ware war in einigen Dimensionen gut und in anderen schlecht. Gewinnen würde am Ende die Ware, die in der wichtigsten Dimension – der Härte – unschlagbar war, ohne in den anderen zu versagen.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 2 «Primitive Moneys».</li>
+        <li>Mark Kurlansky: <em>Salt: A World History</em>, 2002 (dt.: <em>Salz. Der Stoff, der die Welt veränderte</em>).</li>
+        <li>Jack Weatherford: <em>The History of Money</em>, 1997.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="gold" data-num="6" data-part="I" data-title="Silber und Gold" data-desc="2’500 Jahre Metallgeld – und warum das Gold gewann">
+  <header class="ch-head">
+    <div class="ch-num">06</div>
+    <p class="ch-kicker">Teil I · Die Suche nach hartem Geld</p>
+    <h1>Silber und Gold</h1>
+    <p class="ch-lede">Wie zwei Metalle zweieinhalb Jahrtausende lang die Welt prägten – und warum am Ende das Gold gewann.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Die Erfindung der Münze</h2>
+    <p>Metalle haben, was Muscheln und Salz fehlte: Sie sind haltbar, beliebig teilbar, einheitlich und tragen viel Wert in wenig Gewicht. Ihr Nachteil war zunächst praktischer Natur. Bei jedem Geschäft musste man wiegen und prüfen, ob das Metall rein war.</p>
+    <p>Um 600 vor Christus fanden die Menschen im Königreich Lydien, im Westen der heutigen Türkei, eine elegante Lösung: Sie prägten Klümpchen aus Elektron – einer natürlichen Gold-Silber-Legierung – mit einem Löwenkopf. Der Stempel garantierte Gewicht und Reinheit. Das war die erste <strong>Münze</strong>. Der lydische König Krösus ging noch einen Schritt weiter und liess Münzen aus reinem Gold und reinem Silber schlagen. «Reich wie Krösus» sagen wir bis heute.</p>
+    <p>Eine Münze ist eigentlich eine geniale Kombination aus Ware und Versprechen: Das Metall trägt den Wert, der Stempel spart das Prüfen. Aber genau darin lag auch eine Versuchung – wer den Stempel kontrolliert, kann beim Metall schummeln.</p>
+
+    <h2>Warum ausgerechnet Gold?</h2>
+    <p>Gold hat eine Eigenschaft, die es von allen anderen Rohstoffen unterscheidet: Es ist <strong>chemisch praktisch unzerstörbar</strong>. Es rostet nicht, korrodiert nicht und wird kaum verbraucht. Deshalb existiert fast alles Gold, das Menschen je geschürft haben, heute noch – als Schmuck, Barren, Münzen, in Zahnkronen und Tempeldächern. Laut World Gold Council sind das rund 216’000 Tonnen (Stand Ende 2024).</p>
+    <p>Diesem riesigen Bestand steht eine jährliche Minenproduktion von etwa 3’600 Tonnen gegenüber. Selbst ein Goldrausch wie in Kalifornien (1849), am Witwatersrand (1886) oder am Klondike (1896) vergrössert den Weltbestand nur um wenige Prozent. Das ist der Grund, warum Gold die Falle des leichten Geldes vermeiden konnte.</p>
+
+    <figure class="scene" data-scene="goldcube">
+      <figcaption>Alles je geförderte Gold passt in einen Würfel von gut 22 Metern Kantenlänge. Ein ganzes Jahr Bergbau ist eine Schicht von nur 37 Zentimetern.</figcaption>
+    </figure>
+
+    <p>Silber ist häufiger, wird stärker industriell verbraucht (früher für Fotografie, heute für Elektronik und Solarzellen) und läuft an. Sein Stock-to-Flow-Verhältnis ist deutlich tiefer. Dafür war Silber ideal für kleine Zahlungen: Eine Goldmünze war für den Alltag oft schlicht zu wertvoll. Über Jahrtausende lebten deshalb beide Metalle nebeneinander – Gold für grosse Beträge, Silber für den Markt.</p>
+
+    <h2>Rom: Wie man eine Währung verwässert</h2>
+    <p>Der römische <strong>Denar</strong> war unter Kaiser Augustus eine Münze aus fast reinem Silber. Doch Kriege, Brot und Spiele kosteten Geld. Statt die Steuern zu erhöhen, griffen die Kaiser zu einem bequemeren Mittel: Sie mischten immer mehr Kupfer ins Silber. Diese <strong>Münzverschlechterung</strong> war die Inflation der Antike – und sie funktionierte genau wie die Druckerpresse später: Der Staat bezahlte heute mit Geld, das morgen weniger wert war.</p>
+
+    <figure class="scene" data-scene="denarius">
+      <figcaption>Der Silbergehalt des Denars. Rechts siehst du, wie sich die Münze von Silber zu Kupfer verfärbt.</figcaption>
+    </figure>
+
+    <p>Um 270 nach Christus enthielt der Denar oft weniger als fünf Prozent Silber. Die Preise explodierten. Kaiser Diokletian versuchte es im Jahr 301 mit einem <strong>Höchstpreisedikt</strong>: Für über tausend Waren und Dienstleistungen wurden Maximalpreise festgelegt, Verstösse konnten mit dem Tod bestraft werden. Das Ergebnis war vorhersehbar – die Waren verschwanden von den Märkten. Ammous sieht in der Zerrüttung der römischen Währung einen wichtigen Grund für den wirtschaftlichen Niedergang des Westreichs.</p>
+
+    <aside class="note story">
+      <span class="note-label">Anekdote: Der Dollar des Mittelalters</span>
+      <p>Kaiser Konstantin führte um 309 eine neue Goldmünze ein: den <strong>Solidus</strong>, rund 4.5 Gramm Gold. Im Oströmischen Reich – Byzanz – wurde er rund 700 Jahre lang kaum verändert und war im ganzen Mittelmeerraum begehrt. Historiker nennen ihn den «Dollar des Mittelalters». Erst im 11. Jahrhundert begannen auch die byzantinischen Kaiser, ihn zu verwässern. Später übernahmen der Florentiner <em>Fiorino d’oro</em> (1252) und der venezianische <em>Dukat</em> (1284) diese Rolle. Ammous argumentiert, dass dieses solide Geld den Handel und die Banken der italienischen Stadtstaaten trug – und damit auch die Renaissance.</p>
+    </aside>
+
+    <aside class="note think">
+      <span class="note-label">Auch Gold ist nicht unendlich hart</span>
+      <p>Im 16. Jahrhundert brachten die Spanier gewaltige Mengen Silber und Gold aus Amerika nach Europa, allen voran aus dem Silberberg von Potosí im heutigen Bolivien. Die Preise in Europa stiegen innerhalb eines Jahrhunderts auf etwa das Vierfache – Historiker sprechen von der «Preisrevolution». Das zeigt: Auch Edelmetalle lassen sich inflationieren. Aber es brauchte dafür einen ganzen neuen Kontinent, und die Teuerung lag im Schnitt bei gut einem Prozent pro Jahr. Für heutige Verhältnisse fast nichts.</p>
+    </aside>
+
+    <h2>Gold gegen Silber</h2>
+    <p>Jahrhundertelang galten beide Metalle als Geld, mit einem Tauschverhältnis von meist 12 bis 16 Unzen Silber pro Unze Gold. 1717 legte ausgerechnet <strong>Isaac Newton</strong>, damals Vorsteher der königlichen Münze, ein Verhältnis fest, das Gold gegenüber Silber leicht überbewertete. Die Folge folgte dem <strong>Gresham’schen Gesetz</strong> – «schlechtes Geld verdrängt gutes»: Silber floss aus England ab, und das Land war faktisch auf dem Goldstandard.</p>
+    <p>Den endgültigen Wendepunkt brachte 1871. Nach dem Deutsch-Französischen Krieg nutzte das neue Deutsche Reich die französischen Reparationen von fünf Milliarden Francs, um die Goldmark einzuführen, und verkaufte seine Silberbestände. Andere Länder folgten in rascher Folge: die skandinavischen Staaten, die Niederlande, die USA (1873), die Lateinische Münzunion, zu der auch die Schweiz gehörte. Silber verlor seine Rolle als Geld: Das Austauschverhältnis stieg innerhalb weniger Jahrzehnte von rund 15 auf über 30 Unzen Silber pro Unze Gold – gemessen in Gold halbierte sich der Wert des Silbers. Wer in Silber gespart hatte – etwa die Menschen in Indien oder China, deren Währungen auf Silber beruhten –, verlor einen grossen Teil seines Vermögens. China blieb bis 1935 beim Silber.</p>
+
+    <h2>Warum Gold siegte – und was das kostete</h2>
+    <p>Ammous erklärt den Sieg des Goldes so: Silbers einziger Vorteil war die Eignung für kleine Beträge. Diesen Vorteil machten im 19. Jahrhundert Banknoten, Schecks und der Telegraf wett. Man konnte nun Gold in einem Tresor lagern und mit Papier bezahlen, das darauf lautete. Damit setzte sich das härtere der beiden Metalle durch.</p>
+    <p>Doch genau hier liegt der Keim des Untergangs. Gold siegte, weil es in die Tresore der Banken wanderte. Und was in Tresoren liegt, kann man kontrollieren, einfrieren und beschlagnahmen. Davon handelt das nächste Kapitel.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Gold setzte sich durch, weil es das härteste Geld war: Kein Bergbau der Welt konnte seinen Bestand schnell vergrössern. Seine Schwäche war nicht die Knappheit, sondern das Gewicht.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 3 «Monetary Metals» und Kapitel 4 «Government Money».</li>
+        <li>World Gold Council: <em>Above-ground stocks</em> und <em>Gold mine production</em>, 2025.</li>
+        <li>Milton Friedman: <em>Money Mischief: Episodes in Monetary History</em>, 1992 (u. a. zum «Crime of 1873»).</li>
+        <li>Zum Denar: numismatische Analysen u. a. nach D. R. Walker, <em>The Metrology of the Roman Silver Coinage</em>, 1976–78 (Werte gerundet).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="banken" data-num="7" data-part="II" data-title="Papier, Banken und die Geschwindigkeit" data-desc="Teilreserve, Telegraf, Goldstandard, Goldverbot und Bretton Woods">
+  <header class="ch-head">
+    <div class="ch-num">07</div>
+    <p class="ch-kicker">Teil II · Papier, Macht und Fiat</p>
+    <h1>Papier, Banken und die Geschwindigkeit</h1>
+    <p class="ch-lede">Gold ist hart, aber langsam. Als die Welt schneller wurde, übernahmen die Hauptbücher der Banken – und mit ihnen die Macht über das Geld.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Die Goldschmiede von London</h2>
+    <p>Im London des 17. Jahrhunderts brachten Kaufleute ihr Gold gerne zu den Goldschmieden, denn die hatten die sichersten Tresore der Stadt. Als Beleg bekamen sie eine Quittung. Schon bald merkten alle, dass es viel bequemer war, mit diesen Quittungen zu bezahlen, als jedes Mal das Gold abzuholen. Die Quittungen begannen als Geld zu zirkulieren: Das war die Geburtsstunde der <strong>Banknote</strong>.</p>
+    <p>Die Goldschmiede machten eine zweite Entdeckung. Nur ein kleiner Teil der Kunden holte sein Gold je gleichzeitig ab. Also konnte man doch zusätzliche Quittungen ausgeben – als verzinste Kredite –, ohne dafür Gold im Tresor zu haben. Das ist das Prinzip der <strong>Teilreserve</strong> (englisch <em>fractional reserve banking</em>), und es ist bis heute das Fundament unseres Bankensystems.</p>
+
+    <figure class="scene" data-scene="bankrun">
+      <figcaption>Zehn Goldbarren, dreissig Quittungen. Solange alle ruhig bleiben, geht das gut.</figcaption>
+    </figure>
+
+    <p>Das Problem liegt auf der Hand: Es gibt mehr Ansprüche als Gold. Solange alle der Bank vertrauen, merkt das niemand. Sobald aber ein Gerücht aufkommt, will jeder als Erster am Schalter sein – ein <strong>Bank Run</strong>. Weil solche Paniken immer wieder ganze Volkswirtschaften erschütterten, entstanden die <strong>Zentralbanken</strong> als «Kreditgeber der letzten Instanz». Die Bank of England wurde 1694 gegründet, um König Wilhelm III. Geld für den Krieg gegen Frankreich zu leihen. Die US-Notenbank Federal Reserve folgte 1913.</p>
+
+    <h2>Die Geschwindigkeit des Handels</h2>
+    <p>Lyn Alden erzählt in <em>Broken Money</em> die Geschichte des Geldes als eine Geschichte der <strong>Abwicklungstechnologie</strong>. Ihr Kernargument geht so: Jahrtausendelang konnte sich eine Zahlung höchstens so schnell bewegen wie ein Pferd oder ein Schiff – also genau so schnell wie das Gold selbst. Ob du Gold oder einen Brief mit einer Zahlungsanweisung schicktest, machte kaum einen Unterschied.</p>
+    <p>Dann kam der Telegraf. 1844 schickte Samuel Morse die erste Nachricht von Washington nach Baltimore. 1866 lag ein dauerhaft funktionierendes Kabel durch den Atlantik. Zum ersten Mal in der Geschichte konnte Information die Welt in Minuten umrunden – Gold aber brauchte immer noch Wochen.</p>
+
+    <figure class="scene" data-scene="telegraph">
+      <figcaption>Während ein Dampfschiff mit Gold den Atlantik überquert, laufen Hunderte von Nachrichten durch das Kabel.</figcaption>
+    </figure>
+
+    <p>Der Handel wollte Geschwindigkeit. Also wanderten die Zahlungen auf die Hauptbücher von Banken und Clearinghäusern, während das Gold in den Tresoren liegen blieb und nur noch gelegentlich zum Saldenausgleich verschifft wurde. Die Menschen benutzten immer seltener Gold selbst, sondern Ansprüche auf Gold. Und wer die Hauptbücher führt, so Alden, kontrolliert in Wahrheit das Geld – er kann Regeln ändern, Konten sperren oder mehr Ansprüche schaffen, als es Gold gibt.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Seit dem Telegrafen bewegt sich Handel mit Lichtgeschwindigkeit, Gold aber mit der Geschwindigkeit von Schiffen. Diese Lücke füllten die Banken – und wer das Hauptbuch führt, kann es auch umschreiben.</p>
+    </aside>
+
+    <h2>Der klassische Goldstandard (1871–1914)</h2>
+    <p>Die Jahrzehnte vor dem Ersten Weltkrieg gelten vielen Ökonomen als goldenes Zeitalter des Geldes. Die grossen Währungen waren im Grunde nur verschiedene Namen für bestimmte Gewichte Gold:</p>
+    <ul>
+      <li>1 britisches Pfund = 7.32 Gramm Gold</li>
+      <li>1 US-Dollar = 1.50 Gramm Gold</li>
+      <li>1 Goldmark = 0.358 Gramm Gold</li>
+      <li>1 Schweizer Franken (Lateinische Münzunion) = 0.290 Gramm Gold</li>
+    </ul>
+    <p>Wechselkurse waren damit keine Politik, sondern Physik. Die Preise blieben über Jahrzehnte stabil, Kapital und Handel flossen frei über Grenzen, und die Belle Époque erlebte eine Welle von Erfindungen – Elektrizität, Telefon, Auto, Flugzeug. Ammous betont, dass die tiefe «Zeitpräferenz» dieser Ära, also die Bereitschaft, für die Zukunft zu sparen und zu bauen, eng mit dem verlässlichen Geld zusammenhing.</p>
+
+    <h2>1914: Der Krieg frisst den Goldstandard</h2>
+    <p>Mit dem Ersten Weltkrieg setzten die kriegführenden Staaten die Einlösbarkeit ihrer Banknoten in Gold aus. Kriege mit Steuern zu finanzieren ist unpopulär; mit der Druckerpresse geht es leiser. Ammous vertritt die These, dass der Krieg ohne diese Möglichkeit viel früher zu Ende gegangen wäre, weil den Regierungen schlicht das Geld ausgegangen wäre.</p>
+
+    <aside class="note story">
+      <span class="note-label">Anekdote: «Gold gab ich für Eisen»</span>
+      <p>Im Ersten Weltkrieg riefen deutsche Behörden die Bevölkerung auf, ihren Goldschmuck und ihre Eheringe abzuliefern. Als Dank erhielt man einen schlichten Eisenring oder eine Medaille mit der Aufschrift «Gold gab ich zur Wehr, Eisen nahm ich zur Ehr». Das Gold landete in der Reichsbank, die Menschen behielten Papier – das wenige Jahre später in der Hyperinflation wertlos wurde.</p>
+    </aside>
+
+    <h2>1933: Das Goldverbot</h2>
+    <p>Am 5. April 1933, mitten in der Grossen Depression, unterzeichnete US-Präsident Franklin D. Roosevelt die <strong>Executive Order 6102</strong>. Alle Amerikaner mussten ihre Goldmünzen, Goldbarren und Goldzertifikate bis zum 1. Mai bei der Federal Reserve abliefern – zum Preis von 20.67 Dollar pro Unze. Wer sich weigerte, riskierte bis zu 10’000 Dollar Busse oder zehn Jahre Gefängnis.</p>
+    <p>Im Januar 1934 legte die Regierung den Goldpreis per Gesetz auf 35 Dollar fest. Wer sein Gold abgeliefert hatte, besass damit über Nacht rund 41 Prozent weniger Kaufkraft in Gold gemessen. Privater Goldbesitz blieb in den USA bis Ende 1974 verboten. Die Lektion: <strong>Gold in einem Tresor lässt sich mit einer Unterschrift beschlagnahmen.</strong></p>
+
+    <h2>Bretton Woods (1944)</h2>
+    <p>Im Juli 1944 trafen sich Vertreter von 44 Staaten im Mount Washington Hotel in Bretton Woods, New Hampshire, um die Weltwirtschaft der Nachkriegszeit zu ordnen. Das Ergebnis: Der US-Dollar wurde zu 35 Dollar pro Unze an das Gold gebunden, alle anderen Währungen wurden an den Dollar gebunden. In Gold einlösen konnten Dollar allerdings nur noch ausländische Zentralbanken, nicht mehr Privatpersonen. Die USA besassen damals rund zwei Drittel der Goldreserven aller Zentralbanken der Welt.</p>
+    <p>Das System hatte einen eingebauten Konstruktionsfehler: Die Welt brauchte immer mehr Dollar, aber die USA hatten nicht entsprechend mehr Gold. In den 1960er-Jahren finanzierten die Vereinigten Staaten den Vietnamkrieg und grosse Sozialprogramme zunehmend mit neuem Geld. Der französische Finanzminister Valéry Giscard d’Estaing nannte die Stellung des Dollars ein «exorbitantes Privileg». Präsident Charles de Gaulle forderte 1965 öffentlich die Rückkehr zum Goldstandard, und Frankreich begann, seine Dollar in Gold umzutauschen und das Gold nach Paris zu holen. Andere taten es ihm gleich. Der Goldberg in Fort Knox schrumpfte.</p>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Lyn Alden: <em>Broken Money: Why Our Financial System Is Failing Us and How We Can Make It Better</em>, Timestamp Press 2023, Teile II–III.</li>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 4 «Government Money».</li>
+        <li>Franklin D. Roosevelt: <em>Executive Order 6102</em>, 5. April 1933; <em>Gold Reserve Act</em>, 1934.</li>
+        <li>Barry Eichengreen: <em>Exorbitant Privilege</em>, Oxford University Press 2011.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="fiat" data-num="8" data-part="II" data-title="Die Geburt des Fiatgeldes" data-desc="Kublai Khan, John Law, Assignaten und Weimar 1923">
+  <header class="ch-head">
+    <div class="ch-num">08</div>
+    <p class="ch-kicker">Teil II · Papier, Macht und Fiat</p>
+    <h1>Die Geburt des Fiatgeldes</h1>
+    <p class="ch-lede">«Fiat» heisst auf Latein «es werde». Geld, das wertvoll ist, weil jemand es befiehlt. Eine Idee mit einer langen, wilden Vorgeschichte.</p>
+  </header>
+
+  <div class="prose">
+    <p>Bevor wir zum entscheidenden Jahr 1971 kommen, lohnt sich ein Blick zurück. Denn Papiergeld ohne Deckung ist keine Erfindung des 20. Jahrhunderts. Es wurde schon viele Male ausprobiert – und die Geschichten ähneln sich auf beunruhigende Weise.</p>
+
+    <h2>China: Das erste Papiergeld der Welt</h2>
+    <p>In der chinesischen Provinz Sichuan bezahlte man im 10. Jahrhundert mit Eisenmünzen. Die waren so schwer, dass Kaufleute begannen, Hinterlegungsscheine auszugeben, die sogenannten <em>Jiaozi</em>. Um 1024 übernahm der Staat der Song-Dynastie die Ausgabe: Das erste staatliche Papiergeld der Welt war geboren. Zunächst war es gedeckt und begrenzt. Doch Kriege gegen die Reiternomaden im Norden kosteten viel, und die Versuchung war zu gross. Die Notenmenge wuchs, der Wert schwand.</p>
+    <p>Rund 250 Jahre später machte der Mongolenherrscher <strong>Kublai Khan</strong> Papiergeld zum einzigen erlaubten Zahlungsmittel seines Reiches. Wer es ablehnte, riskierte die Todesstrafe. Der venezianische Reisende <strong>Marco Polo</strong> berichtete fasziniert, wie der Grosskhan aus der Rinde von Maulbeerbäumen Geld herstellen liess und damit alles kaufen konnte, was er wollte – für Polo war das eine Art vollendete Alchemie. Auch dieses Experiment endete in Inflation. Unter der Ming-Dynastie verlor das Papiergeld bis Mitte des 15. Jahrhunderts fast seinen gesamten Wert, und China kehrte für Jahrhunderte zum Silber zurück.</p>
+
+    <h2>John Law: Der Mann, der Frankreich Papier gab</h2>
+    <p>1716 war Frankreich nach den Kriegen Ludwigs XIV. bankrott. Da trat ein schottischer Spieler, Duellant und Wirtschaftsdenker auf den Plan: <strong>John Law</strong>. Er überzeugte den Regenten, eine Bank zu gründen, die Papiergeld ausgab. Gleichzeitig kontrollierte Law die Mississippi-Kompanie, die das Monopol auf den Handel mit der französischen Kolonie Louisiana hatte.</p>
+    <p>Law liess die Bank immer mehr Noten drucken, mit denen die Menschen Aktien der Mississippi-Kompanie kauften, deren Kurs dadurch weiter stieg. Ganz Paris war im Rausch. In dieser Zeit soll das Wort «Millionär» entstanden sein. 1720 platzte die Blase. Die Aktien stürzten ab, die Noten verloren ihren Wert, und Law floh aus Frankreich. Er starb 1729 verarmt in Venedig.</p>
+
+    <h2>Assignaten und Continentals</h2>
+    <p>Die Französische Revolution versuchte es ab 1790 mit den <strong>Assignaten</strong>, angeblich gedeckt durch das beschlagnahmte Land der Kirche. Sie wurden so masslos gedruckt, dass sie 1796 praktisch wertlos waren. Auf der anderen Seite des Atlantiks finanzierte der Kontinentalkongress den Unabhängigkeitskrieg mit Papiergeld, den <strong>Continentals</strong>. Sie verfielen so gründlich, dass «not worth a Continental» zur Redewendung für «völlig wertlos» wurde. Die Gründerväter zogen daraus eine Lehre und schrieben in die US-Verfassung, dass die Bundesstaaten nur Gold- und Silbermünzen als gesetzliches Zahlungsmittel bestimmen dürfen.</p>
+
+    <h2>Weimar 1923</h2>
+    <p>Das berühmteste Beispiel ist Deutschland. Den Ersten Weltkrieg hatte das Kaiserreich weitgehend auf Pump und mit der Notenpresse finanziert. Danach kamen die Reparationen, und als französische und belgische Truppen im Januar 1923 das Ruhrgebiet besetzten, bezahlte die Regierung den passiven Widerstand der Arbeiter mit frisch gedrucktem Geld. Die Inflation wurde zur Hyperinflation.</p>
+
+    <figure class="scene" data-scene="weimar">
+      <figcaption>Wie viele Mark kostete ein Dollar? Erst auf logarithmischer Skala erkennt man, wie gewaltig die Entwertung war. (Monatswerte, gerundet.)</figcaption>
+    </figure>
+
+    <p>1914 kostete ein Dollar 4.20 Mark. Im November 1923 waren es 4.2 Billionen – 4’200’000’000’000 Mark. Ein Laib Brot kostete in Berlin zuletzt rund 200 Milliarden Mark. Löhne wurden zweimal täglich ausbezahlt, und die Menschen rannten in der Mittagspause in die Läden, bevor die Preise am Nachmittag wieder stiegen. Kinder bastelten Drachen aus Geldscheinen, und Banknoten wurden als Brennmaterial verheizt, weil sie billiger waren als Holz.</p>
+
+    <aside class="note story">
+      <span class="note-label">Gewinner und Verlierer</span>
+      <p>Die Hyperinflation traf nicht alle gleich. Sparer, Rentner und der Mittelstand verloren alles, was sie in Mark angelegt hatten. Wer dagegen Schulden hatte und Sachwerte besass, wurde reich. Der Industrielle <strong>Hugo Stinnes</strong> etwa kaufte mit billigen Krediten Hunderte von Firmen auf und zahlte die Schulden später mit wertlosem Geld zurück – man nannte ihn den «Inflationskönig». Viele Historiker sehen in der Verarmung und Verbitterung der Mittelschicht einen Nährboden für die politische Radikalisierung der folgenden Jahre.</p>
+    </aside>
+
+    <p>Beendet wurde der Spuk im November 1923 mit einer neuen Währung, der Rentenmark. Der Umtauschkurs: eine Rentenmark für eine Billion Papiermark.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Hyperinflation ist kein Naturereignis. Sie entsteht, wenn eine Regierung ihre Ausgaben mit neu geschaffenem Geld bezahlt – und die Menschen das Vertrauen verlieren.</p>
+    </aside>
+
+    <p>Und das ist keine ferne Geschichte. Simbabwe brachte im Januar 2009 eine Banknote über 100 Billionen Dollar in Umlauf. Venezuela, Argentinien, der Libanon und die Türkei haben in den letzten Jahren alle Inflationsraten erlebt, die die Ersparnisse von Millionen Menschen vernichteten. Seit 1971 gibt es keine Währung der Welt mehr, die an etwas anderes gebunden wäre als an das Versprechen einer Regierung.</p>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Adam Fergusson: <em>When Money Dies: The Nightmare of the Weimar Hyperinflation</em>, 1975.</li>
+        <li>Statistisches Reichsamt: <em>Zahlen zur Geldentwertung in Deutschland 1914 bis 1923</em>, 1925 (Dollarkurse).</li>
+        <li>Richard von Glahn: <em>Fountain of Fortune: Money and Monetary Policy in China, 1000–1700</em>, 1996.</li>
+        <li>Marco Polo: <em>Il Milione</em> (Die Wunder der Welt), um 1300.</li>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 4–5.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="1971" data-num="9" data-part="II" data-title="1971: Das Geld verliert seinen Anker" data-desc="Der Nixon-Schock und «WTF Happened in 1971?»">
+  <header class="ch-head">
+    <div class="ch-num">09</div>
+    <p class="ch-kicker">Teil II · Papier, Macht und Fiat</p>
+    <h1>1971: Das Geld verliert seinen Anker</h1>
+    <p class="ch-lede">Am 15. August 1971 trennte eine Fernsehansprache das Geld der Welt endgültig vom Gold. Was danach geschah, sieht man in erstaunlich vielen Statistiken.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Ein Wochenende in Camp David</h2>
+    <p>Im Sommer 1971 war klar, dass die USA ihr Versprechen nicht mehr halten konnten. Es gab viel mehr Dollar im Ausland, als Gold in Fort Knox lag, und immer mehr Länder wollten tauschen. Präsident <strong>Richard Nixon</strong> zog sich vom 13. bis 15. August mit seinen engsten Beratern nach Camp David zurück, darunter Finanzminister John Connally, Notenbankchef Arthur Burns und ein junger Staatssekretär namens Paul Volcker.</p>
+    <p>Am Sonntagabend, dem 15. August, wandte sich Nixon in einer Fernsehansprache an die Nation – zur besten Sendezeit, anstelle der beliebten Westernserie <em>Bonanza</em>. Er kündigte einen Lohn- und Preisstopp an, einen Importzoll von zehn Prozent und, fast beiläufig, das Wichtigste: Er habe Finanzminister Connally angewiesen, die Umtauschbarkeit des Dollars in Gold <strong>«vorübergehend»</strong> auszusetzen.</p>
+
+    <blockquote>
+      <p>«I have directed Secretary Connally to suspend temporarily the convertibility of the dollar into gold.»</p>
+      <cite>Richard Nixon, Ansprache an die Nation, 15. August 1971</cite>
+    </blockquote>
+
+    <p>Dieses «vorübergehend» dauert inzwischen über ein halbes Jahrhundert. Nach einigen gescheiterten Rettungsversuchen gaben die grossen Industrieländer 1973 auch die festen Wechselkurse auf. Seither ist jede Währung der Welt <strong>reines Fiatgeld</strong>: gedeckt durch nichts als das Gesetz, das sie zum Zahlungsmittel erklärt, und das Vertrauen in den Staat, der sie herausgibt.</p>
+
+    <aside class="note story">
+      <span class="note-label">Der Franken und das Gold</span>
+      <p>Die Schweiz ging einen Sonderweg. Der Franken war noch bis zur Jahrtausendwende rechtlich an das Gold gebunden – als eine der letzten Währungen der Welt. Erst mit der neuen Bundesverfassung und dem neuen Währungs- und Zahlungsmittelgesetz wurde diese Bindung im Jahr 2000 aufgehoben. Danach verkaufte die Schweizerische Nationalbank 1’300 Tonnen ihrer Goldreserven, zu Preisen, die rückblickend sehr tief waren.</p>
+    </aside>
+
+    <h2>WTF happened in 1971?</h2>
+    <p>Die Website <a href="https://wtfhappenedin1971.com" rel="noopener">wtfhappenedin1971.com</a> sammelt Dutzende Diagramme, in denen um das Jahr 1971 herum etwas abknickt: Produktivität und Löhne entkoppeln sich, Hauspreise steigen schneller als Einkommen, der Anteil des reichsten Prozents am Einkommen wächst, die Staatsschulden explodieren, und vieles mehr. Die Seite ist bewusst provokativ – und sie hat einen Nerv getroffen.</p>
+
+    <figure class="scene" data-scene="nixon">
+      <figcaption>Drei Blicke auf die Zeit nach 1971. Wähle oben ein Diagramm aus. (Daten: Economic Policy Institute, FRED/Federal Reserve, LBMA; gerundet und teilweise stilisiert.)</figcaption>
+    </figure>
+
+    <ul>
+      <li><strong>Produktivität und Löhne:</strong> Von 1948 bis 1973 wuchsen in den USA die Produktivität und der Lohn eines typischen Arbeitnehmers fast im Gleichschritt. Danach stieg die Produktivität weiter – die Löhne kaum noch. Nach Berechnungen des Economic Policy Institute wuchs die Produktivität von 1973 bis 2013 um rund 74 Prozent, der Stundenlohn eines typischen Arbeitnehmers nur um rund 9 Prozent.</li>
+      <li><strong>Geldmenge:</strong> Die breite Geldmenge M2 in den USA stieg von rund 0.68 Billionen Dollar im Jahr 1971 auf rund 22 Billionen Dollar im Jahr 2025 – mehr als das Dreissigfache.</li>
+      <li><strong>Gold:</strong> Eine Unze Gold kostete 1971 35 Dollar. 2025 überschritt sie erstmals 4’000 Dollar. In Gold gemessen hat der Dollar also über 99 Prozent seines Werts verloren.</li>
+      <li><strong>Schulden:</strong> Die Staatsschulden der USA stiegen von rund 400 Milliarden Dollar (1971) auf über 37 Billionen Dollar (2025).</li>
+    </ul>
+
+    <aside class="note think">
+      <span class="note-label">Vorsicht vor vorschnellen Schlüssen</span>
+      <p>Korrelation ist nicht Kausalität. Um 1971 herum passierte vieles gleichzeitig: Ölkrisen, Globalisierung, Automatisierung, schwächere Gewerkschaften, Steuerreformen. Ökonomen streiten darüber, welcher Faktor wie viel erklärt. Was die Bitcoin-Ökonomen wie Ammous und Alden betonen, ist ein plausibler Mechanismus: Wenn Geld beliebig geschaffen werden kann, fliesst es zuerst in Kredite und Vermögenswerte. Wer Vermögen besitzt, profitiert; wer von Lohn und Erspartem lebt, fällt zurück. Diesen Mechanismus schauen wir uns im nächsten Kapitel genau an.</p>
+    </aside>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Seit dem 15. August 1971 hat das Geld der Welt keinen Anker mehr. Seine Menge ist keine Frage der Geologie mehr, sondern der Politik.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Richard Nixon: <em>Address to the Nation Outlining a New Economic Policy</em>, 15. August 1971.</li>
+        <li><a href="https://wtfhappenedin1971.com" rel="noopener">WTF Happened In 1971?</a> – Sammlung von Diagrammen.</li>
+        <li>Economic Policy Institute: <em>The Productivity–Pay Gap</em>, <a href="https://www.epi.org/productivity-pay-gap/" rel="noopener">epi.org</a>.</li>
+        <li>Federal Reserve Bank of St. Louis, FRED: Zeitreihe M2SL; U.S. Treasury: <em>Debt to the Penny</em>.</li>
+        <li>Schweizerische Nationalbank: Geschichte der Goldverkäufe 2000–2005.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="inflation" data-num="10" data-part="II" data-title="Inflation und der Cantillon-Effekt" data-desc="Wer von neuem Geld profitiert – und wer dafür bezahlt">
+  <header class="ch-head">
+    <div class="ch-num">10</div>
+    <p class="ch-kicker">Teil II · Papier, Macht und Fiat</p>
+    <h1>Inflation und der Cantillon-Effekt</h1>
+    <p class="ch-lede">Inflation ist nicht einfach «alles wird teurer». Sie ist eine Umverteilung – von denen, die weit weg vom Geldhahn sitzen, zu denen, die nah dran sind.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Was Inflation wirklich ist</h2>
+    <p>Ursprünglich bedeutete Inflation die <em>Aufblähung der Geldmenge</em>. Heute meinen wir damit meistens den Anstieg der Konsumentenpreise. Das eine verursacht das andere, aber nicht eins zu eins. Technischer Fortschritt würde vieles eigentlich billiger machen – Computer, Kleider, Lebensmittel. Wenn die Preise trotzdem steigen, verdeckt die Ausweitung der Geldmenge diesen natürlichen Preisrückgang. Der Unternehmer Jeff Booth hat diesem Gedanken ein ganzes Buch gewidmet: <em>The Price of Tomorrow</em>.</p>
+    <p>Lyn Alden weist darauf hin, dass die Geldmenge in den USA über die letzten Jahrzehnte im Schnitt um rund sieben Prozent pro Jahr gewachsen ist – deutlich schneller als die offizielle Teuerung. Wohin fliesst der Rest? Vor allem in die Preise von Vermögenswerten: Aktien, Immobilien, Kunst.</p>
+
+    <h2>Richard Cantillon: Wer zuerst kommt …</h2>
+    <p><strong>Richard Cantillon</strong> war ein irisch-französischer Bankier des 18. Jahrhunderts – und er wusste, wovon er sprach: Er hatte während der Mississippi-Blase von John Law ein Vermögen gemacht, weil er rechtzeitig verkauft hatte. In seinem Werk <em>Essai sur la nature du commerce en général</em>, geschrieben um 1730 und 1755 veröffentlicht, beschrieb er eine Beobachtung, die heute seinen Namen trägt.</p>
+    <p>Neues Geld, so Cantillon, verteilt sich nicht gleichmässig wie Regen über das Land. Es entsteht an einem bestimmten Ort und fliesst von dort aus durch die Wirtschaft. Wer es zuerst erhält, kann es noch zu den alten Preisen ausgeben. Mit jedem Schritt, den das Geld weiterwandert, steigen die Preise ein Stück. Wer es zuletzt erhält – oder gar nicht –, zahlt bereits die neuen, höheren Preise, bevor sein Einkommen gestiegen ist.</p>
+
+    <figure class="scene" data-scene="cantillon">
+      <figcaption>Der Cantillon-Effekt: Neues Geld breitet sich vom Zentrum aus wie eine Welle. Die Preise steigen hinterher. (Schematische Darstellung.)</figcaption>
+    </figure>
+
+    <p>Wo entsteht neues Geld heute? Im Wesentlichen auf zwei Wegen: Zentralbanken kaufen Staatsanleihen und andere Wertpapiere von Banken und Finanzmarktteilnehmern, und Geschäftsbanken vergeben Kredite – vor allem an Kunden mit Sicherheiten, also an jene, die bereits etwas besitzen. Das neue Geld landet zuerst auf den Finanzmärkten, beim Staat und bei grossen Unternehmen. Es treibt die Preise von Aktien und Immobilien in die Höhe, lange bevor es als höherer Lohn bei der Pflegefachfrau oder dem Busfahrer ankommt.</p>
+
+    <h2>Die unsichtbare Steuer</h2>
+    <p>Inflation wirkt wie eine Steuer, über die nie abgestimmt wurde. Schon 1919 schrieb der Ökonom John Maynard Keynes, der später zum geistigen Vater der modernen Geldpolitik werden sollte:</p>
+    <blockquote>
+      <p>«Durch einen fortgesetzten Inflationsprozess können Regierungen heimlich und unbemerkt einen wichtigen Teil des Vermögens ihrer Bürger konfiszieren.»</p>
+      <cite>John Maynard Keynes, <em>The Economic Consequences of the Peace</em>, 1919 (übersetzt)</cite>
+    </blockquote>
+    <p>Wie stark diese Steuer wirkt, unterschätzen die meisten, weil sie sich über Jahre verteilt. Eine einfache Faustregel hilft:</p>
+    $$\text{Halbierungszeit der Kaufkraft} \approx \frac{72}{\text{Inflationsrate in \%}}$$
+    <p>Bei 2 Prozent Inflation halbiert sich die Kaufkraft in etwa 36 Jahren, bei 3 Prozent in 24 Jahren, bei 7 Prozent in rund zehn Jahren. Ein US-Dollar von 1913, dem Gründungsjahr der Federal Reserve, ist heute noch etwa drei Cent wert.</p>
+
+    <figure class="scene" data-scene="inflationcalc">
+      <figcaption>Spiele mit Inflationsrate und Zeitraum. Jedes Brot steht für ein Prozent der heutigen Kaufkraft von 10’000 Franken.</figcaption>
+    </figure>
+
+    <h2>Anna und Ben: Wie Inflation die Schere öffnet</h2>
+    <p>Stell dir zwei Menschen vor, beide 30 Jahre alt im Jahr 2000, beide mit dem gleichen Lohn. <strong>Anna</strong> hat eine kleine Wohnung und ein Aktiendepot geerbt. <strong>Ben</strong> hat 100’000 Franken gespart, die auf seinem Sparkonto liegen.</p>
+    <p>In den folgenden 25 Jahren wächst die Geldmenge kräftig, besonders nach der Finanzkrise 2008 und der Pandemie 2020, als die Zentralbanken die Zinsen auf null senkten und Billionen schufen. Annas Wohnung und Aktien steigen im Wert um ein Vielfaches. Bens Sparkonto bringt kaum Zinsen; nach Abzug der Teuerung schrumpft seine Kaufkraft Jahr für Jahr. Als Ben selbst eine Wohnung kaufen möchte, sind die Preise längst davongezogen.</p>
+    <p>Keiner von beiden hat etwas «besser» gemacht. Anna wurde im Schlaf reicher, Ben arbeitete und sparte – und fiel zurück. Das Geldsystem belohnt das Besitzen von Vermögenswerten und bestraft das Sparen in Geld. In den USA gehören rund 90 Prozent aller Aktien den reichsten zehn Prozent der Haushalte. Jede Welle neuen Geldes, die die Aktienkurse hebt, vergrössert damit fast automatisch die Vermögensungleichheit.</p>
+
+    <aside class="note story">
+      <span class="note-label">Der Anlagenotstand</span>
+      <p>In der Schweiz gibt es dafür ein eigenes Wort: <em>Anlagenotstand</em>. Wenn Sparkonten nichts mehr abwerfen, werden Sparer – und Pensionskassen – in immer riskantere Anlagen gedrängt, nur um die Kaufkraft zu erhalten. Sparen allein reicht nicht mehr; man muss spekulieren. Ammous sieht darin einen der tiefsten Schäden des Fiatgeldes: Es erhöht die «Zeitpräferenz» einer Gesellschaft. Wer weiss, dass sein Geld morgen weniger wert ist, gibt es lieber heute aus oder verschuldet sich.</p>
+    </aside>
+
+    <h2>Die Gegenposition</h2>
+    <p>Die meisten Zentralbanken verfolgen bewusst ein Inflationsziel von rund zwei Prozent. Ihre Begründung: Leicht steigende Preise verhindern gefährliche Deflationsspiralen, erleichtern die Anpassung von Löhnen und geben der Geldpolitik Spielraum in Krisen. Diese Argumente sind ernst zu nehmen, und die Debatte ist nicht entschieden. Doch selbst Befürworter der heutigen Geldpolitik bestreiten nicht, dass neues Geld Verteilungswirkungen hat – und dass diese Wirkungen nie demokratisch beschlossen wurden.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Inflation verteilt Vermögen um: von Sparern zu Schuldnern, von Lohnempfängern zu Vermögensbesitzern und von den Bürgern zum Staat. Leise, schleichend und ohne Abstimmung.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Richard Cantillon: <em>Essai sur la nature du commerce en général</em>, 1755.</li>
+        <li>John Maynard Keynes: <em>The Economic Consequences of the Peace</em>, 1919, Kapitel VI.</li>
+        <li>Lyn Alden: <em>Broken Money</em>, 2023; sowie ihre Analysen zur Geldmengenentwicklung auf <a href="https://www.lynalden.com" rel="noopener">lynalden.com</a>.</li>
+        <li>Jeff Booth: <em>The Price of Tomorrow: Why Deflation Is the Key to an Abundant Future</em>, 2020.</li>
+        <li>Federal Reserve: <em>Distributional Financial Accounts</em> (Verteilung des Aktienbesitzes).</li>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 6 «Money and Time Preference».</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="schichten" data-num="11" data-part="II" data-title="Geld in Schichten" data-desc="Layered Money und das Dilemma zwischen Härte und Geschwindigkeit">
+  <header class="ch-head">
+    <div class="ch-num">11</div>
+    <p class="ch-kicker">Teil II · Papier, Macht und Fiat</p>
+    <h1>Geld in Schichten</h1>
+    <p class="ch-lede">Jedes Geld ist ein Versprechen auf ein anderes Geld – bis man ganz unten ankommt. Was liegt heute ganz unten?</p>
+  </header>
+
+  <div class="prose">
+    <h2>Die Pyramide des Geldes</h2>
+    <p>Der Ökonom <strong>Nik Bhatia</strong> beschreibt das Geldsystem in seinem Buch <em>Layered Money</em> als eine Abfolge von Schichten. Ganz unten liegt das <strong>Basisgeld</strong>: ein Vermögenswert, der niemandes Schuld ist und mit dem am Ende alle Rechnungen endgültig beglichen werden. Darüber liegen Schichten von Versprechen: Eine Banknote verspricht Gold, ein Bankguthaben verspricht Banknoten, ein Geldmarktfonds verspricht Bankguthaben, und so weiter.</p>
+    <p>Jede höhere Schicht ist bequemer und schneller als die darunter – aber sie trägt ein <strong>Gegenparteirisiko</strong>. Das Versprechen gilt nur, solange der Schuldner es halten kann. Bhatia beginnt seine Geschichte bei den Medici im Florenz des 15. Jahrhunderts: Goldene Florin bildeten die Basis, darüber zirkulierten Wechselbriefe, mit denen Kaufleute quer durch Europa zahlten, ohne Münzen zu bewegen.</p>
+
+    <figure class="scene" data-scene="layers">
+      <figcaption>Vier Epochen, vier Pyramiden. Achte darauf, was 1971 mit der untersten Schicht passiert.</figcaption>
+    </figure>
+
+    <h2>Seit 1971 steht die Pyramide auf einem Versprechen</h2>
+    <p>Unter dem Goldstandard war die Basis ein physisches Gut, das niemand drucken konnte. Seit 1971 besteht die Basis aus Verbindlichkeiten von Staaten: Zentralbankgeld und Staatsanleihen, allen voran amerikanische. Sie gelten als «risikofreie» Anlage – aber nur in dem Sinn, dass ein Staat seine Schulden in seiner eigenen Währung immer bezahlen kann, notfalls indem er mehr davon schafft. Das Risiko verschwindet nicht; es wird zur Inflation.</p>
+    <p>Weil die Basis beliebig erweitert werden kann, kann die ganze Pyramide wachsen. In Krisen wie 2008 und 2020 schufen die Zentralbanken Billionen neuer Basisgelder, um zu verhindern, dass die oberen Schichten zusammenbrechen. Das System wurde gerettet – aber jedes Mal auf Kosten derer, die Geld halten.</p>
+
+    <h2>Das Dilemma: Härte oder Geschwindigkeit</h2>
+    <p>Fassen wir die ersten beiden Teile dieser Geschichte zusammen. Die Menschheit hat bis heute zwei Arten von Geld ausprobiert, und beide haben einen fatalen Haken:</p>
+    <ul>
+      <li><strong>Gold</strong> ist hart. Aber es ist schwer, langsam und mühsam zu prüfen. Um es im modernen Handel zu nutzen, muss man es in Tresoren zentralisieren – und dort kann man es beschlagnahmen (1933) oder mit Papier überbieten (Teilreserve, Bretton Woods).</li>
+      <li><strong>Fiatgeld</strong> ist schnell. Es fliesst in Sekunden um die Welt. Aber es ist weich: Seine Menge bestimmen Zentralbanken und Regierungen, und wer das Hauptbuch führt, kann Konten einfrieren und Transaktionen verhindern.</li>
+    </ul>
+
+    <figure class="scene" data-scene="dilemma">
+      <figcaption>Jede Geldform der Geschichte auf einer Karte aus Härte und Geschwindigkeit. Der Weg der letzten 150 Jahre führte nach unten rechts.</figcaption>
+    </figure>
+
+    <p>Die Ecke oben rechts blieb leer. Ein Geld, so hart wie Gold und so schnell wie der Telegraf, ohne dass irgendjemand das Hauptbuch kontrolliert – das schien unmöglich. Denn wie soll ein Hauptbuch ohne Buchhalter funktionieren? Wer verhindert, dass jemand dasselbe Geld zweimal ausgibt? Und wer bestimmt die Regeln?</p>
+    <p>Genau mit diesen Fragen beschäftigte sich eine kleine Gruppe von Kryptografen seit den 1980er-Jahren. Ihre Geschichte erzählt der dritte Teil.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Die Geschichte des Geldes ist ein Tauschgeschäft: Wir haben Härte gegen Geschwindigkeit getauscht – und dafür die Kontrolle an jene abgegeben, die das Hauptbuch führen. Die grosse Frage lautet: Geht beides zugleich, ohne Zentrale?</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Nik Bhatia: <em>Layered Money: From Gold and Dollars to Bitcoin and Central Bank Digital Currencies</em>, 2021.</li>
+        <li>Perry Mehrling: <em>The New Lombard Street: How the Fed Became the Dealer of Last Resort</em>, 2011 (zur «Hierarchie des Geldes»).</li>
+        <li>Lyn Alden: <em>Broken Money</em>, 2023.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="cypherpunks" data-num="12" data-part="III" data-title="Die Suche nach digitalem Bargeld" data-desc="Cypherpunks, gescheiterte Vorgänger und Satoshi Nakamoto">
+  <header class="ch-head">
+    <div class="ch-num">12</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Die Suche nach digitalem Bargeld</h1>
+    <p class="ch-lede">Bevor Satoshi Nakamoto auftauchte, versuchten Kryptografen zwanzig Jahre lang, digitales Geld zu bauen. Jeder Versuch scheiterte – und hinterliess ein Puzzlestück.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Die Cypherpunks</h2>
+    <p>1992 gründeten Eric Hughes, Timothy May und John Gilmore in der Bucht von San Francisco eine Mailingliste, deren Mitglieder sich bald <strong>Cypherpunks</strong> nannten. Ihre Überzeugung: Im digitalen Zeitalter lässt sich Privatsphäre nicht durch Gesetze schützen, sondern nur durch Mathematik – durch Kryptografie, die jeder benutzen kann. Eric Hughes fasste das 1993 in seinem <em>Cypherpunk’s Manifesto</em> in drei Worte: «Cypherpunks write code.» Nicht reden, bauen.</p>
+    <p>Ein Traum zog sich durch die Diskussionen wie ein roter Faden: <strong>digitales Bargeld</strong>. Geld, das man so privat und direkt weitergeben kann wie eine Banknote, aber über das Internet. Die Geschichte dieses Traums ist eine Geschichte des Scheiterns – und des Lernens.</p>
+
+    <ol class="tl">
+      <li><span class="yr">1982</span><span class="ev"><b>David Chaum: blinde Signaturen</b><span>Der Kryptograf zeigt, wie eine Bank digitale Münzen signieren kann, ohne zu sehen, wer sie später ausgibt. Anonymes digitales Geld wird denkbar.</span></span></li>
+      <li class="fail"><span class="yr">1990</span><span class="ev"><b>DigiCash und eCash</b><span>Chaums Firma in Amsterdam bringt eCash auf den Markt. Technisch brillant, aber auf eine zentrale Firma angewiesen. 1998 geht DigiCash in Konkurs – und mit ihr das Geld.</span></span></li>
+      <li><span class="yr">1992</span><span class="ev"><b>Die Cypherpunk-Mailingliste</b><span>Hunderte Kryptografen, Programmierer und Libertäre diskutieren über Privatsphäre, Verschlüsselung und digitales Geld.</span></span></li>
+      <li class="fail"><span class="yr">1996</span><span class="ev"><b>e-gold</b><span>Digitales, mit echtem Gold gedecktes Geld. Zeitweise mit Millionen Konten. Doch die Firma und ihre Server lassen sich angreifen: Ab 2007 verfolgen die US-Behörden e-gold, 2008 bekennen sich die Gründer schuldig. Lektion: Was einen Kopf hat, kann man abschlagen.</span></span></li>
+      <li><span class="yr">1997</span><span class="ev"><b>Adam Back: Hashcash</b><span>Ein Mittel gegen Spam: Wer eine E-Mail sendet, muss eine kleine Rechenaufgabe lösen. Für einzelne Mails kaum spürbar, für Millionen Spam-Mails teuer. Die Idee des <em>Proof of Work</em> ist geboren.</span></span></li>
+      <li><span class="yr">1998</span><span class="ev"><b>Wei Dai: b-money</b><span>Ein Entwurf für dezentrales Geld: Geld entsteht durch Rechenarbeit, alle Teilnehmer führen ein gemeinsames Hauptbuch. Nie umgesetzt, aber später von Satoshi zitiert.</span></span></li>
+      <li><span class="yr">1998</span><span class="ev"><b>Nick Szabo: Bit Gold</b><span>«Digitales Gold»: eine Kette aus Proof-of-Work-Lösungen, jede mit der vorherigen verknüpft. Szabo veröffentlicht den Entwurf 2005 in seinem Blog. Es fehlt ein Weg, wie sich alle ohne Zentrale über die Reihenfolge einigen.</span></span></li>
+      <li><span class="yr">2004</span><span class="ev"><b>Hal Finney: RPOW</b><span>Wiederverwendbare Proof-of-Work-Token. Finney wird fünf Jahre später der erste Mensch sein, der Bitcoin erhält.</span></span></li>
+      <li class="btc"><span class="yr">31.10.2008</span><span class="ev"><b>Das Whitepaper</b><span>Auf der Cryptography-Mailingliste veröffentlicht jemand unter dem Namen Satoshi Nakamoto ein neunseitiges Papier: <em>Bitcoin: A Peer-to-Peer Electronic Cash System</em>.</span></span></li>
+      <li class="btc"><span class="yr">03.01.2009</span><span class="ev"><b>Der Genesis-Block</b><span>Satoshi startet das Netzwerk. Im allerersten Block ist eine Schlagzeile der Londoner <em>Times</em> verewigt.</span></span></li>
+      <li class="btc"><span class="yr">12.01.2009</span><span class="ev"><b>Die erste Transaktion</b><span>Satoshi sendet Hal Finney 10 Bitcoin (Block 170). Finney hatte zwei Tage zuvor getwittert: «Running bitcoin».</span></span></li>
+      <li class="btc"><span class="yr">22.05.2010</span><span class="ev"><b>Pizza für 10’000 Bitcoin</b><span>Laszlo Hanyecz bezahlt 10’000 BTC für zwei Pizzen – der erste bekannte Kauf eines realen Guts mit Bitcoin. Damals rund 41 Dollar wert.</span></span></li>
+      <li class="btc"><span class="yr">2010/11</span><span class="ev"><b>Satoshi verschwindet</b><span>Im Dezember 2010 der letzte Forumsbeitrag, im April 2011 die letzten E-Mails. Seither: Schweigen.</span></span></li>
+    </ol>
+
+    <h2>Was alle Vorgänger scheitern liess</h2>
+    <p>DigiCash, e-gold und ihre Nachfolger hatten alle dasselbe Problem: einen <strong>zentralen Punkt</strong>. Eine Firma, die pleitegehen kann. Einen Server, den man abschalten kann. Einen Gründer, den man verhaften kann. Satoshi kannte diese Geschichte genau. Er verwies auf Tauschbörsen wie Napster, die mit ihrem zentralen Server leicht zu schliessen waren, während reine Peer-to-Peer-Netze wie Gnutella oder Tor sich hielten.</p>
+    <p>Die geniale Leistung von Bitcoin war nicht eine einzelne Erfindung. Fast alle Bausteine existierten schon: Public-Key-Kryptografie, digitale Signaturen, Hash-Ketten für Zeitstempel (Haber und Stornetta, 1991), Proof of Work (Back), die Idee eines gemeinsamen Hauptbuchs (Dai, Szabo) und Peer-to-Peer-Netzwerke. Satoshi fügte sie so zusammen, dass ein Problem gelöst wurde, das als unlösbar galt: <strong>Wie einigt sich ein offenes Netzwerk von Fremden auf ein einziges Hauptbuch, ohne dass jemand die Kontrolle hat?</strong></p>
+
+    <aside class="note story">
+      <span class="note-label">Die Botschaft im Genesis-Block</span>
+      <p>In den allerersten Block der Bitcoin-Blockchain schrieb Satoshi diesen Text:</p>
+      <p style="font-family:var(--mono);font-size:16px;color:var(--btc)">The Times 03/Jan/2009 Chancellor on brink of second bailout for banks</p>
+      <p>Es ist die Schlagzeile der Titelseite der <em>Times</em> vom selben Tag: Der britische Schatzkanzler steht kurz vor einer zweiten Rettung der Banken. Die Zeile beweist einerseits, dass der Block nicht vor diesem Datum erstellt wurde – ein Zeitstempel. Andererseits ist sie ein Kommentar: Bitcoin entstand mitten in der Finanzkrise, als Staaten mit neu geschaffenem Geld Banken retteten, deren Risiken die Allgemeinheit tragen musste.</p>
+    </aside>
+
+    <h2>Ein Geschenk ohne Absender</h2>
+    <p>Wer Satoshi Nakamoto war, ist bis heute unbekannt. Ein Mensch oder eine Gruppe? Die Spekulationen füllen Bücher. Schätzungen zufolge hat Satoshi in der Anfangszeit rund eine Million Bitcoin geschürft und nie bewegt.</p>
+    <p>Viele Bitcoiner sehen in Satoshis Verschwinden eines der wichtigsten Geschenke an das Projekt. Bitcoin hat keinen Gründer, den man verhaften, bestechen oder erpressen könnte, keinen CEO, der die Regeln ändern könnte, und keine Firma, die man verklagen kann. Es ist das, was e-gold und DigiCash nie waren: <strong>kopflos</strong>.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Bitcoin ist keine Erfindung aus dem Nichts, sondern die geniale Kombination von Bausteinen, an denen Kryptografen zwei Jahrzehnte gearbeitet hatten. Der entscheidende Schritt: ein Geld ohne Zentrale.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Satoshi Nakamoto: <em>Bitcoin: A Peer-to-Peer Electronic Cash System</em>, 2008 – <a href="https://bitcoin.org/bitcoin.pdf" rel="noopener">bitcoin.org/bitcoin.pdf</a>.</li>
+        <li>Eric Hughes: <em>A Cypherpunk’s Manifesto</em>, 1993.</li>
+        <li>Adam Back: <em>Hashcash – A Denial of Service Counter-Measure</em>, 2002 (Idee 1997).</li>
+        <li>Wei Dai: <em>b-money</em>, 1998; Nick Szabo: <em>Bit Gold</em>, 2005; Hal Finney: <em>RPOW</em>, 2004.</li>
+        <li>Stuart Haber, W. Scott Stornetta: <em>How to Time-Stamp a Digital Document</em>, Journal of Cryptology, 1991.</li>
+        <li>Nathaniel Popper: <em>Digital Gold</em>, 2015.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="generaele" data-num="13" data-part="III" data-title="Double Spending und die byzantinischen Generäle" data-desc="Zwei Probleme, die im Grunde dasselbe sind">
+  <header class="ch-head">
+    <div class="ch-num">13</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Double Spending und die byzantinischen Generäle</h1>
+    <p class="ch-lede">Zwei Probleme, die digitales Geld jahrzehntelang unmöglich machten – und warum sie im Grunde dasselbe Problem sind.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Das Problem mit Kopien</h2>
+    <p>Alles Digitale lässt sich kopieren. Das ist die grosse Stärke des Internets: Ein Foto, ein Lied oder ein Buch kann man millionenfach teilen, ohne dass das Original weniger wird. Für Geld ist genau das eine Katastrophe. Wenn eine digitale Münze einfach eine Datei ist, kann Alice sie an Bob schicken – und eine Kopie davon an Carol. Dieses Problem heisst <strong>Double Spending</strong>, zu Deutsch Doppelausgabe.</p>
+
+    <figure class="scene" data-scene="doublespend">
+      <figcaption>Drei Akte: das Kopierproblem, die Lösung mit einer Bank, und das eigentliche Problem eines Netzwerks ohne Zentrale.</figcaption>
+    </figure>
+
+    <p>Die klassische Lösung ist eine <strong>vertrauenswürdige dritte Partei</strong>: eine Bank, PayPal, Visa. Sie führt ein zentrales Hauptbuch, prüft jede Zahlung und lehnt den zweiten Versuch ab. Das funktioniert hervorragend – aber es bringt alle Probleme zurück, die wir in Teil II gesehen haben. Die dritte Partei kann Konten sperren, Zahlungen zensieren, Gebühren diktieren, pleitegehen, gehackt oder von einer Regierung unter Druck gesetzt werden. Satoshi beschrieb das Ziel deshalb im ersten Abschnitt des Whitepapers als ein elektronisches Zahlungssystem «based on cryptographic proof instead of trust» – auf kryptografischem Beweis statt auf Vertrauen.</p>
+    <p>Die naheliegende Alternative: Jeder führt eine Kopie des Hauptbuchs, wie auf Yap. Doch im Internet gibt es kein Dorf, in dem sich alle kennen und alles gleichzeitig erfahren. Nachrichten brauchen unterschiedlich lange und kommen in unterschiedlicher Reihenfolge an. Wenn Alice zwei widersprüchliche Zahlungen gleichzeitig an verschiedene Ecken des Netzwerks schickt, sieht die eine Hälfte der Teilnehmer die Zahlung an Bob zuerst, die andere die an Carol. Wer hat recht?</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Das Double-Spend-Problem ist ein Problem der Reihenfolge. Alle müssen sich auf eine einzige, gemeinsame Geschichte der Transaktionen einigen – ohne dass jemand bestimmt, welche das ist.</p>
+    </aside>
+
+    <h2>Die byzantinischen Generäle</h2>
+    <p>Informatiker kennen dieses Problem seit 1982 unter einem farbigen Namen. Leslie Lamport, Robert Shostak und Marshall Pease beschrieben es als Gleichnis: Mehrere Divisionen der byzantinischen Armee belagern eine feindliche Stadt. Jede wird von einem General kommandiert. Die Generäle können sich nur durch Boten verständigen. Greifen alle gemeinsam an, gewinnen sie. Greifen nur einige an, werden sie aufgerieben. Das Problem: Einige der Generäle könnten Verräter sein, die absichtlich widersprüchliche Botschaften schicken.</p>
+
+    <figure class="scene" data-scene="generals">
+      <figcaption>Das Problem der byzantinischen Generäle – und warum es im offenen Internet noch schwieriger wird.</figcaption>
+    </figure>
+
+    <p>Lamport und seine Kollegen bewiesen, dass sich die loyalen Generäle einigen können, solange mehr als zwei Drittel von ihnen ehrlich sind – vorausgesetzt, man weiss, <em>wer</em> überhaupt General ist. Darauf bauen viele klassische Systeme auf, etwa in Flugzeugsteuerungen oder Datenbanken. Sie funktionieren mit einer festen, bekannten Liste von Teilnehmern.</p>
+
+    <h2>Der Sybil-Angriff</h2>
+    <p>Ein offenes Geldsystem für die ganze Welt kann aber keine solche Liste haben. Wer würde sie führen? Und wenn jeder mitmachen darf, kann ein Angreifer einfach tausend Teilnehmer erfinden. In der Informatik heisst das <strong>Sybil-Angriff</strong>, benannt nach einem Buch über eine Frau mit vielen Persönlichkeiten. Im Internet sind Identitäten gratis – eine Abstimmung nach Köpfen ist so wertlos wie Geld aus Kieselsteinen.</p>
+    <p>Fällt dir die Parallele auf? Es ist dasselbe Problem wie in Kapitel 2. <strong>Was nichts kostet, kann man beliebig vermehren – Kiesel genauso wie Stimmen.</strong></p>
+
+    <h2>Satoshis Idee: Abstimmen mit Energie</h2>
+    <p>Satoshis Lösung ist so einfach wie radikal: Eine Stimme muss etwas kosten, das man nicht fälschen kann – reale Rechenarbeit und damit Energie. Im Whitepaper heisst es: «one-CPU-one-vote», eine CPU, eine Stimme. Wer tausend falsche Identitäten erzeugt, hat dadurch keinen einzigen zusätzlichen Prozessor. Die Mehrheitsentscheidung wird durch die Kette mit der meisten investierten Rechenarbeit repräsentiert.</p>
+    <p>Im November 2008 erklärte Satoshi seine Lösung auf der Mailingliste selbst mit dem Bild der Generäle: Jeder General beginnt, an einem schwierigen Rechenrätsel zu arbeiten. Wer zuerst eine Lösung findet, schickt sie allen anderen. Die arbeiten dann an der nächsten Lösung, die auf der ersten aufbaut. Nach einer Weile hat sich eine Kette von Lösungen gebildet, die nur die Mehrheit der Rechenleistung erzeugt haben kann. Jeder General sieht an der Länge der Kette, worauf sich die Mehrheit geeinigt hat – und alle greifen gemeinsam an.</p>
+    <p>Wie diese Rechenrätsel funktionieren, schauen wir uns in den nächsten zwei Kapiteln an. Zuerst brauchen wir ein Werkzeug: die Hashfunktion.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Bitcoin löst das Problem der byzantinischen Generäle in einem offenen Netzwerk, indem jede «Stimme» echte Energie kostet. Kieselsteine kann jeder sammeln, Rechenarbeit nicht.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Leslie Lamport, Robert Shostak, Marshall Pease: <em>The Byzantine Generals Problem</em>, ACM Transactions on Programming Languages and Systems, 1982.</li>
+        <li>John R. Douceur: <em>The Sybil Attack</em>, IPTPS 2002.</li>
+        <li>Satoshi Nakamoto: Whitepaper, Abschnitte 1 und 4; E-Mail an die Cryptography-Mailingliste vom 13. November 2008.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="hash" data-num="14" data-part="III" data-title="Hashfunktionen: digitale Fingerabdrücke" data-desc="SHA-256, Lawineneffekt und die Grösse von 2²⁵⁶">
+  <header class="ch-head">
+    <div class="ch-num">14</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Hashfunktionen: digitale Fingerabdrücke</h1>
+    <p class="ch-lede">Eine Maschine, die aus jedem beliebigen Text eine scheinbar zufällige Zahl macht – immer dieselbe, aber nie umkehrbar. Das Fundament von Bitcoin.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Ein Fleischwolf für Daten</h2>
+    <p>Eine <strong>Hashfunktion</strong> nimmt beliebige Daten – ein Wort, ein Buch, einen ganzen Film – und macht daraus eine Zahl fester Länge. Bitcoin verwendet die Funktion <strong>SHA-256</strong> (Secure Hash Algorithm, 256 Bit), entwickelt von der amerikanischen NSA und 2001 von der Normungsbehörde NIST veröffentlicht. Ihr Ergebnis ist immer genau 256 Nullen und Einsen lang, meist geschrieben als 64 Zeichen im Hexadezimalsystem (0–9 und a–f).</p>
+    <p>Eine gute Hashfunktion hat fünf Eigenschaften:</p>
+    <ol>
+      <li><strong>Deterministisch:</strong> Gleiche Eingabe, immer gleiches Ergebnis.</li>
+      <li><strong>Schnell:</strong> Ein Computer berechnet sie in Sekundenbruchteilen.</li>
+      <li><strong>Nicht umkehrbar:</strong> Aus dem Ergebnis lässt sich die Eingabe nicht zurückrechnen. Wie bei einem Fleischwolf: Aus einem Steak wird Hackfleisch, aber aus Hackfleisch nie wieder ein Steak.</li>
+      <li><strong>Lawineneffekt:</strong> Ändert man die Eingabe minimal, sieht das Ergebnis völlig anders aus.</li>
+      <li><strong>Kollisionsresistent:</strong> Es ist praktisch unmöglich, zwei verschiedene Eingaben mit gleichem Ergebnis zu finden.</li>
+    </ol>
+    <p>Probiere es selbst aus. Die Berechnung läuft direkt in deinem Browser:</p>
+
+    <figure class="scene" data-scene="avalanche">
+      <figcaption>Ändere einen einzigen Buchstaben. Etwa die Hälfte aller 256 Bits kippt – und zwar unvorhersehbar welche.</figcaption>
+    </figure>
+
+    <p>Der Lawineneffekt ist der Grund, warum man Hashes nicht «steuern» kann. Es gibt keinen Weg, die Eingabe ein bisschen in die richtige Richtung zu verändern, um einen gewünschten Hash zu bekommen. Jede Änderung ist wie ein neuer Wurf mit einem riesigen Würfel.</p>
+
+    <h2>Wie gross ist 2<sup>256</sup>?</h2>
+    <p>Ein SHA-256-Hash ist eine Zahl zwischen 0 und 2<sup>256</sup> − 1. Wie gross ist das?</p>
+    $$2^{256} \approx 1.16 \cdot 10^{77}$$
+    <p>Das ist ungefähr die Grössenordnung der Anzahl Atome im beobachtbaren Universum (man schätzt etwa 10<sup>80</sup>). Grant Sanderson hat dieser Zahl ein ganzes 3Blue1Brown-Video gewidmet. Machen wir unser eigenes Gedankenexperiment:</p>
+
+    <aside class="note think">
+      <span class="note-label">Gedankenexperiment</span>
+      <p>Jeder der 8 Milliarden Menschen auf der Erde besitzt eine Milliarde Computer. Jeder dieser Computer berechnet eine Billion Hashes pro Sekunde. Zusammen sind das</p>
+      $$8 \cdot 10^{9} \;\cdot\; 10^{9} \;\cdot\; 10^{12} = 8 \cdot 10^{30} \text{ Hashes pro Sekunde.}$$
+      <p>Um alle 2<sup>256</sup> Möglichkeiten durchzuprobieren, bräuchte diese absurde Maschine</p>
+      $$\frac{1.16 \cdot 10^{77}}{8 \cdot 10^{30}} \approx 1.4 \cdot 10^{46} \text{ Sekunden} \approx 4.6 \cdot 10^{38} \text{ Jahre.}$$
+      <p>Das Universum ist etwa 1.4 · 10<sup>10</sup> Jahre alt. Wir müssten also rund 30’000’000’000’000’000’000’000’000’000 Mal so lange warten, wie das Universum bisher existiert.</p>
+    </aside>
+
+    <p>Wenn also jemand den Hash einer Nachricht kennt, kann er die Nachricht nicht erraten. Und wenn jemand einen Hash mit ganz bestimmten Eigenschaften braucht, hat er nur eine Möglichkeit: <strong>ausprobieren, ausprobieren, ausprobieren.</strong> Genau darauf baut Proof of Work auf.</p>
+
+    <h2>Wofür Bitcoin Hashes braucht</h2>
+    <ul>
+      <li><strong>Fingerabdrücke:</strong> Jeder Block und jede Transaktion wird durch ihren Hash eindeutig identifiziert. Ändert sich ein einziges Bit, ändert sich der Fingerabdruck.</li>
+      <li><strong>Verkettung:</strong> Jeder Block enthält den Hash seines Vorgängers. So entsteht die Blockchain (Kapitel 16).</li>
+      <li><strong>Mining:</strong> Miner suchen einen Block, dessen Hash kleiner als ein Zielwert ist (Kapitel 15).</li>
+      <li><strong>Adressen:</strong> Bitcoin-Adressen werden aus öffentlichen Schlüsseln gehasht (Kapitel 17).</li>
+    </ul>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Ein Hash ist ein digitaler Fingerabdruck. Jeder kann ihn in Sekundenbruchteilen berechnen und prüfen, aber niemand kann aus ihm die Daten zurückrechnen oder gezielt einen bestimmten Hash erzeugen – ausser durch blindes Ausprobieren.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>NIST: <em>FIPS 180-4, Secure Hash Standard</em>, 2015.</li>
+        <li>3Blue1Brown (Grant Sanderson): <em>How secure is 256 bit security?</em>, 2017 – <a href="https://www.youtube.com/watch?v=S9JGmA5_unY" rel="noopener">YouTube</a>.</li>
+        <li>3Blue1Brown: <em>But how does bitcoin actually work?</em>, 2017 – <a href="https://www.youtube.com/watch?v=bBC-nXj3Ng4" rel="noopener">YouTube</a>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="proof-of-work" data-num="15" data-part="III" data-title="Proof of Work: Rechenarbeit als Beweis" data-desc="Die Lotterie der Miner – selbst ausprobieren">
+  <header class="ch-head">
+    <div class="ch-num">15</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Proof of Work: Rechenarbeit als Beweis</h1>
+    <p class="ch-lede">Wie man im Digitalen etwas erschafft, das teuer herzustellen, aber billig zu prüfen ist – die digitale Version des Rai-Steins.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Die Lotterie</h2>
+    <p>Erinnern wir uns: Bitcoin braucht eine Art Abstimmung, bei der jede Stimme etwas Reales kostet. Die Hashfunktion liefert dafür das perfekte Werkzeug. Die Aufgabe für die <strong>Miner</strong> lautet:</p>
+    <p style="text-align:center;font-size:21px"><em>Finde einen Block, dessen Hash kleiner ist als ein bestimmter Zielwert.</em></p>
+    <p>Weil Hashes nicht vorhersagbar sind, gibt es nur einen Weg: Man ändert eine Zahl im Block – die sogenannte <strong>Nonce</strong> («number used once») –, berechnet den Hash, prüft, ob er klein genug ist, und wenn nicht, versucht man die nächste Nonce. Jeder Versuch ist wie ein Los in einer Lotterie.</p>
+    <p>Stell dir alle möglichen Hash-Werte als Zahlenstrahl von 0 bis 2<sup>256</sup> vor. Jeder Versuch landet an einer zufälligen Stelle. Nur Versuche im kleinen Zielbereich ganz links gewinnen:</p>
+
+    <figure class="scene" data-scene="hashspace">
+      <figcaption>Jeder Punkt ist ein Hash-Versuch. Verkleinere den Zielbereich mit dem Regler und beobachte, wie selten die Treffer werden.</figcaption>
+    </figure>
+
+    <p>Ein kleiner Zielwert bedeutet: Der Hash muss mit vielen Nullen beginnen. In hexadezimaler Schreibweise halbiert jedes zusätzliche Bit den Zielbereich, und jede zusätzliche Null am Anfang teilt ihn durch 16. Die erwartete Anzahl Versuche bei \(k\) führenden Nullen ist</p>
+    $$\mathbb{E}[\text{Versuche}] = 16^{k}.$$
+
+    <h2>Selbst ausprobieren</h2>
+    <p>Hier ist ein echter Miner. Dein Browser berechnet SHA-256 und probiert eine Nonce nach der anderen, bis der Hash mit der gewünschten Anzahl Nullen beginnt. Ändere die Daten, und alles beginnt von vorn.</p>
+
+    <figure class="scene" data-scene="miner">
+      <figcaption>Mit vier Nullen dauert es meist unter einer Sekunde, mit sechs Nullen eine ganze Weile. Bitcoin verlangt heute rund 19 hexadezimale Nullen.</figcaption>
+    </figure>
+
+    <h2>Schwer zu finden, leicht zu prüfen</h2>
+    <p>Hier liegt der Zauber: Um die richtige Nonce zu <em>finden</em>, braucht es Millionen, Milliarden oder – bei Bitcoin – Trilliarden Versuche. Um zu <em>prüfen</em>, ob eine Nonce stimmt, braucht es genau einen einzigen Hash. Jeder, auch mit einem alten Laptop oder einem Raspberry Pi, kann in Sekundenbruchteilen kontrollieren, dass die Miner die Arbeit wirklich geleistet haben.</p>
+    <p>Das ist exakt die Eigenschaft, die gutes Geld schon immer hatte. Ein Goldbarren war teuer zu fördern, aber relativ leicht zu wiegen und zu prüfen. Ein Rai-Stein kostete Monate gefährlicher Arbeit, aber jeder auf Yap konnte ihn sehen. Nick Szabo nannte das <em>unforgeable costliness</em>. Proof of Work bringt diese unfälschbare Kostspieligkeit zum ersten Mal in die digitale Welt.</p>
+
+    <aside class="note story">
+      <span class="note-label">Die Dimensionen heute</span>
+      <p>Das Bitcoin-Netzwerk berechnet inzwischen rund 10<sup>21</sup> Hashes pro Sekunde – eine Trilliarde (Stand 2025). Dafür laufen weltweit Millionen spezialisierter Chips, sogenannte ASICs, in Hallen von Texas bis Paraguay und von Äthiopien bis Kasachstan. Wer die Geschichte von Bitcoin umschreiben wollte, müsste diese Arbeit wiederholen und überbieten.</p>
+    </aside>
+
+    <h2>Energie als Anker in der physischen Welt</h2>
+    <p>Gigi beschreibt Proof of Work als die Brücke zwischen der digitalen und der physischen Welt. Im Digitalen ist alles kopierbar und kostenlos – ausser Energie. Indem Bitcoin jeden neuen Block an verbrauchte Energie bindet, wird die Vergangenheit physisch abgesichert: Um sie zu ändern, müsste man real mehr Energie aufwenden, als das ganze ehrliche Netzwerk aufgewendet hat.</p>
+    <p>Diese Energie ist zugleich der grösste Kritikpunkt an Bitcoin. Die Universität Cambridge schätzt den Stromverbrauch des Netzwerks in der Grössenordnung eines mittelgrossen Industrielandes. Kritiker sehen darin Verschwendung. Befürworter halten dagegen, dass der Verbrauch die Sicherheit eines weltweiten, neutralen Geldsystems bezahlt, dass Miner zunehmend überschüssige oder sonst ungenutzte Energie verwenden – etwa abgefackeltes Gas oder Wasserkraft in abgelegenen Regionen – und dass sie als flexible Last Stromnetze stabilisieren können. Diese Debatte ist offen, und beide Seiten haben ernsthafte Argumente.</p>
+
+    <h2>Die Belohnung</h2>
+    <p>Warum sollte jemand all diese Energie aufwenden? Wer einen gültigen Block findet, darf sich selbst eine <strong>Belohnung</strong> auszahlen: neu geschaffene Bitcoin (seit 2024 sind es 3.125 BTC pro Block) plus die Gebühren aller Transaktionen im Block. So kommen neue Bitcoin in Umlauf – nicht durch eine Zentralbank, sondern als Lohn für die Absicherung des Hauptbuchs. Mitmachen darf jeder, ohne Erlaubnis.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Proof of Work macht Bitcoin teuer herzustellen und billig zu prüfen – genau wie gutes Geld es immer war. Nur lassen sich die Kosten diesmal nicht vortäuschen, und die Prüfung kann jeder selbst übernehmen.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Satoshi Nakamoto: Whitepaper, Abschnitt 4 «Proof-of-Work» und Abschnitt 6 «Incentive».</li>
+        <li>Adam Back: <em>Hashcash</em>, 1997/2002.</li>
+        <li>Nick Szabo: <em>Bit Gold</em>, 2005; <em>Shelling Out</em>, 2002.</li>
+        <li>Gigi: <em>21 Lessons</em>, 2019, sowie <em>Bitcoin Is Time</em>, 2021 – <a href="https://dergigi.com" rel="noopener">dergigi.com</a>.</li>
+        <li>Cambridge Centre for Alternative Finance: <em>Cambridge Bitcoin Electricity Consumption Index</em>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="blockchain" data-num="16" data-part="III" data-title="Die Blockchain und die längste Kette" data-desc="Warum sich die Vergangenheit nicht umschreiben lässt">
+  <header class="ch-head">
+    <div class="ch-num">16</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Die Blockchain und die längste Kette</h1>
+    <p class="ch-lede">Blöcke, die über Hashes aneinandergekettet sind, machen die Vergangenheit unveränderlich – solange die ehrlichen Miner die Mehrheit der Rechenleistung haben.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Eine Kette aus Fingerabdrücken</h2>
+    <p>Ein Bitcoin-Block enthält eine Liste von Transaktionen, eine Nonce – und den <strong>Hash des vorherigen Blocks</strong>. Dieser letzte Punkt ist entscheidend. Jeder Block trägt den Fingerabdruck seines Vorgängers in sich, und weil der Hash des Vorgängers wiederum vom Vor-Vorgänger abhängt, ist jeder Block mit der gesamten Geschichte bis zum Genesis-Block verbunden. Die Idee, Dokumente so zu verketten, um ihre Reihenfolge fälschungssicher zu machen, stammt von Stuart Haber und Scott Stornetta aus dem Jahr 1991 – Satoshi zitierte sie im Whitepaper.</p>
+    <p>Was passiert, wenn jemand eine alte Transaktion ändern will? Probiere es aus:</p>
+
+    <figure class="scene" data-scene="chain">
+      <figcaption>Ändere die Daten in Block 2 – zum Beispiel die Anzahl Bitcoin für die Pizza. Sein Hash ändert sich, und alle Blöcke danach werden ungültig. Mit «Minen» kannst du sie reparieren, einen nach dem anderen. (Nach der Blockchain-Demo von Anders Brownworth.)</figcaption>
+    </figure>
+
+    <p>Hast du bemerkt, wie viel Arbeit es kostet, die Geschichte umzuschreiben? Wer einen alten Block ändert, muss nicht nur diesen einen neu minen, sondern <strong>jeden einzelnen Block danach</strong>. Und während er das tut, hängt das ehrliche Netzwerk alle zehn Minuten einen neuen Block an. Er muss also nicht nur aufholen, sondern überholen.</p>
+
+    <h2>Die Regel der längsten Kette</h2>
+    <p>Bitcoin hat eine einfache Regel: <strong>Jeder Knoten folgt der gültigen Kette mit der meisten akkumulierten Rechenarbeit</strong>, vereinfacht gesagt der «längsten Kette». Manchmal finden zwei Miner fast gleichzeitig einen Block. Dann gibt es kurz zwei konkurrierende Versionen, und das Netzwerk ist für einen Moment geteilt. Sobald der nächste Block gefunden wird, ist eine der beiden Ketten länger, und alle wechseln zu ihr. Die Transaktionen aus dem verwaisten Block wandern zurück in den Wartebereich und kommen in einen späteren Block.</p>
+    <p>Deshalb spricht man von <strong>Bestätigungen</strong>. Eine Transaktion im neusten Block hat eine Bestätigung, mit jedem weiteren Block kommt eine dazu. Für kleine Beträge reicht oft eine Bestätigung, für grosse Beträge wartet man üblicherweise sechs Blöcke, also rund eine Stunde.</p>
+
+    <h2>Das Wettrennen des Angreifers</h2>
+    <p>Wie sicher ist das? Satoshi hat es im elften Abschnitt des Whitepapers ausgerechnet. Angenommen, ein Angreifer kontrolliert den Anteil \(q\) der gesamten Rechenleistung, die ehrlichen Miner den Rest \(p = 1-q\). Der Angreifer bezahlt einen Händler, wartet, bis dieser nach \(z\) Bestätigungen die Ware liefert, und versucht dann, heimlich eine längere Kette ohne die Zahlung zu bauen. Die Wahrscheinlichkeit, dass ihm das gelingt, ist</p>
+    $$P = 1 - \sum_{k=0}^{z} \frac{\lambda^k e^{-\lambda}}{k!}\left(1 - \left(\frac{q}{p}\right)^{z-k}\right), \qquad \lambda = z\,\frac{q}{p}.$$
+    <p>Hinter der Formel steckt ein Zufallslauf, wie ihn schon Glücksspieler kennen («Gambler’s Ruin»): Der Angreifer ist im Rückstand und muss in einem Rennen aufholen, in dem er jede Runde mit Wahrscheinlichkeit \(q\) gewinnt. Solange \(q &lt; p\) ist, sinkt seine Chance mit jeder Bestätigung <strong>exponentiell</strong>.</p>
+
+    <figure class="scene" data-scene="race">
+      <figcaption>Stelle die Rechenleistung des Angreifers und die Anzahl Bestätigungen ein. Unten läuft eine Simulation des Rennens – sie bestätigt Satoshis Formel.</figcaption>
+    </figure>
+
+    <p>Mit 10 Prozent der Rechenleistung und sechs Bestätigungen liegt die Erfolgschance bei etwa 0.02 Prozent. Selbst mit 30 Prozent der Rechenleistung braucht ein Händler nur gut zwanzig Bestätigungen, um auf ein Risiko von 0.1 Prozent zu kommen.</p>
+
+    <aside class="note think">
+      <span class="note-label">Und der 51-%-Angriff?</span>
+      <p>Hätte ein Angreifer mehr als die Hälfte der Rechenleistung, würde er das Rennen auf Dauer gewinnen. Er könnte dann eigene Zahlungen rückgängig machen und Transaktionen anderer blockieren. Was er aber nicht kann: fremde Bitcoin stehlen (dafür bräuchte er die privaten Schlüssel, siehe nächstes Kapitel), Bitcoin aus dem Nichts erzeugen oder die Regeln ändern – jeder Knoten würde ungültige Blöcke ablehnen. Zudem müsste er Hardware und Energie im Wert von vielen Milliarden einsetzen, um ein System anzugreifen, dessen Wert er damit zerstört.</p>
+    </aside>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Die Vergangenheit von Bitcoin ist nicht durch Vertrauen geschützt, sondern durch Physik: Wer sie ändern will, muss mehr Energie aufwenden als alle ehrlichen Miner zusammen – und zwar ab dem Block, den er ändern will, bis heute.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Satoshi Nakamoto: Whitepaper, Abschnitte 3–5 und 11 «Calculations».</li>
+        <li>Stuart Haber, W. Scott Stornetta: <em>How to Time-Stamp a Digital Document</em>, 1991.</li>
+        <li>Anders Brownworth: <em>Blockchain Demo</em>, 2016 – <a href="https://andersbrownworth.com/blockchain/" rel="noopener">andersbrownworth.com</a>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="schluessel" data-num="17" data-part="III" data-title="Schlüssel, Signaturen und Eigentum" data-desc="Elliptische Kurven, digitale Signaturen und 24 Wörter">
+  <header class="ch-head">
+    <div class="ch-num">17</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Schlüssel, Signaturen und Eigentum</h1>
+    <p class="ch-lede">Wem gehört ein Bitcoin? Demjenigen, der eine bestimmte Zahl kennt. Über elliptische Kurven und Eigentum ohne Grundbuchamt.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Eigentum ist Wissen</h2>
+    <p>Auf Yap gehörte ein Stein dem, von dem das Dorf wusste, dass er ihm gehört. Bei Bitcoin gehört eine Münze dem, der eine ganz bestimmte geheime Zahl kennt: den <strong>privaten Schlüssel</strong>. Das ist einfach eine riesige Zufallszahl zwischen 1 und etwa 2<sup>256</sup> – so, als würdest du 256 Mal eine Münze werfen und Kopf und Zahl als Einsen und Nullen aufschreiben. Wie wir im Kapitel über Hashfunktionen gesehen haben, ist dieser Zahlenraum so gross, dass niemand jemals zufällig deine Zahl erraten wird.</p>
+    <p>Aus dem privaten Schlüssel wird ein <strong>öffentlicher Schlüssel</strong> berechnet, und daraus wiederum eine <strong>Adresse</strong>, an die dir andere Bitcoin senden können. Der Trick: Diese Berechnungen laufen nur in eine Richtung. Vom privaten zum öffentlichen Schlüssel geht es in Millisekunden. Zurück geht es nicht.</p>
+
+    <h2>Addition auf einer Kurve</h2>
+    <p>Wie baut man eine solche Einbahnstrasse? Bitcoin verwendet eine <strong>elliptische Kurve</strong> namens <em>secp256k1</em>, beschrieben durch die erstaunlich einfache Gleichung</p>
+    $$y^2 = x^3 + 7.$$
+    <p>Auf dieser Kurve kann man Punkte auf eine besondere Art «addieren». Das klingt abstrakt, ist aber eine schöne geometrische Konstruktion:</p>
+
+    <figure class="scene" data-scene="ecc">
+      <figcaption>Punktaddition auf der Kurve y² = x³ + 7 – zuerst über den reellen Zahlen, dann so, wie Bitcoin wirklich rechnet: über einem endlichen Feld.</figcaption>
+    </figure>
+
+    <p>Addiert man einen festen Startpunkt \(G\) immer wieder zu sich selbst, erhält man \(2G, 3G, 4G, \ldots\). Mit einem cleveren Verfahren (wiederholtes Verdoppeln) kann man \(k \cdot G\) auch für eine 77-stellige Zahl \(k\) blitzschnell berechnen. Dein privater Schlüssel ist \(k\), dein öffentlicher Schlüssel ist der Punkt \(K = k \cdot G\).</p>
+    <p>Bei Bitcoin wird nicht mit gewöhnlichen Zahlen gerechnet, sondern mit Resten bei der Division durch eine riesige Primzahl. Dadurch springen die Punkte \(G, 2G, 3G, \ldots\) scheinbar zufällig durch den Raum. Wer nur \(K\) kennt, hat keinen Anhaltspunkt, wie oft man \(G\) addieren musste, um dort anzukommen. Dieses <strong>Problem des diskreten Logarithmus</strong> gilt mit heutiger Technik als praktisch unlösbar.</p>
+
+    <h2>Digitale Signaturen</h2>
+    <p>Mit dem privaten Schlüssel kann man eine Nachricht <strong>signieren</strong>, etwa: «Ich sende 0.1 BTC an Adresse X.» Jeder kann mit dem öffentlichen Schlüssel prüfen, dass die Signatur echt ist – ohne den privaten Schlüssel je zu sehen. Und die Signatur passt nur zu genau dieser Nachricht. Ändert jemand auch nur ein Bit, etwa den Betrag oder den Empfänger, ist sie ungültig.</p>
+    <p>Man kann sich das vorstellen wie ein Siegel, das nur du herstellen kannst, das jeder auf Echtheit prüfen kann und das nur auf ein einziges Dokument passt. Deshalb kann niemand – auch kein Miner und kein 51-Prozent-Angreifer – deine Bitcoin ausgeben, solange er deinen privaten Schlüssel nicht kennt.</p>
+
+    <h2>Münzen, die sich nie bewegen</h2>
+    <p>Bitcoin kennt keine Konten mit Kontoständen. Das Hauptbuch besteht aus <strong>unverbrauchten Transaktionsausgängen</strong> (englisch <em>unspent transaction outputs</em>, kurz UTXO) – man kann sie sich vorstellen wie Banknoten mit beliebigem Nennwert, auf denen steht, welcher Schlüssel sie ausgeben darf. Eine Transaktion verbraucht einige dieser «Noten» und erzeugt neue: eine für den Empfänger, eine als Wechselgeld zurück an dich. Wie auf Yap bewegt sich dabei nichts. Es ändert sich nur, wer worüber verfügen darf.</p>
+
+    <h2>Ein Vermögen in 24 Wörtern</h2>
+    <p>Private Schlüssel sind unhandlich. Deshalb hat sich ein Standard (BIP-39) durchgesetzt, der sie in eine Folge von 12 oder 24 gewöhnlichen Wörtern aus einer Liste von 2’048 Wörtern übersetzt, die sogenannte <strong>Seed-Phrase</strong>. Wer diese Wörter kennt, besitzt die Bitcoin – unabhängig von Gerät, Bank oder Land.</p>
+
+    <aside class="note story">
+      <span class="note-label">Eigentum, das man im Kopf tragen kann</span>
+      <p>Denk an die Amerikaner von 1933, die ihr Gold abliefern mussten, oder an Flüchtlinge, die über Jahrhunderte Schmuck in ihre Kleider einnähten, in der Hoffnung, ihn über eine Grenze zu retten. Eine Seed-Phrase kann man auf ein Stück Metall stanzen, an mehreren Orten verstecken oder sich merken. Menschen, die aus Krisenländern fliehen mussten, haben berichtet, wie sie so ihre Ersparnisse mitnehmen konnten, ohne dass sie an einer Grenze beschlagnahmt wurden.</p>
+    </aside>
+
+    <aside class="note warn">
+      <span class="note-label">Die Kehrseite</span>
+      <p>Diese Freiheit bedeutet volle Verantwortung. Wer seine Seed-Phrase verliert, verliert seine Bitcoin für immer – es gibt keinen Kundendienst, kein «Passwort vergessen». Wer sie jemand anderem zeigt, kann bestohlen werden. Und wer seine Bitcoin bei einer Börse liegen lässt, besitzt in Wahrheit nur ein Versprechen der Börse. Daher der Leitsatz: <strong>«Not your keys, not your coins.»</strong></p>
+    </aside>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Bitcoin trennt Eigentum von physischem Besitz und von Institutionen. Wer die Schlüssel hat, hat das Geld – kein Tresor, keine Bank, kein Grundbuchamt.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Satoshi Nakamoto: Whitepaper, Abschnitt 2 «Transactions».</li>
+        <li>Certicom Research: <em>SEC 2: Recommended Elliptic Curve Domain Parameters</em> (secp256k1), 2000/2010.</li>
+        <li>BIP-39: <em>Mnemonic code for generating deterministic keys</em>, 2013.</li>
+        <li>Andreas M. Antonopoulos, David A. Harding: <em>Mastering Bitcoin</em>, 3. Auflage, O’Reilly 2023.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="geldpolitik" data-num="18" data-part="III" data-title="21 Millionen: Die Geldpolitik von Bitcoin" data-desc="Halbierungen, Schwierigkeitsanpassung und die Lösung der Kieselstein-Falle">
+  <header class="ch-head">
+    <div class="ch-num">18</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>21 Millionen: Die Geldpolitik von Bitcoin</h1>
+    <p class="ch-lede">Eine Geldpolitik, die 2009 festgelegt wurde und die niemand ändern kann – nicht einmal dann, wenn die ganze Welt mehr Bitcoin will.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Der Emissionsplan</h2>
+    <p>Jeder neue Bitcoin entsteht als Belohnung für einen Miner. Zu Beginn betrug diese Belohnung 50 BTC pro Block. Alle 210’000 Blöcke – also etwa alle vier Jahre – halbiert sie sich. Man nennt das <strong>Halving</strong>:</p>
+    <ul>
+      <li>2009: 50 BTC pro Block</li>
+      <li>2012: 25 BTC</li>
+      <li>2016: 12.5 BTC</li>
+      <li>2020: 6.25 BTC</li>
+      <li>2024: 3.125 BTC</li>
+      <li>um 2028: 1.5625 BTC – und so weiter, bis um das Jahr 2140 die letzte Belohnung ausgezahlt wird.</li>
+    </ul>
+    <p>Wie viele Bitcoin wird es also insgesamt geben? Eine schöne geometrische Reihe:</p>
+    $$210\,000 \cdot 50 \cdot \left(1 + \tfrac12 + \tfrac14 + \tfrac18 + \cdots\right) = 210\,000 \cdot 50 \cdot 2 = 21\,000\,000.$$
+    <p>Wegen Rundungen auf ganze Satoshi werden es am Ende knapp 20’999’999.98 sein. Jeder Bitcoin ist in 100 Millionen kleinste Einheiten teilbar, die nach dem Erfinder <strong>Satoshi</strong> (kurz «Sats») heissen.</p>
+
+    <figure class="scene" data-scene="supply">
+      <figcaption>Oben: die Anzahl Bitcoin über die Zeit. Unten: die jährliche Inflationsrate von Bitcoin im Vergleich zu Gold. Die gelbe Linie markiert heute.</figcaption>
+    </figure>
+
+    <p>Im Jahr 2026 überschritt die Menge der existierenden Bitcoin 20 Millionen – über 95 Prozent aller jemals existierenden Bitcoin sind damit bereits geschürft. Seit dem Halving 2024 kommen pro Jahr nur noch etwa 0.8 Prozent hinzu. Das ist weniger als bei Gold. Das Stock-to-Flow-Verhältnis von Bitcoin liegt bei rund 120, doppelt so hoch wie das von Gold, und es verdoppelt sich mit jedem Halving.</p>
+
+    <h2>Die Schwierigkeitsanpassung: Bitcoins Antwort auf O’Keefe</h2>
+    <p>Hier kommen wir zum vielleicht wichtigsten Mechanismus von allen. Erinnere dich an die Falle des leichten Geldes aus Kapitel 2: Steigt der Wert eines Geldes, lohnt es sich, mehr davon zu produzieren. O’Keefe brachte mehr Rai-Steine, die Venezianer mehr Glasperlen, die Goldsucher mehr Gold. Was passiert, wenn der Bitcoin-Preis steigt? Es lohnt sich, mehr zu minen. Neue Miner kommen dazu, die Rechenleistung steigt, und die Blöcke werden schneller gefunden.</p>
+    <p>Aber nur für eine Weile. Alle 2’016 Blöcke – etwa alle zwei Wochen – prüft jeder Knoten, wie lange die letzten 2’016 Blöcke gedauert haben, und passt die Schwierigkeit so an, dass im Durchschnitt wieder <strong>ein Block alle zehn Minuten</strong> gefunden wird. Mehr Rechenleistung führt also zu mehr Wettbewerb, aber nicht zu mehr Bitcoin.</p>
+
+    <figure class="scene" data-scene="difficulty">
+      <figcaption>Die Rechenleistung verdoppelt sich. Kurz kommen die Blöcke schneller, dann zieht die Schwierigkeit nach. Bei Gold dagegen bleibt die Förderung dauerhaft erhöht. (Im Modell wird schon nach 10 statt nach 2’016 Blöcken angepasst.)</figcaption>
+    </figure>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Bitcoin ist das erste Geld der Geschichte, dessen Angebot vollkommen unelastisch ist. Mehr Nachfrage führt zu mehr Wettbewerb unter den Minern – aber nicht zu mehr Bitcoin. Damit entkommt Bitcoin der Falle des leichten Geldes, an der Muscheln, Perlen, Rai-Steine und Salz gescheitert sind.</p>
+    </aside>
+
+    <h2>Wer könnte die Regeln ändern?</h2>
+    <p>Die naheliegende Frage: Was hindert jemanden daran, einfach den Code zu ändern und mehr als 21 Millionen Bitcoin zu erschaffen? Die Antwort liegt in der Architektur. Die Regeln werden nicht von einer zentralen Instanz durchgesetzt, sondern von zehntausenden <strong>Full Nodes</strong> – Computern, auf denen Menschen die Bitcoin-Software laufen lassen und jeden Block selbst prüfen. Ein Block, der mehr Belohnung auszahlt als erlaubt, wird von jedem dieser Knoten abgelehnt, egal wie viel Rechenarbeit darin steckt.</p>
+    <p>Miner können die Regeln also nicht ändern. Entwickler können nur Vorschläge machen. Am Ende entscheiden die Nutzer, welche Software sie laufen lassen. Und wer würde einer Änderung zustimmen, die den Wert seiner eigenen Bitcoin verwässert?</p>
+
+    <aside class="note story">
+      <span class="note-label">Anekdote: Der Blocksize-Krieg</span>
+      <p>Zwischen 2015 und 2017 tobte ein erbitterter Streit über die Grösse der Bitcoin-Blöcke. Ein grosser Teil der Miner und viele grosse Unternehmen einigten sich im Mai 2017 im sogenannten «New York Agreement» darauf, die Blockgrösse zu verdoppeln – gegen den Willen vieler Nutzer und Entwickler. Die Nutzer setzten sich mit einer Graswurzelbewegung durch, und im November 2017 wurde der Plan («SegWit2x») abgesagt. Die Episode zeigte eindrücklich, wer in Bitcoin das letzte Wort hat: nicht die Miner und nicht die Konzerne, sondern die Menschen, die ihre eigenen Knoten betreiben.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Satoshi Nakamoto: Whitepaper, Abschnitt 6 «Incentive»; Bitcoin-Core-Quellcode, Funktion <code>GetBlockSubsidy</code>.</li>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 8–9.</li>
+        <li>Jonathan Bier: <em>The Blocksize War</em>, 2021.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="loesung" data-num="19" data-part="III" data-title="Warum Bitcoin die Probleme von Gold und Fiat löst" data-desc="Hart wie Gold, schnell wie das Internet – und die ehrlichen Einwände">
+  <header class="ch-head">
+    <div class="ch-num">19</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Warum Bitcoin die Probleme von Gold und Fiat löst</h1>
+    <p class="ch-lede">Hart wie Gold, schnell wie das Internet, prüfbar durch jeden – und ohne Zentrale, die man unter Druck setzen kann.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Zurück zur Wunschliste</h2>
+    <p>Im ersten Kapitel haben wir eine Wunschliste für die ideale «Zeitkapsel» aufgestellt. Legen wir nun die drei wichtigsten Geldformen der Gegenwart nebeneinander:</p>
+  </div>
+
+  <div class="prose">
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Eigenschaft</th><th>Gold</th><th>Fiat-Geld</th><th class="col-btc">Bitcoin</th></tr></thead>
+        <tbody>
+          <tr><th>Knappheit</th><td class="good">hoch – etwa 1.7 % neue Förderung pro Jahr</td><td class="bad">tief – Geldmenge wächst oft 5–10 % pro Jahr</td><td class="good col-btc">absolut – max. 21 Mio., heute ≈ 0.8 % pro Jahr, gegen null</td></tr>
+          <tr><th>Haltbarkeit</th><td class="good">praktisch unzerstörbar</td><td class="mid">physisch ja, Kaufkraft schwindet</td><td class="good col-btc">digital, existiert, solange das Netzwerk läuft</td></tr>
+          <tr><th>Teilbarkeit</th><td class="mid">mässig – Barren, Münzen</td><td class="good">gut – Rappen, Cent</td><td class="good col-btc">hervorragend – 100 Mio. Sats pro BTC</td></tr>
+          <tr><th>Transport</th><td class="bad">schwer, teuer, langsam</td><td class="good">schnell, aber über Banken</td><td class="good col-btc">weltweit in Minuten, mit Lightning in Sekunden</td></tr>
+          <tr><th>Prüfbarkeit</th><td class="mid">aufwendig (Echtheit, Reinheit)</td><td class="bad">Bücher der Banken nicht einsehbar</td><td class="good col-btc">jeder Knoten prüft alles selbst</td></tr>
+          <tr><th>Beschlagnahme &amp; Zensur</th><td class="mid">in Tresoren beschlagnahmbar (1933)</td><td class="bad">Konten können gesperrt werden</td><td class="good col-btc">ohne Erlaubnis, schwer zu blockieren</td></tr>
+          <tr><th>Wer bestimmt die Menge?</th><td class="good">Geologie</td><td class="bad">Zentralbanken und Politik</td><td class="good col-btc">Code, durchgesetzt von allen Knoten</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure class="scene" data-scene="radar-cmp">
+      <figcaption>Die drei Geldformen im direkten Vergleich. Schalte einzeln um oder zeige alle drei übereinander.</figcaption>
+    </figure>
+
+    <h2>Hauptbuch und Wert wieder vereint</h2>
+    <p>Erinnere dich an Lyn Aldens zentrales Argument aus Kapitel 7: Seit dem Telegrafen bewegt sich Information schneller als Gold. Deshalb trennten sich das <em>Hauptbuch</em> (schnell, bei den Banken) und der <em>Wert</em> (langsam, im Tresor). Wer das Hauptbuch führte, gewann die Kontrolle – bis 1971 der Wert ganz wegfiel und nur das Hauptbuch übrig blieb.</p>
+    <p>Bitcoin dreht diese Entwicklung um. Bei Bitcoin <strong>ist das Hauptbuch der Wert</strong>. Es gibt keinen Tresor irgendwo, auf den sich die Einträge beziehen – die Einträge selbst sind das knappe Gut. Und dieses Hauptbuch bewegt sich mit der Geschwindigkeit des Internets, wird von allen geführt und von niemandem kontrolliert. Zum ersten Mal seit dem Telegrafen ist das härteste Geld auch eines der schnellsten.</p>
+
+    <figure class="scene" data-scene="dilemma-btc">
+      <figcaption>Die leere Ecke oben rechts aus Kapitel 11 ist besetzt.</figcaption>
+    </figure>
+
+    <h2>Lightning: Schichten auf hartem Fundament</h2>
+    <p>Die Bitcoin-Blockchain selbst ist bewusst langsam und sparsam: Nur einige tausend Transaktionen passen in einen Block, damit jeder mit bescheidener Hardware einen eigenen Knoten betreiben kann. Für den Kaffee am Morgen braucht es also, wie schon bei Gold, weitere Schichten – ganz im Sinne von Nik Bhatias <em>Layered Money</em>. Die bekannteste ist das <strong>Lightning-Netzwerk</strong>, beschrieben 2016 von Joseph Poon und Thaddeus Dryja.</p>
+
+    <figure class="scene" data-scene="lightning">
+      <figcaption>Ein Lightning-Kanal: zwei Einträge in der Blockchain, dazwischen beliebig viele Zahlungen in Echtzeit.</figcaption>
+    </figure>
+
+    <p>Über ein Geflecht solcher Kanäle lassen sich Zahlungen auch an Menschen weiterleiten, mit denen man keinen direkten Kanal hat. Der entscheidende Unterschied zu den Schichten des Fiatsystems: Ganz unten liegt kein Versprechen, das jemand beliebig vermehren kann, sondern ein Gut mit fester Menge. Und jeder Teilnehmer kann jederzeit zur Basisschicht zurückkehren.</p>
+
+    <h2>Geschichten aus der realen Welt</h2>
+    <p>Für Menschen in der Schweiz mag das alles theoretisch klingen. Für einen grossen Teil der Weltbevölkerung ist es das nicht. Der Menschenrechtsaktivist Alex Gladstein von der Human Rights Foundation hat in <em>Check Your Financial Privilege</em> viele Geschichten gesammelt:</p>
+    <ul>
+      <li>Im <strong>Libanon</strong> froren die Banken ab 2019 die Dollar-Ersparnisse ihrer Kunden ein; die Landeswährung verlor über 90 Prozent ihres Werts.</li>
+      <li>In <strong>Argentinien</strong> erlebten die Menschen 2001 den «Corralito», bei dem Bankguthaben gesperrt wurden, und 2023 eine Inflation von über 200 Prozent.</li>
+      <li>In <strong>Afghanistan</strong> bezahlte die Unternehmerin Roya Mahboob junge Frauen, die kein eigenes Bankkonto eröffnen durften, für ihre Arbeit in Bitcoin.</li>
+      <li>In <strong>Kanada</strong> liess die Regierung im Februar 2022 unter dem Notstandsgesetz Bankkonten von Unterstützern der Trucker-Proteste einfrieren – mitten in einer westlichen Demokratie.</li>
+    </ul>
+    <p>Und 2021 machte <strong>El Salvador</strong> Bitcoin als erstes Land zum gesetzlichen Zahlungsmittel – ein umstrittenes Experiment, das 2025 im Rahmen eines Abkommens mit dem Internationalen Währungsfonds wieder abgeschwächt wurde. Es zeigt, dass der Weg eines neuen Geldes nicht geradlinig verläuft.</p>
+
+    <h2>Ehrliche Einwände</h2>
+    <p>Eine Seite, die nur Vorteile aufzählt, wäre Werbung, nicht Erklärung. Diese Einwände solltest du kennen:</p>
+    <ul>
+      <li><strong>Volatilität:</strong> Der Bitcoin-Preis schwankt stark. Befürworter sehen darin die normale Phase eines neuen Geldes, das von der Welt erst «entdeckt» wird. Trotzdem: Als stabile Recheneinheit taugt Bitcoin heute noch nicht, und niemand weiss, ob und wann sich das ändert.</li>
+      <li><strong>Energie:</strong> Proof of Work verbraucht viel Strom (siehe Kapitel 15). Ob das Verschwendung oder der Preis der Sicherheit ist, wird heftig debattiert.</li>
+      <li><strong>Skalierung und Gebühren:</strong> Die Basisschicht ist bewusst begrenzt. Bei grosser Nachfrage steigen die Gebühren, und zweite Schichten wie Lightning sind noch jung.</li>
+      <li><strong>Privatsphäre:</strong> Bitcoin ist pseudonym, nicht anonym. Alle Transaktionen sind öffentlich, und spezialisierte Firmen werten sie aus.</li>
+      <li><strong>Selbstverwahrung ist schwer:</strong> Verlorene Schlüssel bedeuten verlorenes Geld. Wer Bitcoin dagegen bei einer Börse lässt, trägt deren Risiko – die Pleiten von Mt. Gox (2014) und FTX (2022) haben Kunden Milliarden gekostet.</li>
+      <li><strong>Papier-Bitcoin:</strong> Seit 2024 halten börsengehandelte Fonds (ETFs) grosse Mengen Bitcoin bei wenigen Verwahrern. Das ist bequem, wiederholt aber das Muster des Goldes: Was in wenigen Tresoren liegt, kann reguliert, eingefroren und mit Ansprüchen überbaut werden.</li>
+      <li><strong>Technische Zukunftsrisiken:</strong> Leistungsfähige Quantencomputer könnten eines Tages die heutigen Signaturverfahren gefährden. Die Bitcoin-Entwickler diskutieren bereits, wie man auf neue Verfahren umsteigen könnte.</li>
+    </ul>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Bitcoin vereint, was die Geschichte getrennt hatte: die Härte des Goldes und die Geschwindigkeit des Hauptbuchs – ohne dass jemand dieses Hauptbuch kontrolliert. Ob es sich durchsetzt, entscheidet, wie immer beim Geld, der Wettbewerb.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Lyn Alden: <em>Broken Money</em>, 2023, Teil IV.</li>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 8–10.</li>
+        <li>Nik Bhatia: <em>Layered Money</em>, 2021.</li>
+        <li>Joseph Poon, Thaddeus Dryja: <em>The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments</em>, 2016.</li>
+        <li>Alex Gladstein: <em>Check Your Financial Privilege</em>, BTC Media 2022.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="philosophie" data-num="20" data-part="III" data-title="Philosophie: Bitcoin ist Zeit" data-desc="Gigi, Zeitpräferenz und eine Uhr ohne Uhrmacher">
+  <header class="ch-head">
+    <div class="ch-num">20</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Philosophie: Bitcoin ist Zeit</h1>
+    <p class="ch-lede">Was eine Uhr ohne Uhrmacher, ein Geld ohne Herrscher und eine tiefere Zeitpräferenz mit unserer Zukunft zu tun haben.</p>
+  </header>
+
+  <div class="prose">
+    <p>Bisher haben wir Bitcoin als Technik und als Ökonomie betrachtet. Zum Schluss lohnt sich ein Schritt zurück. Kaum ein Autor hat die philosophische Seite von Bitcoin so schön beschrieben wie der Autor, der sich schlicht <strong>Gigi</strong> nennt – in seinem Buch <em>21 Lessons</em> und in seinem Essay <em>Bitcoin Is Time</em>.</p>
+
+    <h2>Tick tock, next block</h2>
+    <p>Gigis Ausgangspunkt ist überraschend: Das Double-Spend-Problem, sagt er, ist in Wahrheit ein Problem der <strong>Zeit</strong>. Um zu entscheiden, welche von zwei widersprüchlichen Zahlungen gilt, muss man wissen, welche zuerst kam. Doch in einem verteilten System ohne Zentrale gibt es keine gemeinsame Uhr. Jeder Computer hat seine eigene, und keiner kann der Uhr eines anderen trauen.</p>
+    <p>Bitcoin löst das, indem es seine eigene Zeit erschafft. Jeder Block ist ein Tick einer dezentralen Uhr. Weil jeder Block Proof of Work enthält, lassen sich diese Ticks nicht fälschen und nicht vordatieren – sie sind an reale, verbrauchte Energie gebunden. In Bitcoin misst man Zeit nicht in Sekunden, sondern in Blöcken. Unter Bitcoinern hat sich dafür ein kleiner Gruss etabliert: <em>«Tick tock, next block.»</em></p>
+
+    <figure class="scene" data-scene="blockclock">
+      <figcaption>Der Herzschlag des Netzwerks. Die Zahl oben ist die aktuelle Blockhöhe – jeder Block ein Tick seit dem 3. Januar 2009.</figcaption>
+    </figure>
+
+    <p>Und Geld selbst, so Gigi, ist gespeicherte Zeit. Du tauschst Stunden deines Lebens gegen Geld, um sie später gegen die Stunden anderer zurückzutauschen. Wenn jemand dein Geld verwässert, nimmt er dir also nichts weniger als ein Stück deiner Lebenszeit. Gutes Geld bewahrt diese Zeit. Schlechtes Geld lässt sie verdunsten.</p>
+
+    <h2>Die Knappheit der Knappheit</h2>
+    <p>In <em>21 Lessons</em> denkt Gigi über ein Paradox nach: Echte Knappheit ist selbst eine knappe Sache. Fast alles in der physischen Welt lässt sich mit genug Aufwand vermehren – mehr Minen, mehr Bohrtürme, mehr Fabriken, eines Tages vielleicht sogar Gold aus Asteroiden. Und in der digitalen Welt ist überhaupt nichts knapp: Alles lässt sich kopieren, und zwar kostenlos.</p>
+    <p>Bitcoin ist das erste digitale Gut, das sich nicht kopieren lässt, und das erste Gut überhaupt, dessen Gesamtmenge absolut feststeht und von jedem selbst überprüft werden kann. Ein Bitcoin ist ein 21-millionstel eines Ganzen – nicht mehr und nicht weniger, egal was passiert. Das ist eine neue Art von Ding in der Welt.</p>
+
+    <h2>Zeitpräferenz: Bauen für Generationen</h2>
+    <p>Saifedean Ammous widmet ein zentrales Kapitel seines Buches der <strong>Zeitpräferenz</strong>: dem Mass, in dem wir die Gegenwart der Zukunft vorziehen. Ein Kind, das den Marshmallow sofort isst, hat eine hohe Zeitpräferenz. Wer heute verzichtet, um morgen mehr zu haben – wer sät, spart, lernt oder baut –, hat eine tiefe.</p>
+    <p>Ammous’ These: Hartes Geld senkt die Zeitpräferenz einer Gesellschaft. Wenn Ersparnisse ihren Wert behalten oder sogar gewinnen, lohnt es sich, langfristig zu denken. Weiches Geld bewirkt das Gegenteil: Wer weiss, dass sein Geld morgen weniger wert ist, gibt es lieber heute aus oder verschuldet sich. Ammous verweist auf die Kathedralen des Mittelalters, an denen Generationen bauten, die ihre Vollendung nie erleben würden – der Kölner Dom etwa wurde 1248 begonnen und erst 1880 vollendet. Ob man ihm in jeder Zuspitzung folgt oder nicht: Die Frage, welche Art von Denken unser Geld belohnt, ist eine der wichtigsten, die eine Gesellschaft stellen kann.</p>
+
+    <h2>Don’t trust, verify</h2>
+    <p>Das vielleicht wichtigste kulturelle Erbe von Bitcoin ist eine Haltung: <em>«Don’t trust, verify»</em> – vertraue nicht, überprüfe. Im Fiatsystem musst du der Zentralbank vertrauen, dass sie verantwortungsvoll handelt, der Bank, dass sie dein Geld hat, und der Statistik, dass sie die Inflation richtig misst. In Bitcoin kannst du alles selbst prüfen: jede Transaktion, jede Regel, die Gesamtmenge. Jeder, der einen eigenen Knoten betreibt, ist sein eigener Buchhalter.</p>
+    <p>Gigi beschreibt in seinen Lektionen auch, wie tief der Kaninchenbau ist. Wer sich mit Bitcoin beschäftigt, landet unweigerlich bei Fragen der Geschichte, der Ökonomie, der Informatik, der Spieltheorie und der Philosophie – und merkt, dass er nie ganz fertig wird. Eine Lektion ist schlicht: Bitcoin lehrt Demut.</p>
+
+    <h2>Fix the money, fix the world?</h2>
+    <p>Unter Bitcoinern kursiert der Satz <em>«Fix the money, fix the world»</em>. Die Idee: Wenn Geld nicht mehr verwässert werden kann, müssen Staaten offen besteuern statt heimlich zu inflationieren. Kriege lassen sich nicht mehr bequem mit der Notenpresse finanzieren. Der Cantillon-Effekt verschwindet an der Basis. Sparen wird wieder belohnt.</p>
+    <p>Ob es so kommt, weiss niemand. Geld setzt sich nicht durch Versprechen durch, sondern im Wettbewerb – das haben wir in Kapitel 1 gelernt. Aber zum ersten Mal in der Geschichte hat die Menschheit eine echte Wahl: ein neutrales, offenes Geld, das allen gehört und niemandem, das niemand vermehren kann und das jeder überprüfen kann.</p>
+
+    <h2>Der Kreis schliesst sich</h2>
+    <p>Wir haben mit Kieselsteinen begonnen, die jeder aufheben konnte. Wir haben Muscheln gesehen, die mit Schiffen kamen, Perlen aus europäischen Fabriken, Rai-Steine, die mit Eisenwerkzeug inflationiert wurden, Salz, das die Industrie billig machte, Silber, das das Gold verdrängte, und Gold, das in Tresoren landete und dort von Papier überholt wurde. Und schliesslich Fiatgeld, dessen Menge nur noch eine Frage der Politik ist.</p>
+    <p>Jedes dieser Gelder scheiterte am selben Punkt: Irgendwann fand jemand einen billigeren Weg, mehr davon herzustellen. Bitcoin ist das erste Geld, bei dem das nicht nur schwierig, sondern nach den Regeln, die jeder Teilnehmer selbst durchsetzt, unmöglich ist.</p>
+
+    <aside class="note key">
+      <span class="note-label">Die eine Lektion</span>
+      <p>Gutes Geld ist schwer herzustellen. Bitcoin ist das erste Geld, bei dem «schwer» bedeutet: Es ist unmöglich, mehr herzustellen, als die Regeln erlauben – egal wie viel Energie, Macht oder Technik jemand aufwendet.</p>
+    </aside>
+
+    <p style="text-align:center;margin-top:2.4em"><a class="cta" href="#/quellen">Zu den Quellen und Buchempfehlungen →</a></p>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Gigi: <em>Bitcoin Is Time</em>, 2021 – <a href="https://dergigi.com/2021/01/14/bitcoin-is-time/" rel="noopener">dergigi.com</a>.</li>
+        <li>Gigi: <em>21 Lessons: What I’ve Learned from Falling Down the Bitcoin Rabbit Hole</em>, 2019 – frei lesbar auf <a href="https://21lessons.com" rel="noopener">21lessons.com</a>.</li>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 6 «Money and Time Preference».</li>
+        <li>Hans-Hermann Hoppe: <em>Democracy: The God That Failed</em>, 2001 (zur Zeitpräferenz).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="quellen" data-num="21" data-part="A" data-title="Quellen &amp; Dank" data-desc="Bücher, Papers, Daten und Inspiration">
+  <header class="ch-head">
+    <div class="ch-num">§</div>
+    <p class="ch-kicker">Anhang</p>
+    <h1>Quellen &amp; Dank</h1>
+    <p class="ch-lede">Diese Seite steht auf den Schultern von Riesen. Wer tiefer graben will, findet hier die besten Schaufeln.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Die wichtigsten Bücher</h2>
+    <ul>
+      <li><strong>Saifedean Ammous: <em>The Bitcoin Standard: The Decentralized Alternative to Central Banking</em></strong>, Wiley 2018. Deutsch: <em>Der Bitcoin-Standard</em>, Aprycot Media 2019. – Die Geschichte des Geldes aus Sicht der Österreichischen Schule: Absatzfähigkeit, Stock-to-Flow, Zeitpräferenz. Grundlage für Teil I und vieles in Teil II.</li>
+      <li><strong>Lyn Alden: <em>Broken Money: Why Our Financial System Is Failing Us and How We Can Make It Better</em></strong>, Timestamp Press 2023. – Geld als Hauptbuch und die Geschichte der Abwicklungstechnologie; der Gedanke, dass der Telegraf Gold und Hauptbuch trennte und Bitcoin sie wieder vereint.</li>
+      <li><strong>Nik Bhatia: <em>Layered Money: From Gold and Dollars to Bitcoin and Central Bank Digital Currencies</em></strong>, 2021. – Die Pyramide des Geldes und Bitcoin als neue Basisschicht.</li>
+      <li><strong>Gigi: <em>21 Lessons: What I’ve Learned from Falling Down the Bitcoin Rabbit Hole</em></strong>, 2019 – frei verfügbar auf <a href="https://21lessons.com" rel="noopener">21lessons.com</a>; sowie der Essay <a href="https://dergigi.com/2021/01/14/bitcoin-is-time/" rel="noopener"><em>Bitcoin Is Time</em></a>, 2021. – Die philosophische Seite.</li>
+      <li><strong>Nick Szabo: <em>Shelling Out: The Origins of Money</em></strong>, 2002 – <a href="https://nakamotoinstitute.org/library/shelling-out/" rel="noopener">nakamotoinstitute.org</a>. – Sammelobjekte, unfälschbare Kostspieligkeit.</li>
+      <li>Alex Gladstein: <em>Check Your Financial Privilege</em>, 2022.</li>
+      <li>Jeff Booth: <em>The Price of Tomorrow</em>, 2020.</li>
+      <li>Adam Fergusson: <em>When Money Dies</em>, 1975.</li>
+      <li>Nathaniel Popper: <em>Digital Gold</em>, 2015.</li>
+      <li>Jonathan Bier: <em>The Blocksize War</em>, 2021.</li>
+      <li>Andreas M. Antonopoulos, David A. Harding: <em>Mastering Bitcoin</em>, 3. Auflage 2023.</li>
+      <li>David Graeber: <em>Debt: The First 5,000 Years</em>, 2011 – als Gegenperspektive.</li>
+      <li>Milton Friedman: <em>Money Mischief: Episodes in Monetary History</em>, 1992.</li>
+      <li>Friedrich A. Hayek: <em>Denationalisation of Money</em>, 1976 – die frühe Idee konkurrierender Privatwährungen.</li>
+      <li>Jack Weatherford: <em>The History of Money</em>, 1997; Mark Kurlansky: <em>Salt: A World History</em>, 2002; Richard von Glahn: <em>Fountain of Fortune</em>, 1996.</li>
+    </ul>
+
+    <h2>Historische Texte und Papers</h2>
+    <ul>
+      <li>Satoshi Nakamoto: <em>Bitcoin: A Peer-to-Peer Electronic Cash System</em>, 2008 – <a href="https://bitcoin.org/bitcoin.pdf" rel="noopener">bitcoin.org/bitcoin.pdf</a>.</li>
+      <li>Carl Menger: <em>On the Origins of Money</em>, 1892.</li>
+      <li>Richard Cantillon: <em>Essai sur la nature du commerce en général</em>, 1755.</li>
+      <li>John Maynard Keynes: <em>The Economic Consequences of the Peace</em>, 1919.</li>
+      <li>William Henry Furness III: <em>The Island of Stone Money</em>, 1910; Milton Friedman: <em>The Island of Stone Money</em>, 1991.</li>
+      <li>Leslie Lamport, Robert Shostak, Marshall Pease: <em>The Byzantine Generals Problem</em>, 1982.</li>
+      <li>Stuart Haber, W. Scott Stornetta: <em>How to Time-Stamp a Digital Document</em>, 1991.</li>
+      <li>Eric Hughes: <em>A Cypherpunk’s Manifesto</em>, 1993.</li>
+      <li>Adam Back: <em>Hashcash</em>, 1997/2002; Wei Dai: <em>b-money</em>, 1998; Nick Szabo: <em>Bit Gold</em>, 2005; Hal Finney: <em>RPOW</em>, 2004.</li>
+      <li>John R. Douceur: <em>The Sybil Attack</em>, 2002.</li>
+      <li>Joseph Poon, Thaddeus Dryja: <em>The Bitcoin Lightning Network</em>, 2016.</li>
+      <li>Richard Nixon: Ansprache an die Nation vom 15. August 1971; Franklin D. Roosevelt: Executive Order 6102, 1933.</li>
+    </ul>
+
+    <h2>Daten</h2>
+    <ul>
+      <li><a href="https://wtfhappenedin1971.com" rel="noopener">WTF Happened In 1971?</a> – Sammlung von Diagrammen rund um 1971.</li>
+      <li>Economic Policy Institute: <a href="https://www.epi.org/productivity-pay-gap/" rel="noopener"><em>The Productivity–Pay Gap</em></a>.</li>
+      <li>Federal Reserve Bank of St. Louis: FRED, Zeitreihe <em>M2SL</em>; Federal Reserve: <em>Distributional Financial Accounts</em>.</li>
+      <li>World Gold Council: Goldbestand und Minenproduktion; LBMA: Goldpreise.</li>
+      <li>Statistisches Reichsamt: <em>Zahlen zur Geldentwertung in Deutschland 1914 bis 1923</em>, 1925.</li>
+      <li>Cambridge Centre for Alternative Finance: <em>Cambridge Bitcoin Electricity Consumption Index</em>.</li>
+      <li>Blockhöhe live über die öffentliche API von <a href="https://mempool.space" rel="noopener">mempool.space</a> (mit Schätzung als Rückfall).</li>
+    </ul>
+    <p>Alle Zahlen sind gerundet. Einige Diagramme sind bewusst vereinfacht oder stilisiert, um ein Prinzip sichtbar zu machen; sie ersetzen keine Primärdaten.</p>
+
+    <h2>Inspiration</h2>
+    <ul>
+      <li><strong>3Blue1Brown</strong> (Grant Sanderson): <a href="https://www.youtube.com/watch?v=bBC-nXj3Ng4" rel="noopener"><em>But how does bitcoin actually work?</em></a> und <a href="https://www.youtube.com/watch?v=S9JGmA5_unY" rel="noopener"><em>How secure is 256 bit security?</em></a>, beide 2017. Die Farbpalette und der Erklärstil dieser Seite sind eine Hommage an seine Arbeit.</li>
+      <li><strong>Anders Brownworth</strong>: <a href="https://andersbrownworth.com/blockchain/" rel="noopener"><em>Blockchain Demo</em></a> – Vorbild für die interaktive Blockchain in Kapitel 16.</li>
+    </ul>
+
+    <h2>Über diese Seite</h2>
+    <p>Alle Animationen sind von Hand mit Canvas und JavaScript gezeichnet; SHA-256, Mining und Blockchain-Demo laufen vollständig in deinem Browser. Es gibt keine Cookies und kein Tracking. Dein Lesefortschritt wird nur lokal gespeichert.</p>
+
+    <aside class="note warn">
+      <span class="note-label">Keine Anlageberatung</span>
+      <p>Diese Seite ist ein Bildungsprojekt. Sie vertritt bewusst die Perspektive der «Bitcoin-Ökonomie» und nennt die wichtigsten Gegenargumente, ersetzt aber keine unabhängige Beratung. Bitcoin ist volatil; investiere nie Geld, dessen Verlust du dir nicht leisten kannst.</p>
+    </aside>
+
+    <p style="text-align:center;margin-top:2.6em;font-size:22px"><em>Danke fürs Mitreisen. Tick tock, next block.</em></p>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  Ein Bildungsprojekt – keine Anlageberatung. Inspiriert von 3Blue1Brown, Saifedean Ammous, Lyn Alden, Nik Bhatia, Gigi und Satoshi Nakamoto. <a href="#/quellen">Quellen &amp; Dank</a>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+<script src="js/sha256.js" defer></script>
+<script src="js/engine.js" defer></script>
+<script src="js/scenes-geld.js" defer></script>
+<script src="js/scenes-bitcoin.js" defer></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>

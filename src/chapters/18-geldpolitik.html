@@ -1,0 +1,61 @@
+<section class="chapter" id="geldpolitik" data-num="18" data-part="III" data-title="21 Millionen: Die Geldpolitik von Bitcoin" data-desc="Halbierungen, Schwierigkeitsanpassung und die Lösung der Kieselstein-Falle">
+  <header class="ch-head">
+    <div class="ch-num">18</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>21 Millionen: Die Geldpolitik von Bitcoin</h1>
+    <p class="ch-lede">Eine Geldpolitik, die 2009 festgelegt wurde und die niemand ändern kann – nicht einmal dann, wenn die ganze Welt mehr Bitcoin will.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Der Emissionsplan</h2>
+    <p>Jeder neue Bitcoin entsteht als Belohnung für einen Miner. Zu Beginn betrug diese Belohnung 50 BTC pro Block. Alle 210’000 Blöcke – also etwa alle vier Jahre – halbiert sie sich. Man nennt das <strong>Halving</strong>:</p>
+    <ul>
+      <li>2009: 50 BTC pro Block</li>
+      <li>2012: 25 BTC</li>
+      <li>2016: 12.5 BTC</li>
+      <li>2020: 6.25 BTC</li>
+      <li>2024: 3.125 BTC</li>
+      <li>um 2028: 1.5625 BTC – und so weiter, bis um das Jahr 2140 die letzte Belohnung ausgezahlt wird.</li>
+    </ul>
+    <p>Wie viele Bitcoin wird es also insgesamt geben? Eine schöne geometrische Reihe:</p>
+    $$210\,000 \cdot 50 \cdot \left(1 + \tfrac12 + \tfrac14 + \tfrac18 + \cdots\right) = 210\,000 \cdot 50 \cdot 2 = 21\,000\,000.$$
+    <p>Wegen Rundungen auf ganze Satoshi werden es am Ende knapp 20’999’999.98 sein. Jeder Bitcoin ist in 100 Millionen kleinste Einheiten teilbar, die nach dem Erfinder <strong>Satoshi</strong> (kurz «Sats») heissen.</p>
+
+    <figure class="scene" data-scene="supply">
+      <figcaption>Oben: die Anzahl Bitcoin über die Zeit. Unten: die jährliche Inflationsrate von Bitcoin im Vergleich zu Gold. Die gelbe Linie markiert heute.</figcaption>
+    </figure>
+
+    <p>Im Jahr 2026 überschritt die Menge der existierenden Bitcoin 20 Millionen – über 95 Prozent aller jemals existierenden Bitcoin sind damit bereits geschürft. Seit dem Halving 2024 kommen pro Jahr nur noch etwa 0.8 Prozent hinzu. Das ist weniger als bei Gold. Das Stock-to-Flow-Verhältnis von Bitcoin liegt bei rund 120, doppelt so hoch wie das von Gold, und es verdoppelt sich mit jedem Halving.</p>
+
+    <h2>Die Schwierigkeitsanpassung: Bitcoins Antwort auf O’Keefe</h2>
+    <p>Hier kommen wir zum vielleicht wichtigsten Mechanismus von allen. Erinnere dich an die Falle des leichten Geldes aus Kapitel 2: Steigt der Wert eines Geldes, lohnt es sich, mehr davon zu produzieren. O’Keefe brachte mehr Rai-Steine, die Venezianer mehr Glasperlen, die Goldsucher mehr Gold. Was passiert, wenn der Bitcoin-Preis steigt? Es lohnt sich, mehr zu minen. Neue Miner kommen dazu, die Rechenleistung steigt, und die Blöcke werden schneller gefunden.</p>
+    <p>Aber nur für eine Weile. Alle 2’016 Blöcke – etwa alle zwei Wochen – prüft jeder Knoten, wie lange die letzten 2’016 Blöcke gedauert haben, und passt die Schwierigkeit so an, dass im Durchschnitt wieder <strong>ein Block alle zehn Minuten</strong> gefunden wird. Mehr Rechenleistung führt also zu mehr Wettbewerb, aber nicht zu mehr Bitcoin.</p>
+
+    <figure class="scene" data-scene="difficulty">
+      <figcaption>Die Rechenleistung verdoppelt sich. Kurz kommen die Blöcke schneller, dann zieht die Schwierigkeit nach. Bei Gold dagegen bleibt die Förderung dauerhaft erhöht. (Im Modell wird schon nach 10 statt nach 2’016 Blöcken angepasst.)</figcaption>
+    </figure>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Bitcoin ist das erste Geld der Geschichte, dessen Angebot vollkommen unelastisch ist. Mehr Nachfrage führt zu mehr Wettbewerb unter den Minern – aber nicht zu mehr Bitcoin. Damit entkommt Bitcoin der Falle des leichten Geldes, an der Muscheln, Perlen, Rai-Steine und Salz gescheitert sind.</p>
+    </aside>
+
+    <h2>Wer könnte die Regeln ändern?</h2>
+    <p>Die naheliegende Frage: Was hindert jemanden daran, einfach den Code zu ändern und mehr als 21 Millionen Bitcoin zu erschaffen? Die Antwort liegt in der Architektur. Die Regeln werden nicht von einer zentralen Instanz durchgesetzt, sondern von zehntausenden <strong>Full Nodes</strong> – Computern, auf denen Menschen die Bitcoin-Software laufen lassen und jeden Block selbst prüfen. Ein Block, der mehr Belohnung auszahlt als erlaubt, wird von jedem dieser Knoten abgelehnt, egal wie viel Rechenarbeit darin steckt.</p>
+    <p>Miner können die Regeln also nicht ändern. Entwickler können nur Vorschläge machen. Am Ende entscheiden die Nutzer, welche Software sie laufen lassen. Und wer würde einer Änderung zustimmen, die den Wert seiner eigenen Bitcoin verwässert?</p>
+
+    <aside class="note story">
+      <span class="note-label">Anekdote: Der Blocksize-Krieg</span>
+      <p>Zwischen 2015 und 2017 tobte ein erbitterter Streit über die Grösse der Bitcoin-Blöcke. Ein grosser Teil der Miner und viele grosse Unternehmen einigten sich im Mai 2017 im sogenannten «New York Agreement» darauf, die Blockgrösse zu verdoppeln – gegen den Willen vieler Nutzer und Entwickler. Die Nutzer setzten sich mit einer Graswurzelbewegung durch, und im November 2017 wurde der Plan («SegWit2x») abgesagt. Die Episode zeigte eindrücklich, wer in Bitcoin das letzte Wort hat: nicht die Miner und nicht die Konzerne, sondern die Menschen, die ihre eigenen Knoten betreiben.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Satoshi Nakamoto: Whitepaper, Abschnitt 6 «Incentive»; Bitcoin-Core-Quellcode, Funktion <code>GetBlockSubsidy</code>.</li>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 8–9.</li>
+        <li>Jonathan Bier: <em>The Blocksize War</em>, 2021.</li>
+      </ul>
+    </div>
+  </div>
+</section>

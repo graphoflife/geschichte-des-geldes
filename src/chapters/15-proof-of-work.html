@@ -1,0 +1,62 @@
+<section class="chapter" id="proof-of-work" data-num="15" data-part="III" data-title="Proof of Work: Rechenarbeit als Beweis" data-desc="Die Lotterie der Miner – selbst ausprobieren">
+  <header class="ch-head">
+    <div class="ch-num">15</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Proof of Work: Rechenarbeit als Beweis</h1>
+    <p class="ch-lede">Wie man im Digitalen etwas erschafft, das teuer herzustellen, aber billig zu prüfen ist – die digitale Version des Rai-Steins.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Die Lotterie</h2>
+    <p>Erinnern wir uns: Bitcoin braucht eine Art Abstimmung, bei der jede Stimme etwas Reales kostet. Die Hashfunktion liefert dafür das perfekte Werkzeug. Die Aufgabe für die <strong>Miner</strong> lautet:</p>
+    <p style="text-align:center;font-size:21px"><em>Finde einen Block, dessen Hash kleiner ist als ein bestimmter Zielwert.</em></p>
+    <p>Weil Hashes nicht vorhersagbar sind, gibt es nur einen Weg: Man ändert eine Zahl im Block – die sogenannte <strong>Nonce</strong> («number used once») –, berechnet den Hash, prüft, ob er klein genug ist, und wenn nicht, versucht man die nächste Nonce. Jeder Versuch ist wie ein Los in einer Lotterie.</p>
+    <p>Stell dir alle möglichen Hash-Werte als Zahlenstrahl von 0 bis 2<sup>256</sup> vor. Jeder Versuch landet an einer zufälligen Stelle. Nur Versuche im kleinen Zielbereich ganz links gewinnen:</p>
+
+    <figure class="scene" data-scene="hashspace">
+      <figcaption>Jeder Punkt ist ein Hash-Versuch. Verkleinere den Zielbereich mit dem Regler und beobachte, wie selten die Treffer werden.</figcaption>
+    </figure>
+
+    <p>Ein kleiner Zielwert bedeutet: Der Hash muss mit vielen Nullen beginnen. In hexadezimaler Schreibweise halbiert jedes zusätzliche Bit den Zielbereich, und jede zusätzliche Null am Anfang teilt ihn durch 16. Die erwartete Anzahl Versuche bei \(k\) führenden Nullen ist</p>
+    $$\mathbb{E}[\text{Versuche}] = 16^{k}.$$
+
+    <h2>Selbst ausprobieren</h2>
+    <p>Hier ist ein echter Miner. Dein Browser berechnet SHA-256 und probiert eine Nonce nach der anderen, bis der Hash mit der gewünschten Anzahl Nullen beginnt. Ändere die Daten, und alles beginnt von vorn.</p>
+
+    <figure class="scene" data-scene="miner">
+      <figcaption>Mit vier Nullen dauert es meist unter einer Sekunde, mit sechs Nullen eine ganze Weile. Bitcoin verlangt heute rund 19 hexadezimale Nullen.</figcaption>
+    </figure>
+
+    <h2>Schwer zu finden, leicht zu prüfen</h2>
+    <p>Hier liegt der Zauber: Um die richtige Nonce zu <em>finden</em>, braucht es Millionen, Milliarden oder – bei Bitcoin – Trilliarden Versuche. Um zu <em>prüfen</em>, ob eine Nonce stimmt, braucht es genau einen einzigen Hash. Jeder, auch mit einem alten Laptop oder einem Raspberry Pi, kann in Sekundenbruchteilen kontrollieren, dass die Miner die Arbeit wirklich geleistet haben.</p>
+    <p>Das ist exakt die Eigenschaft, die gutes Geld schon immer hatte. Ein Goldbarren war teuer zu fördern, aber relativ leicht zu wiegen und zu prüfen. Ein Rai-Stein kostete Monate gefährlicher Arbeit, aber jeder auf Yap konnte ihn sehen. Nick Szabo nannte das <em>unforgeable costliness</em>. Proof of Work bringt diese unfälschbare Kostspieligkeit zum ersten Mal in die digitale Welt.</p>
+
+    <aside class="note story">
+      <span class="note-label">Die Dimensionen heute</span>
+      <p>Das Bitcoin-Netzwerk berechnet inzwischen rund 10<sup>21</sup> Hashes pro Sekunde – eine Trilliarde (Stand 2025). Dafür laufen weltweit Millionen spezialisierter Chips, sogenannte ASICs, in Hallen von Texas bis Paraguay und von Äthiopien bis Kasachstan. Wer die Geschichte von Bitcoin umschreiben wollte, müsste diese Arbeit wiederholen und überbieten.</p>
+    </aside>
+
+    <h2>Energie als Anker in der physischen Welt</h2>
+    <p>Gigi beschreibt Proof of Work als die Brücke zwischen der digitalen und der physischen Welt. Im Digitalen ist alles kopierbar und kostenlos – ausser Energie. Indem Bitcoin jeden neuen Block an verbrauchte Energie bindet, wird die Vergangenheit physisch abgesichert: Um sie zu ändern, müsste man real mehr Energie aufwenden, als das ganze ehrliche Netzwerk aufgewendet hat.</p>
+    <p>Diese Energie ist zugleich der grösste Kritikpunkt an Bitcoin. Die Universität Cambridge schätzt den Stromverbrauch des Netzwerks in der Grössenordnung eines mittelgrossen Industrielandes. Kritiker sehen darin Verschwendung. Befürworter halten dagegen, dass der Verbrauch die Sicherheit eines weltweiten, neutralen Geldsystems bezahlt, dass Miner zunehmend überschüssige oder sonst ungenutzte Energie verwenden – etwa abgefackeltes Gas oder Wasserkraft in abgelegenen Regionen – und dass sie als flexible Last Stromnetze stabilisieren können. Diese Debatte ist offen, und beide Seiten haben ernsthafte Argumente.</p>
+
+    <h2>Die Belohnung</h2>
+    <p>Warum sollte jemand all diese Energie aufwenden? Wer einen gültigen Block findet, darf sich selbst eine <strong>Belohnung</strong> auszahlen: neu geschaffene Bitcoin (seit 2024 sind es 3.125 BTC pro Block) plus die Gebühren aller Transaktionen im Block. So kommen neue Bitcoin in Umlauf – nicht durch eine Zentralbank, sondern als Lohn für die Absicherung des Hauptbuchs. Mitmachen darf jeder, ohne Erlaubnis.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Proof of Work macht Bitcoin teuer herzustellen und billig zu prüfen – genau wie gutes Geld es immer war. Nur lassen sich die Kosten diesmal nicht vortäuschen, und die Prüfung kann jeder selbst übernehmen.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Satoshi Nakamoto: Whitepaper, Abschnitt 4 «Proof-of-Work» und Abschnitt 6 «Incentive».</li>
+        <li>Adam Back: <em>Hashcash</em>, 1997/2002.</li>
+        <li>Nick Szabo: <em>Bit Gold</em>, 2005; <em>Shelling Out</em>, 2002.</li>
+        <li>Gigi: <em>21 Lessons</em>, 2019, sowie <em>Bitcoin Is Time</em>, 2021 – <a href="https://dergigi.com" rel="noopener">dergigi.com</a>.</li>
+        <li>Cambridge Centre for Alternative Finance: <em>Cambridge Bitcoin Electricity Consumption Index</em>.</li>
+      </ul>
+    </div>
+  </div>
+</section>

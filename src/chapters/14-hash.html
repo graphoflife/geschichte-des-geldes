@@ -1,0 +1,66 @@
+<section class="chapter" id="hash" data-num="14" data-part="III" data-title="Hashfunktionen: digitale Fingerabdrücke" data-desc="SHA-256, Lawineneffekt und die Grösse von 2²⁵⁶">
+  <header class="ch-head">
+    <div class="ch-num">14</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Hashfunktionen: digitale Fingerabdrücke</h1>
+    <p class="ch-lede">Eine Maschine, die aus jedem beliebigen Text eine scheinbar zufällige Zahl macht – immer dieselbe, aber nie umkehrbar. Das Fundament von Bitcoin.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Ein Fleischwolf für Daten</h2>
+    <p>Eine <strong>Hashfunktion</strong> nimmt beliebige Daten – ein Wort, ein Buch, einen ganzen Film – und macht daraus eine Zahl fester Länge. Bitcoin verwendet die Funktion <strong>SHA-256</strong> (Secure Hash Algorithm, 256 Bit), entwickelt von der amerikanischen NSA und 2001 von der Normungsbehörde NIST veröffentlicht. Ihr Ergebnis ist immer genau 256 Nullen und Einsen lang, meist geschrieben als 64 Zeichen im Hexadezimalsystem (0–9 und a–f).</p>
+    <p>Eine gute Hashfunktion hat fünf Eigenschaften:</p>
+    <ol>
+      <li><strong>Deterministisch:</strong> Gleiche Eingabe, immer gleiches Ergebnis.</li>
+      <li><strong>Schnell:</strong> Ein Computer berechnet sie in Sekundenbruchteilen.</li>
+      <li><strong>Nicht umkehrbar:</strong> Aus dem Ergebnis lässt sich die Eingabe nicht zurückrechnen. Wie bei einem Fleischwolf: Aus einem Steak wird Hackfleisch, aber aus Hackfleisch nie wieder ein Steak.</li>
+      <li><strong>Lawineneffekt:</strong> Ändert man die Eingabe minimal, sieht das Ergebnis völlig anders aus.</li>
+      <li><strong>Kollisionsresistent:</strong> Es ist praktisch unmöglich, zwei verschiedene Eingaben mit gleichem Ergebnis zu finden.</li>
+    </ol>
+    <p>Probiere es selbst aus. Die Berechnung läuft direkt in deinem Browser:</p>
+
+    <figure class="scene" data-scene="avalanche">
+      <figcaption>Ändere einen einzigen Buchstaben. Etwa die Hälfte aller 256 Bits kippt – und zwar unvorhersehbar welche.</figcaption>
+    </figure>
+
+    <p>Der Lawineneffekt ist der Grund, warum man Hashes nicht «steuern» kann. Es gibt keinen Weg, die Eingabe ein bisschen in die richtige Richtung zu verändern, um einen gewünschten Hash zu bekommen. Jede Änderung ist wie ein neuer Wurf mit einem riesigen Würfel.</p>
+
+    <h2>Wie gross ist 2<sup>256</sup>?</h2>
+    <p>Ein SHA-256-Hash ist eine Zahl zwischen 0 und 2<sup>256</sup> − 1. Wie gross ist das?</p>
+    $$2^{256} \approx 1.16 \cdot 10^{77}$$
+    <p>Das ist ungefähr die Grössenordnung der Anzahl Atome im beobachtbaren Universum (man schätzt etwa 10<sup>80</sup>). Grant Sanderson hat dieser Zahl ein ganzes 3Blue1Brown-Video gewidmet. Machen wir unser eigenes Gedankenexperiment:</p>
+
+    <aside class="note think">
+      <span class="note-label">Gedankenexperiment</span>
+      <p>Jeder der 8 Milliarden Menschen auf der Erde besitzt eine Milliarde Computer. Jeder dieser Computer berechnet eine Billion Hashes pro Sekunde. Zusammen sind das</p>
+      $$8 \cdot 10^{9} \;\cdot\; 10^{9} \;\cdot\; 10^{12} = 8 \cdot 10^{30} \text{ Hashes pro Sekunde.}$$
+      <p>Um alle 2<sup>256</sup> Möglichkeiten durchzuprobieren, bräuchte diese absurde Maschine</p>
+      $$\frac{1.16 \cdot 10^{77}}{8 \cdot 10^{30}} \approx 1.4 \cdot 10^{46} \text{ Sekunden} \approx 4.6 \cdot 10^{38} \text{ Jahre.}$$
+      <p>Das Universum ist etwa 1.4 · 10<sup>10</sup> Jahre alt. Wir müssten also rund 30’000’000’000’000’000’000’000’000’000 Mal so lange warten, wie das Universum bisher existiert.</p>
+    </aside>
+
+    <p>Wenn also jemand den Hash einer Nachricht kennt, kann er die Nachricht nicht erraten. Und wenn jemand einen Hash mit ganz bestimmten Eigenschaften braucht, hat er nur eine Möglichkeit: <strong>ausprobieren, ausprobieren, ausprobieren.</strong> Genau darauf baut Proof of Work auf.</p>
+
+    <h2>Wofür Bitcoin Hashes braucht</h2>
+    <ul>
+      <li><strong>Fingerabdrücke:</strong> Jeder Block und jede Transaktion wird durch ihren Hash eindeutig identifiziert. Ändert sich ein einziges Bit, ändert sich der Fingerabdruck.</li>
+      <li><strong>Verkettung:</strong> Jeder Block enthält den Hash seines Vorgängers. So entsteht die Blockchain (Kapitel 16).</li>
+      <li><strong>Mining:</strong> Miner suchen einen Block, dessen Hash kleiner als ein Zielwert ist (Kapitel 15).</li>
+      <li><strong>Adressen:</strong> Bitcoin-Adressen werden aus öffentlichen Schlüsseln gehasht (Kapitel 17).</li>
+    </ul>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Ein Hash ist ein digitaler Fingerabdruck. Jeder kann ihn in Sekundenbruchteilen berechnen und prüfen, aber niemand kann aus ihm die Daten zurückrechnen oder gezielt einen bestimmten Hash erzeugen – ausser durch blindes Ausprobieren.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>NIST: <em>FIPS 180-4, Secure Hash Standard</em>, 2015.</li>
+        <li>3Blue1Brown (Grant Sanderson): <em>How secure is 256 bit security?</em>, 2017 – <a href="https://www.youtube.com/watch?v=S9JGmA5_unY" rel="noopener">YouTube</a>.</li>
+        <li>3Blue1Brown: <em>But how does bitcoin actually work?</em>, 2017 – <a href="https://www.youtube.com/watch?v=bBC-nXj3Ng4" rel="noopener">YouTube</a>.</li>
+      </ul>
+    </div>
+  </div>
+</section>

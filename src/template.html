@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Die Geschichte des Geldes – Von Muscheln bis Bitcoin</title>
+<meta name="description" content="Eine animierte Reise durch die Geschichte des Geldes: Kieselsteine, Muscheln, Rai-Steine, Salz, Silber, Gold, Fiat-Geld, 1971, Inflation und Cantillon-Effekt – und wie Bitcoin mit Proof of Work die Probleme von Gold und Fiat löst.">
+<meta name="theme-color" content="#0b0d11">
+<meta property="og:title" content="Die Geschichte des Geldes – Von Muscheln bis Bitcoin">
+<meta property="og:description" content="Kapitel für Kapitel animiert erklärt: warum sich welches Geld durchgesetzt hat, wie Fiat entstand und wie Bitcoin funktioniert.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%230b0d11' stroke='%23f0ac5f' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%2358c4dd' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23f7931a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#/prolog" aria-label="Zur Startseite">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="none" stroke="#f0ac5f" stroke-width="4"/><circle cx="32" cy="32" r="19" fill="none" stroke="#58c4dd" stroke-width="3"/><circle cx="32" cy="32" r="7" fill="#f7931a"/></svg>
+    <span class="brand-text">Die Geschichte des Geldes</span>
+  </a>
+  <div class="where" id="where" aria-live="polite"></div>
+  <div class="top-btns">
+    <button class="icon-btn" id="prevBtn" aria-label="Vorheriges Kapitel" title="Vorheriges Kapitel (←)"><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="icon-btn" id="nextBtn" aria-label="Nächstes Kapitel" title="Nächstes Kapitel (→)"><svg viewBox="0 0 16 16"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="icon-btn" id="tocBtn" aria-expanded="false" aria-controls="toc"><svg viewBox="0 0 16 16"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="btn-label">Kapitel</span></button>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<nav class="toc" id="toc" hidden aria-label="Inhaltsverzeichnis"><div class="toc-inner" id="tocInner"></div></nav>
+
+<main id="main">
+<noscript><p>Diese Seite braucht JavaScript für die Navigation und die Animationen. Ohne JavaScript werden alle Kapitel untereinander angezeigt.</p><style>.chapter{display:block!important}</style></noscript>
+<!-- CHAPTERS -->
+</main>
+
+<footer class="site-foot">
+  Ein Bildungsprojekt – keine Anlageberatung. Inspiriert von 3Blue1Brown, Saifedean Ammous, Lyn Alden, Nik Bhatia, Gigi und Satoshi Nakamoto. <a href="#/quellen">Quellen &amp; Dank</a>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" defer></script>
+<script src="js/sha256.js" defer></script>
+<script src="js/engine.js" defer></script>
+<script src="js/scenes-geld.js" defer></script>
+<script src="js/scenes-bitcoin.js" defer></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>

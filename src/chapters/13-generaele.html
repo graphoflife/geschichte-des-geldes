@@ -1,0 +1,57 @@
+<section class="chapter" id="generaele" data-num="13" data-part="III" data-title="Double Spending und die byzantinischen Generäle" data-desc="Zwei Probleme, die im Grunde dasselbe sind">
+  <header class="ch-head">
+    <div class="ch-num">13</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Double Spending und die byzantinischen Generäle</h1>
+    <p class="ch-lede">Zwei Probleme, die digitales Geld jahrzehntelang unmöglich machten – und warum sie im Grunde dasselbe Problem sind.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Das Problem mit Kopien</h2>
+    <p>Alles Digitale lässt sich kopieren. Das ist die grosse Stärke des Internets: Ein Foto, ein Lied oder ein Buch kann man millionenfach teilen, ohne dass das Original weniger wird. Für Geld ist genau das eine Katastrophe. Wenn eine digitale Münze einfach eine Datei ist, kann Alice sie an Bob schicken – und eine Kopie davon an Carol. Dieses Problem heisst <strong>Double Spending</strong>, zu Deutsch Doppelausgabe.</p>
+
+    <figure class="scene" data-scene="doublespend">
+      <figcaption>Drei Akte: das Kopierproblem, die Lösung mit einer Bank, und das eigentliche Problem eines Netzwerks ohne Zentrale.</figcaption>
+    </figure>
+
+    <p>Die klassische Lösung ist eine <strong>vertrauenswürdige dritte Partei</strong>: eine Bank, PayPal, Visa. Sie führt ein zentrales Hauptbuch, prüft jede Zahlung und lehnt den zweiten Versuch ab. Das funktioniert hervorragend – aber es bringt alle Probleme zurück, die wir in Teil II gesehen haben. Die dritte Partei kann Konten sperren, Zahlungen zensieren, Gebühren diktieren, pleitegehen, gehackt oder von einer Regierung unter Druck gesetzt werden. Satoshi beschrieb das Ziel deshalb im ersten Abschnitt des Whitepapers als ein elektronisches Zahlungssystem «based on cryptographic proof instead of trust» – auf kryptografischem Beweis statt auf Vertrauen.</p>
+    <p>Die naheliegende Alternative: Jeder führt eine Kopie des Hauptbuchs, wie auf Yap. Doch im Internet gibt es kein Dorf, in dem sich alle kennen und alles gleichzeitig erfahren. Nachrichten brauchen unterschiedlich lange und kommen in unterschiedlicher Reihenfolge an. Wenn Alice zwei widersprüchliche Zahlungen gleichzeitig an verschiedene Ecken des Netzwerks schickt, sieht die eine Hälfte der Teilnehmer die Zahlung an Bob zuerst, die andere die an Carol. Wer hat recht?</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Das Double-Spend-Problem ist ein Problem der Reihenfolge. Alle müssen sich auf eine einzige, gemeinsame Geschichte der Transaktionen einigen – ohne dass jemand bestimmt, welche das ist.</p>
+    </aside>
+
+    <h2>Die byzantinischen Generäle</h2>
+    <p>Informatiker kennen dieses Problem seit 1982 unter einem farbigen Namen. Leslie Lamport, Robert Shostak und Marshall Pease beschrieben es als Gleichnis: Mehrere Divisionen der byzantinischen Armee belagern eine feindliche Stadt. Jede wird von einem General kommandiert. Die Generäle können sich nur durch Boten verständigen. Greifen alle gemeinsam an, gewinnen sie. Greifen nur einige an, werden sie aufgerieben. Das Problem: Einige der Generäle könnten Verräter sein, die absichtlich widersprüchliche Botschaften schicken.</p>
+
+    <figure class="scene" data-scene="generals">
+      <figcaption>Das Problem der byzantinischen Generäle – und warum es im offenen Internet noch schwieriger wird.</figcaption>
+    </figure>
+
+    <p>Lamport und seine Kollegen bewiesen, dass sich die loyalen Generäle einigen können, solange mehr als zwei Drittel von ihnen ehrlich sind – vorausgesetzt, man weiss, <em>wer</em> überhaupt General ist. Darauf bauen viele klassische Systeme auf, etwa in Flugzeugsteuerungen oder Datenbanken. Sie funktionieren mit einer festen, bekannten Liste von Teilnehmern.</p>
+
+    <h2>Der Sybil-Angriff</h2>
+    <p>Ein offenes Geldsystem für die ganze Welt kann aber keine solche Liste haben. Wer würde sie führen? Und wenn jeder mitmachen darf, kann ein Angreifer einfach tausend Teilnehmer erfinden. In der Informatik heisst das <strong>Sybil-Angriff</strong>, benannt nach einem Buch über eine Frau mit vielen Persönlichkeiten. Im Internet sind Identitäten gratis – eine Abstimmung nach Köpfen ist so wertlos wie Geld aus Kieselsteinen.</p>
+    <p>Fällt dir die Parallele auf? Es ist dasselbe Problem wie in Kapitel 2. <strong>Was nichts kostet, kann man beliebig vermehren – Kiesel genauso wie Stimmen.</strong></p>
+
+    <h2>Satoshis Idee: Abstimmen mit Energie</h2>
+    <p>Satoshis Lösung ist so einfach wie radikal: Eine Stimme muss etwas kosten, das man nicht fälschen kann – reale Rechenarbeit und damit Energie. Im Whitepaper heisst es: «one-CPU-one-vote», eine CPU, eine Stimme. Wer tausend falsche Identitäten erzeugt, hat dadurch keinen einzigen zusätzlichen Prozessor. Die Mehrheitsentscheidung wird durch die Kette mit der meisten investierten Rechenarbeit repräsentiert.</p>
+    <p>Im November 2008 erklärte Satoshi seine Lösung auf der Mailingliste selbst mit dem Bild der Generäle: Jeder General beginnt, an einem schwierigen Rechenrätsel zu arbeiten. Wer zuerst eine Lösung findet, schickt sie allen anderen. Die arbeiten dann an der nächsten Lösung, die auf der ersten aufbaut. Nach einer Weile hat sich eine Kette von Lösungen gebildet, die nur die Mehrheit der Rechenleistung erzeugt haben kann. Jeder General sieht an der Länge der Kette, worauf sich die Mehrheit geeinigt hat – und alle greifen gemeinsam an.</p>
+    <p>Wie diese Rechenrätsel funktionieren, schauen wir uns in den nächsten zwei Kapiteln an. Zuerst brauchen wir ein Werkzeug: die Hashfunktion.</p>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Bitcoin löst das Problem der byzantinischen Generäle in einem offenen Netzwerk, indem jede «Stimme» echte Energie kostet. Kieselsteine kann jeder sammeln, Rechenarbeit nicht.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Leslie Lamport, Robert Shostak, Marshall Pease: <em>The Byzantine Generals Problem</em>, ACM Transactions on Programming Languages and Systems, 1982.</li>
+        <li>John R. Douceur: <em>The Sybil Attack</em>, IPTPS 2002.</li>
+        <li>Satoshi Nakamoto: Whitepaper, Abschnitte 1 und 4; E-Mail an die Cryptography-Mailingliste vom 13. November 2008.</li>
+      </ul>
+    </div>
+  </div>
+</section>

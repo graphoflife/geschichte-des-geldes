@@ -1,0 +1,89 @@
+<section class="chapter" id="loesung" data-num="19" data-part="III" data-title="Warum Bitcoin die Probleme von Gold und Fiat löst" data-desc="Hart wie Gold, schnell wie das Internet – und die ehrlichen Einwände">
+  <header class="ch-head">
+    <div class="ch-num">19</div>
+    <p class="ch-kicker">Teil III · Bitcoin</p>
+    <h1>Warum Bitcoin die Probleme von Gold und Fiat löst</h1>
+    <p class="ch-lede">Hart wie Gold, schnell wie das Internet, prüfbar durch jeden – und ohne Zentrale, die man unter Druck setzen kann.</p>
+  </header>
+
+  <div class="prose">
+    <h2>Zurück zur Wunschliste</h2>
+    <p>Im ersten Kapitel haben wir eine Wunschliste für die ideale «Zeitkapsel» aufgestellt. Legen wir nun die drei wichtigsten Geldformen der Gegenwart nebeneinander:</p>
+  </div>
+
+  <div class="prose">
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>Eigenschaft</th><th>Gold</th><th>Fiat-Geld</th><th class="col-btc">Bitcoin</th></tr></thead>
+        <tbody>
+          <tr><th>Knappheit</th><td class="good">hoch – etwa 1.7 % neue Förderung pro Jahr</td><td class="bad">tief – Geldmenge wächst oft 5–10 % pro Jahr</td><td class="good col-btc">absolut – max. 21 Mio., heute ≈ 0.8 % pro Jahr, gegen null</td></tr>
+          <tr><th>Haltbarkeit</th><td class="good">praktisch unzerstörbar</td><td class="mid">physisch ja, Kaufkraft schwindet</td><td class="good col-btc">digital, existiert, solange das Netzwerk läuft</td></tr>
+          <tr><th>Teilbarkeit</th><td class="mid">mässig – Barren, Münzen</td><td class="good">gut – Rappen, Cent</td><td class="good col-btc">hervorragend – 100 Mio. Sats pro BTC</td></tr>
+          <tr><th>Transport</th><td class="bad">schwer, teuer, langsam</td><td class="good">schnell, aber über Banken</td><td class="good col-btc">weltweit in Minuten, mit Lightning in Sekunden</td></tr>
+          <tr><th>Prüfbarkeit</th><td class="mid">aufwendig (Echtheit, Reinheit)</td><td class="bad">Bücher der Banken nicht einsehbar</td><td class="good col-btc">jeder Knoten prüft alles selbst</td></tr>
+          <tr><th>Beschlagnahme &amp; Zensur</th><td class="mid">in Tresoren beschlagnahmbar (1933)</td><td class="bad">Konten können gesperrt werden</td><td class="good col-btc">ohne Erlaubnis, schwer zu blockieren</td></tr>
+          <tr><th>Wer bestimmt die Menge?</th><td class="good">Geologie</td><td class="bad">Zentralbanken und Politik</td><td class="good col-btc">Code, durchgesetzt von allen Knoten</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure class="scene" data-scene="radar-cmp">
+      <figcaption>Die drei Geldformen im direkten Vergleich. Schalte einzeln um oder zeige alle drei übereinander.</figcaption>
+    </figure>
+
+    <h2>Hauptbuch und Wert wieder vereint</h2>
+    <p>Erinnere dich an Lyn Aldens zentrales Argument aus Kapitel 7: Seit dem Telegrafen bewegt sich Information schneller als Gold. Deshalb trennten sich das <em>Hauptbuch</em> (schnell, bei den Banken) und der <em>Wert</em> (langsam, im Tresor). Wer das Hauptbuch führte, gewann die Kontrolle – bis 1971 der Wert ganz wegfiel und nur das Hauptbuch übrig blieb.</p>
+    <p>Bitcoin dreht diese Entwicklung um. Bei Bitcoin <strong>ist das Hauptbuch der Wert</strong>. Es gibt keinen Tresor irgendwo, auf den sich die Einträge beziehen – die Einträge selbst sind das knappe Gut. Und dieses Hauptbuch bewegt sich mit der Geschwindigkeit des Internets, wird von allen geführt und von niemandem kontrolliert. Zum ersten Mal seit dem Telegrafen ist das härteste Geld auch eines der schnellsten.</p>
+
+    <figure class="scene" data-scene="dilemma-btc">
+      <figcaption>Die leere Ecke oben rechts aus Kapitel 11 ist besetzt.</figcaption>
+    </figure>
+
+    <h2>Lightning: Schichten auf hartem Fundament</h2>
+    <p>Die Bitcoin-Blockchain selbst ist bewusst langsam und sparsam: Nur einige tausend Transaktionen passen in einen Block, damit jeder mit bescheidener Hardware einen eigenen Knoten betreiben kann. Für den Kaffee am Morgen braucht es also, wie schon bei Gold, weitere Schichten – ganz im Sinne von Nik Bhatias <em>Layered Money</em>. Die bekannteste ist das <strong>Lightning-Netzwerk</strong>, beschrieben 2016 von Joseph Poon und Thaddeus Dryja.</p>
+
+    <figure class="scene" data-scene="lightning">
+      <figcaption>Ein Lightning-Kanal: zwei Einträge in der Blockchain, dazwischen beliebig viele Zahlungen in Echtzeit.</figcaption>
+    </figure>
+
+    <p>Über ein Geflecht solcher Kanäle lassen sich Zahlungen auch an Menschen weiterleiten, mit denen man keinen direkten Kanal hat. Der entscheidende Unterschied zu den Schichten des Fiatsystems: Ganz unten liegt kein Versprechen, das jemand beliebig vermehren kann, sondern ein Gut mit fester Menge. Und jeder Teilnehmer kann jederzeit zur Basisschicht zurückkehren.</p>
+
+    <h2>Geschichten aus der realen Welt</h2>
+    <p>Für Menschen in der Schweiz mag das alles theoretisch klingen. Für einen grossen Teil der Weltbevölkerung ist es das nicht. Der Menschenrechtsaktivist Alex Gladstein von der Human Rights Foundation hat in <em>Check Your Financial Privilege</em> viele Geschichten gesammelt:</p>
+    <ul>
+      <li>Im <strong>Libanon</strong> froren die Banken ab 2019 die Dollar-Ersparnisse ihrer Kunden ein; die Landeswährung verlor über 90 Prozent ihres Werts.</li>
+      <li>In <strong>Argentinien</strong> erlebten die Menschen 2001 den «Corralito», bei dem Bankguthaben gesperrt wurden, und 2023 eine Inflation von über 200 Prozent.</li>
+      <li>In <strong>Afghanistan</strong> bezahlte die Unternehmerin Roya Mahboob junge Frauen, die kein eigenes Bankkonto eröffnen durften, für ihre Arbeit in Bitcoin.</li>
+      <li>In <strong>Kanada</strong> liess die Regierung im Februar 2022 unter dem Notstandsgesetz Bankkonten von Unterstützern der Trucker-Proteste einfrieren – mitten in einer westlichen Demokratie.</li>
+    </ul>
+    <p>Und 2021 machte <strong>El Salvador</strong> Bitcoin als erstes Land zum gesetzlichen Zahlungsmittel – ein umstrittenes Experiment, das 2025 im Rahmen eines Abkommens mit dem Internationalen Währungsfonds wieder abgeschwächt wurde. Es zeigt, dass der Weg eines neuen Geldes nicht geradlinig verläuft.</p>
+
+    <h2>Ehrliche Einwände</h2>
+    <p>Eine Seite, die nur Vorteile aufzählt, wäre Werbung, nicht Erklärung. Diese Einwände solltest du kennen:</p>
+    <ul>
+      <li><strong>Volatilität:</strong> Der Bitcoin-Preis schwankt stark. Befürworter sehen darin die normale Phase eines neuen Geldes, das von der Welt erst «entdeckt» wird. Trotzdem: Als stabile Recheneinheit taugt Bitcoin heute noch nicht, und niemand weiss, ob und wann sich das ändert.</li>
+      <li><strong>Energie:</strong> Proof of Work verbraucht viel Strom (siehe Kapitel 15). Ob das Verschwendung oder der Preis der Sicherheit ist, wird heftig debattiert.</li>
+      <li><strong>Skalierung und Gebühren:</strong> Die Basisschicht ist bewusst begrenzt. Bei grosser Nachfrage steigen die Gebühren, und zweite Schichten wie Lightning sind noch jung.</li>
+      <li><strong>Privatsphäre:</strong> Bitcoin ist pseudonym, nicht anonym. Alle Transaktionen sind öffentlich, und spezialisierte Firmen werten sie aus.</li>
+      <li><strong>Selbstverwahrung ist schwer:</strong> Verlorene Schlüssel bedeuten verlorenes Geld. Wer Bitcoin dagegen bei einer Börse lässt, trägt deren Risiko – die Pleiten von Mt. Gox (2014) und FTX (2022) haben Kunden Milliarden gekostet.</li>
+      <li><strong>Papier-Bitcoin:</strong> Seit 2024 halten börsengehandelte Fonds (ETFs) grosse Mengen Bitcoin bei wenigen Verwahrern. Das ist bequem, wiederholt aber das Muster des Goldes: Was in wenigen Tresoren liegt, kann reguliert, eingefroren und mit Ansprüchen überbaut werden.</li>
+      <li><strong>Technische Zukunftsrisiken:</strong> Leistungsfähige Quantencomputer könnten eines Tages die heutigen Signaturverfahren gefährden. Die Bitcoin-Entwickler diskutieren bereits, wie man auf neue Verfahren umsteigen könnte.</li>
+    </ul>
+
+    <aside class="note key">
+      <span class="note-label">Merke</span>
+      <p>Bitcoin vereint, was die Geschichte getrennt hatte: die Härte des Goldes und die Geschwindigkeit des Hauptbuchs – ohne dass jemand dieses Hauptbuch kontrolliert. Ob es sich durchsetzt, entscheidet, wie immer beim Geld, der Wettbewerb.</p>
+    </aside>
+
+    <div class="sources">
+      <h4>Quellen &amp; Weiterlesen</h4>
+      <ul>
+        <li>Lyn Alden: <em>Broken Money</em>, 2023, Teil IV.</li>
+        <li>Saifedean Ammous: <em>The Bitcoin Standard</em>, Kapitel 8–10.</li>
+        <li>Nik Bhatia: <em>Layered Money</em>, 2021.</li>
+        <li>Joseph Poon, Thaddeus Dryja: <em>The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments</em>, 2016.</li>
+        <li>Alex Gladstein: <em>Check Your Financial Privilege</em>, BTC Media 2022.</li>
+      </ul>
+    </div>
+  </div>
+</section>
